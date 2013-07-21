@@ -16,6 +16,6 @@ HTML5 Game Development Tutorials with Google Web Toolkit (GWT)
 Learn HTML5 game development using Java through Google Web Toolkit (GWT) and modern concepts and APIs available in modern browsers. If you're not much into Java, and prefers straight up JavaScript game development tutorials, check out my other video series for a more vanilla experience.
 
 <a href="http://www.youtube.com/watch?v=PvQUS1zP6GQ" target="_blank">
-<img src="http://img.youtube.com/vi/PvQUS1zP6GQ" alt="HTML5 Game Development Tutorial with GWT"  width="240" height="180" border="10" />
+<img src="//img.youtube.com/vi/PvQUS1zP6GQ/0.jpg" alt="HTML5 Game Development Tutorial with GWT"  width="240" height="180" border="10" />
 </a>
 
