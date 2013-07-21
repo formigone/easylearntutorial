@@ -10,8 +10,7 @@ Video Tutorial Series
 The following is a list of tutorial series that the code in this repository accompanies. Note that all of the projects inside this repository are build as an Eclipse project, and any dependency is included with the repository. This way, you can just download the repository and get the project up and running right away.
 
 
-HTML5 Game Development Tutorials with Google Web Toolkit (GWT)
---------------------------------------------------------------
+### HTML5 Game Development Tutorials with Google Web Toolkit (GWT) ###
 
 Learn HTML5 game development using Java through Google Web Toolkit (GWT) and modern concepts and APIs available in modern browsers. If you're not much into Java, and prefers straight up JavaScript game development tutorials, check out my other video series for a more vanilla experience.
 
