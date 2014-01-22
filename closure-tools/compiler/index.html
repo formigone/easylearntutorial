@@ -1,0 +1,1 @@
+<script src="app.min.js"></script>
