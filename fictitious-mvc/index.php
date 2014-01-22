@@ -1,8 +1,6 @@
 <?php
 
-ini_set("display_errors", "on");
-
-require_once "../fictitious-mvc/vendor/autoload.php";
+require_once "vendor/autoload.php";
 
 define("APP_ROOT", realpath(__DIR__)."/application/MyModule");
 
