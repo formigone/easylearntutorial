@@ -1,8 +1,0 @@
-{
-"version":3,
-"file":"app.min.js",
-"lineCount":1,
-"mappings":"AAKC,IAAIA,EAAO,SACC,UAAZ,EAAIA,CAAJ,GACCA,CADD,CACQ,SADR,CAKAC,MAAA,CAAMD,CADGE,IAVGC,QAAQ,CAACH,CAAD,CAAO,CAC3B,IAAAA,KAAA,CAAYA,CADe,CAUlBE,CAAWF,CAAXE,CACHF,MAAN;",
-"sources":["app.js"],
-"names":["name","alert","me","Person"]
-}
