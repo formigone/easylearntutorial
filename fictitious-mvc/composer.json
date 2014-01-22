@@ -1,8 +1,7 @@
 {
     "autoload": {
         "psr-0": {
-            "Fict": "src",
-            "MyModule": "application"
+            "Fict": "src"
         }
     }
 }

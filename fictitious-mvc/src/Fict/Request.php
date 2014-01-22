@@ -9,7 +9,7 @@ class Request {
    /**
     * @param array $params
     */
-   public function __construct(array $params){
+   public function __construct(array $params) {
       $this->params = $params;
 
       if (isset($params["action"])) {
@@ -26,6 +26,9 @@ class Request {
       return $this->params;
    }
 
+   /**
+    * @return string
+    */
    public function getAction() {
       return $this->action;
    }

@@ -1,14 +1,15 @@
 <?php
 
 ini_set("display_errors", "on");
-
-require_once "../fictitious-mvc/vendor/autoload.php";
-
 define("APP_ROOT", realpath(__DIR__)."/application/MyModule");
 
-$req = new Fict\Request($_GET);
+require "vendor/autoload.php";
+
+$req = new Fict\Request($_REQUEST);
 $resp = new Fict\Response();
 
-$controller = new MyModule\Controllers\Index($req, $resp);
+$ctr = ucfirst($req->getAction());
+$ctr = "MyModule\\Controllers\\{$ctr}";
+$controller = new $ctr($req, $resp);
 
 $controller->exec();
