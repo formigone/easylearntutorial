@@ -1,0 +1,38 @@
+.card-img {
+    overflow: hidden;
+    height: 150px;
+    position: relative;
+    margin: 0 0 10px;
+}
+
+.card-img img {
+    display: block;
+    position: relative;
+    z-index: 9;
+    top: 25%;
+    left: 25%;
+    margin: -50% 0 0 -50%;
+}
+
+.card-img h2 {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    width: 100%;
+    margin: 0;
+    color: #fff;
+}
+
+.btn-dark {
+    background: #333;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background: #444;
+    color: #eee;
+    border: 1px solid #333
+}
