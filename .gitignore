@@ -1,4 +1,6 @@
 node_modules/
 /**/node_modules/
+/**/deps.js
+/**/lib/closure-library
 .idea
 compiler.jar

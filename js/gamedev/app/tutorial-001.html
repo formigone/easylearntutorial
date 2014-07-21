@@ -6,11 +6,15 @@
     <title>Game Engine Development</title>
     <script src="/lib/closure-library/closure/goog/base.js"></script>
     <script src="/js/app/deps.js"></script>
-    <script src="/js/app/main.js"></script>
 </head>
 <body>
 <script>
-    main();
+    goog.require('elt.Test');
+</script>
+
+<script>
+    var t = new elt.Test(23);
+    t.doit();
 </script>
 
 </body>
