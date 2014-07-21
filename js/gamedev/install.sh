@@ -8,3 +8,5 @@ wget http://dl.google.com/closure-compiler/compiler-latest.zip
 unzip compiler-latest.zip -d lib
 rm compiler-latest.zip
 
+npm install
+
