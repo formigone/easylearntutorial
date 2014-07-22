@@ -36,7 +36,7 @@
 <script>
     var canvas = document.createElement('canvas');
     canvas.width = 800;
-    canvas.height = 600;
+    canvas.height = 450;
     var ctx = canvas.getContext('2d');
     ctx.imageSmoothingEnabled = false;
     ctx.fillStyle = "#fff";
@@ -48,7 +48,7 @@
         clearTimeout(resizeTimer);
 
         resizeTimer = setTimeout(function() {
-            var widthToHeight = 4 / 3;
+            var widthToHeight = 16 / 9;
             var newWidth = window.innerWidth;
             var newHeight = window.innerHeight;
             var newWidthToHeight = newWidth / newHeight;
