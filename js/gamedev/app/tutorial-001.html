@@ -12,8 +12,8 @@
             margin: 0;
             background: #000;
             position: absolute;
-            left:     50%;
-            top:      50%;
+            left: 50%;
+            top: 50%;
         }
 
         canvas {
@@ -44,10 +44,10 @@
     var img = new Image();
     var resizeTimer = null;
 
-    var resize = function(){
+    var resize = function() {
         clearTimeout(resizeTimer);
 
-        resizeTimer = setTimeout(function(){
+        resizeTimer = setTimeout(function() {
             var widthToHeight = 4 / 3;
             var newWidth = window.innerWidth;
             var newHeight = window.innerHeight;
@@ -116,6 +116,7 @@
         {"x": 170, "y": 78, "width": 22, "height": 32},
         {"x": 230, "y": 78, "width": 30, "height": 32},
     ];
+
     img.addEventListener('load', doit);
     img.src = 'img/sprite-mario-bros.png';
 </script>
