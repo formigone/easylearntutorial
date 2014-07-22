@@ -1,0 +1,24 @@
+{
+    "frames": {
+        "dead": {
+            "x": 264, "y": 78, "width": 28, "height": 32
+        },
+        "standing": {
+            "right": [
+                {"x": 100, "y": 78, "width": 24, "height": 32}
+            ]
+        },
+        "jumping": {
+            "right": [
+                {"x": 132, "y": 78, "width": 30, "height": 32}
+            ]
+        },
+        "running": {
+            "right": [
+                {"x": 230, "y": 78, "width": 30, "height": 32},
+                {"x": 170, "y": 78, "width": 22, "height": 32},
+                {"x": 70, "y": 78, "width": 24, "height": 32}
+            ]
+        }
+    }
+}

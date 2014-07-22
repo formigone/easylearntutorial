@@ -6,6 +6,22 @@
     <title>Game Engine Development</title>
     <script src="/lib/closure-library/closure/goog/base.js"></script>
     <script src="/js/app/deps.js"></script>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            background: #000;
+            position: absolute;
+            left:     50%;
+            top:      50%;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 <script>
@@ -14,5 +30,94 @@
 <script>
 </script>
 
+<div style="width:50px; height: 50px; border: 1px solid #c00; overflow: hidden; display: none">
+    <img src="img/sprite-mario-bros.png">
+</div>
+
+<script>
+    var canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 600;
+    var ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.fillStyle = "#fff";
+    var img = new Image();
+    var resizeTimer = null;
+
+    var resize = function(){
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(function(){
+            var widthToHeight = 4 / 3;
+            var newWidth = window.innerWidth;
+            var newHeight = window.innerHeight;
+            var newWidthToHeight = newWidth / newHeight;
+
+            if (newWidthToHeight > widthToHeight) {
+                newWidth = newHeight * widthToHeight;
+                canvas.style.height = newHeight + 'px';
+                canvas.style.width = newWidth + 'px';
+            } else {
+                newHeight = newWidth / widthToHeight;
+                canvas.style.width = newWidth + 'px';
+                canvas.style.height = newHeight + 'px';
+            }
+
+            document.body.style.marginTop = (-newHeight / 2) + 'px';
+            document.body.style.marginLeft = (-newWidth / 2) + 'px';
+        }, 100);
+    };
+
+    window.addEventListener('resize', resize, false);
+    window.addEventListener('orientationchange', resize, false);
+
+    var doit = function() {
+        resize();
+        document.body.appendChild(canvas);
+
+        var render = function(now) {
+            delta = now - lastTime;
+            animDelta = now - animLastTime;
+
+            if (delta > freq) {
+                x = (x + speed * delta) % 900;
+                lastTime = now;
+            }
+
+            if (animDelta > animFreq) {
+                frame = (frame + 1) % sprites.length;
+                animLastTime = now;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img,
+                    sprites[frame].x, sprites[frame].y, sprites[frame].width, sprites[frame].height,
+                    x, 10, sprites[frame].width * 3, sprites[frame].height * 3);
+
+            requestAnimationFrame(render);
+        };
+
+        render(0);
+    };
+    var animFreq = 1000 / 10;
+    var animLastTime = 0;
+    var animDelta = 0;
+    var speed = 0.15;
+    var fps = 32;
+    var freq = 1000 / fps;
+    var lastTime = 0;
+    var delta = 0;
+    var frame = 0;
+    var x = 0;
+    var y = 0;
+    var sprites = [
+        {"x": 70, "y": 78, "width": 24, "height": 32},
+        {"x": 170, "y": 78, "width": 22, "height": 32},
+        {"x": 230, "y": 78, "width": 30, "height": 32},
+    ];
+    img.addEventListener('load', doit);
+    img.src = 'img/sprite-mario-bros.png';
+</script>
 </body>
 </html>
