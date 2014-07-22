@@ -25,9 +25,7 @@
 </head>
 <body>
 <script>
-</script>
-
-<script>
+    goog.require('elt.io.get');
 </script>
 
 <div style="width:50px; height: 50px; border: 1px solid #c00; overflow: hidden; display: none">
@@ -116,6 +114,12 @@
         {"x": 170, "y": 78, "width": 22, "height": 32},
         {"x": 230, "y": 78, "width": 30, "height": 32},
     ];
+
+    elt.io.getJson('/config/mario-anim.json').then(function(resp){
+        console.log(resp, resp.frames);
+    }, function(error){
+        console.log('error', error);
+    });
 
     img.addEventListener('load', doit);
     img.src = 'img/sprite-mario-bros.png';
