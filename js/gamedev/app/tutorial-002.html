@@ -26,30 +26,44 @@
 </script>
 
 <script>
-    var sprite = new elt.graphics.Sprite('/img/img-mushroom-red.png', 0, 0, 400, 400);
+    var mario = new elt.graphics.AnimSprite('/img/sprite-mario-bros.png', [
+        new elt.graphics.AnimSpriteFrame(100, 170, 78, 22, 32),
+        new elt.graphics.AnimSpriteFrame(100, 230, 78, 30, 32),
+        new elt.graphics.AnimSpriteFrame(100, 70, 78, 24, 32)
+    ]);
 
     var canvas = goog.dom.createDom('canvas', {width: 800, height: 450});
     var ctx = canvas.getContext('2d');
     ctx.imageSmoothingEnabled = false;
     ctx.fillStyle = "#5D94FB";
 
-    sprite.x = canvas.width * 0.5 - sprite.width * 0.5;
-    sprite.y = canvas.height * 0.5 - sprite.height * 0.5;
+    var x = 300;
+    var y = 100;
+    var scale = 8;
 
     (function start() {
         document.body.appendChild(canvas);
 
-        var render = function() {
+        var render = function(now) {
+            mario.delta = now - mario.lastTime;
+
+            if (mario.delta > mario.frames[mario.currentFrame].delay) {
+                mario.currentFrame = (mario.currentFrame + 1) % mario.frames.length;
+                mario.lastTime = now;
+            }
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(sprite.img, sprite.x, sprite.y, sprite.width, sprite.height);
 
-            if (sprite.img.width === 0) {
-                setTimeout(render, 0);
-            }
+            var frame = mario.frames[mario.currentFrame];
+            ctx.drawImage(mario.img,
+                    frame.x, frame.y, frame.width, frame.height,
+                    x, y, frame.width * scale, frame.height * scale);
+
+            requestAnimationFrame(render);
         };
 
-        render();
+        render(0);
     }());
 </script>
 </body>

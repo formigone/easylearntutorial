@@ -11,6 +11,7 @@ goog.require('goog.dom');
 elt.graphics.AnimSprite = function(img, frames) {
     this.frames = frames;
     this.lastTime = 0;
+    this.delta = 0;
     this.currentFrame = 0;
 
     if (goog.isString(img)) {
