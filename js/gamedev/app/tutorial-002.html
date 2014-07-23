@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animated Sprites - Game Engine Development</title>
+    <script src="/lib/closure-library/closure/goog/base.js"></script>
+    <script src="/js/app/deps.js"></script>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
+
+        canvas {
+            display: block;
+            margin: 50px auto 0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    goog.require('elt.graphics.AnimSprite');
+    goog.require('goog.dom');
+</script>
+
+<script>
+    var sprite = new elt.graphics.Sprite('/img/img-mushroom-red.png', 0, 0, 400, 400);
+
+    var canvas = goog.dom.createDom('canvas', {width: 800, height: 450});
+    var ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.fillStyle = "#5D94FB";
+
+    sprite.x = canvas.width * 0.5 - sprite.width * 0.5;
+    sprite.y = canvas.height * 0.5 - sprite.height * 0.5;
+
+    (function start() {
+        document.body.appendChild(canvas);
+
+        var render = function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(sprite.img, sprite.x, sprite.y, sprite.width, sprite.height);
+
+            if (sprite.img.width === 0) {
+                setTimeout(render, 0);
+            }
+        };
+
+        render();
+    }());
+</script>
+</body>
+</html>

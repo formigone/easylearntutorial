@@ -4,11 +4,11 @@ goog.require('goog.dom');
 
 /**
  *
- * @param {string|Element} img
- * @param {number} x
- * @param {number} y
- * @param {number} width
- * @param {number} height
+ * @type {string|Element} img
+ * @type {number} x
+ * @type {number} y
+ * @type {number} width
+ * @type {number} height
  * @constructor
  */
 elt.graphics.Sprite = function(img, x, y, width, height){
