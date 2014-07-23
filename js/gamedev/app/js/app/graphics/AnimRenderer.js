@@ -14,35 +14,34 @@ elt.graphics.AnimRenderer = function(width, height) {
     this.ctx.imageSmoothingEnabled = false;
 
     this.resizeTimer = null;
-    this.aspRation = this.width / this.height;
+    this.aspRation = width / height;
 
     this.onRender = goog.nullFunction;
+
+    this.resize();
 };
 
-/**
- *
- * @type {Element} container
- */
-elt.graphics.AnimRenderer.prototype.resize = function(container) {
+elt.graphics.AnimRenderer.prototype.resize = function() {
     clearTimeout(this.resizeTimer);
+    var self = this;
 
     this.resizeTimer = setTimeout(function() {
-        var newWidth = container.innerWidth;
-        var newHeight = container.innerHeight;
+        var newWidth = window.innerWidth;
+        var newHeight = window.innerHeight;
         var newWidthToHeight = newWidth / newHeight;
 
-        if (newWidthToHeight > this.aspRation) {
-            newWidth = newHeight * this.aspRation;
-            this.canvas.style.height = newHeight + 'px';
-            this.canvas.style.width = newWidth + 'px';
+        if (newWidthToHeight > self.aspRation) {
+            newWidth = newHeight * self.aspRation;
+            self.canvas.style.height = newHeight + 'px';
+            self.canvas.style.width = newWidth + 'px';
         } else {
-            newHeight = newWidth / this.aspRation;
-            this.canvas.style.width = newWidth + 'px';
-            this.canvas.style.height = newHeight + 'px';
+            newHeight = newWidth / self.aspRation;
+            self.canvas.style.width = newWidth + 'px';
+            self.canvas.style.height = newHeight + 'px';
         }
 
-        container.style.marginTop = (-newHeight / 2) + 'px';
-        container.style.marginLeft = (-newWidth / 2) + 'px';
+        document.body.style.marginTop = (-newHeight / 2) + 'px';
+        document.body.style.marginLeft = (-newWidth / 2) + 'px';
     }, 100);
 };
 
