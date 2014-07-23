@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Async Asset Loader - Game Engine Development</title>
+    <script src="/lib/closure-library/closure/goog/base.js"></script>
+    <script src="/js/app/deps.js"></script>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
+
+        canvas {
+            display: block;
+            margin: 50px auto 0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    goog.require('elt.io.get');
+    goog.require('elt.io.img');
+    goog.require('elt.graphics.AnimSprite');
+    goog.require('goog.dom');
+</script>
+
+<script>
+    var mario = null;
+
+    var canvas = goog.dom.createDom('canvas', {width: 800, height: 450});
+    var ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.fillStyle = "#5D94FB";
+
+    var x = 300;
+    var y = 100;
+    var scale = 8;
+
+    var start = function() {
+        document.body.appendChild(canvas);
+
+        var render = function(now) {
+            mario.delta = now - mario.lastTime;
+
+            if (mario.delta > mario.frames[mario.currentFrame].delay) {
+                mario.currentFrame = (mario.currentFrame + 1) % mario.frames.length;
+                mario.lastTime = now;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            var frame = mario.frames[mario.currentFrame];
+            ctx.drawImage(mario.img,
+                    frame.x, frame.y, frame.width, frame.height,
+                    x, y, frame.width * scale, frame.height * scale);
+
+            requestAnimationFrame(render);
+        };
+
+        render(0);
+    };
+
+    Promise.all([
+                elt.io.getJson('/config/mario-anim.json'),
+                elt.io.img('/img/sprite-mario-bros.png')]).
+            then(function(resp) {
+                var running = resp[0].frames.running.right;
+                var frames = [];
+
+                for (var i = 0, len = running.length; i < len; i++) {
+                    frames.push(new elt.graphics.AnimSpriteFrame(100,
+                            running[i].x, running[i].y,
+                            running[i].width, running[i].height)
+                    );
+                }
+
+                mario = new elt.graphics.AnimSprite(resp[1], frames);
+
+                start();
+            }, function(error) {
+                console.log(error);
+            }
+    );
+</script>
+</body>
+</html>
