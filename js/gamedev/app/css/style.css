@@ -3,6 +3,7 @@
     height: 150px;
     position: relative;
     margin: 0 0 10px;
+    background: #de0717;
 }
 
 .card-img img {
@@ -12,6 +13,7 @@
     top: 25%;
     left: 25%;
     margin: -50% 0 0 -50%;
+    transition: all 0.5s;
 }
 
 .card-img h2 {
@@ -35,4 +37,17 @@
     background: #444;
     color: #eee;
     border: 1px solid #333
+}
+
+details {
+    display: none;
+}
+
+.card {
+    margin: 0 0 20px;
+}
+
+.card-img:hover img {
+    margin: -50% 0 0;
+    box-shadow: 0 0 100px #000;
 }
