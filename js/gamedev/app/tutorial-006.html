@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Loop - Game Engine Development</title>
+    <script src="/lib/closure-library/closure/goog/base.js"></script>
+    <script src="/js/app/deps.js"></script>
+    <link rel="stylesheet" href="css/elt.css">
+</head>
+<body>
+<script>
+    goog.require('elt.core.Entity');
+    goog.require('elt.core.GameLoop');
+    goog.require('elt.io.get');
+    goog.require('elt.io.img');
+    goog.require('elt.graphics.AnimSprite');
+    goog.require('elt.graphics.AnimRenderer');
+    goog.require('goog.dom');
+</script>
+
+<script>
+    var mario = null;
+    var renderer = new elt.graphics.AnimRenderer(800, 450);
+    renderer.attr('fillStyle', '#5D94FB');
+
+    var scale = 8;
+
+    /**
+     * Context: this runs within the context of the renderer
+     * @type {number} now
+     */
+    var render = function(now) {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+        var frame = mario.sprites.frames[mario.sprites.currentFrame];
+        this.ctx.drawImage(mario.sprites.img,
+                frame.x, frame.y, frame.width, frame.height,
+                mario.x, mario.y, frame.width * scale, frame.height * scale);
+    };
+
+    var onUpdate = function(now){
+        mario.sprites.delta = now - mario.sprites.lastTime;
+
+        if (mario.sprites.delta > mario.sprites.frames[mario.sprites.currentFrame].delay) {
+            mario.sprites.currentFrame = (mario.sprites.currentFrame + 1) % mario.sprites.frames.length;
+            mario.sprites.lastTime = now;
+        }
+    };
+
+    var onRender = function(now){
+        renderer.render(now);
+    };
+
+    var game = new elt.core.GameLoop(32, onUpdate, onRender);
+    var start = function() {
+        renderer.bindTo(document.body);
+        renderer.onRender = render;
+
+        window.addEventListener('resize', renderer.resize.bind(renderer), false);
+        window.addEventListener('orientationchange', renderer.resize.bind(renderer), false);
+
+        game.run();
+    };
+
+    Promise.all([
+                elt.io.getJson('/config/mario-anim.json'),
+                elt.io.img('/img/sprite-mario-bros.png')]).
+            then(function(resp) {
+                var running = resp[0].frames.running.right;
+                var frames = [];
+
+                for (var i = 0, len = running.length; i < len; i++) {
+                    frames.push(new elt.graphics.AnimSpriteFrame(100,
+                            running[i].x, running[i].y,
+                            running[i].width, running[i].height)
+                    );
+                }
+
+                mario = new elt.core.Entity(300, 100, new elt.graphics.AnimSprite(resp[1], frames));
+
+                start();
+            }, function(error) {
+                console.log(error);
+            }
+    );
+</script>
+</body>
+</html>
