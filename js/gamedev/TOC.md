@@ -7,6 +7,7 @@ Table of Contents
  4. Animated Renderer
  5. Entity
  6. Game Loop
- 7. Renderer Component
- 8. Tile Map
- 9. Camera
+ 7. Tile Map
+ 8. Camera
+ 9. Controller Component - listens for dom events + updates player
+ 10. Physics Component - refs world, hero, enemies (event based?)
