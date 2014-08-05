@@ -13,8 +13,8 @@
     goog.require('elt.graphics.AnimRenderer');
     goog.require('elt.core.GameLoop');
     goog.require('elt.core.Map');
-    goog.provide('elt.core.MapLayer');
-    goog.provide('elt.core.MapTile');
+    goog.require('elt.core.MapLayer');
+    goog.require('elt.core.MapTile');
     goog.require('elt.io.get');
     goog.require('elt.io.img');
     goog.require('goog.dom');
@@ -44,8 +44,7 @@
     Promise.all([
                 elt.io.getJson('/config/tile-map.json')]).
             then(function(resp) {
-                map = elt.core.MapLayer.fromJSON(resp[0], renderer);
-                console.log(map);
+                map = elt.core.Map.fromJSON(resp[0], renderer);
                 start();
             }, function(error) {
                 console.log(error);
