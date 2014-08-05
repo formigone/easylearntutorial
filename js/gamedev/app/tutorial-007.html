@@ -12,14 +12,19 @@
 <script>
     goog.require('elt.graphics.AnimRenderer');
     goog.require('elt.core.GameLoop');
+    goog.require('elt.core.Map');
+    goog.provide('elt.core.MapLayer');
+    goog.provide('elt.core.MapTile');
     goog.require('elt.io.get');
     goog.require('elt.io.img');
     goog.require('goog.dom');
 </script>
 
 <script>
+    var map = null;
     var renderer = new elt.graphics.AnimRenderer(800, 450, function(now) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        map.render(now);
     });
 
     var onUpdate = function(now) {
@@ -37,9 +42,10 @@
     };
 
     Promise.all([
-                elt.io.getJson('/config/mario-anim.json')]).
+                elt.io.getJson('/config/tile-map.json')]).
             then(function(resp) {
-//                        resp[0];
+                map = elt.core.MapLayer.fromJSON(resp[0], renderer);
+                console.log(map);
                 start();
             }, function(error) {
                 console.log(error);
