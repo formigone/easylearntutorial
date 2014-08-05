@@ -32,6 +32,8 @@
      */
     var render = function(now) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        // Background
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         var frame = mario.sprites.frames[mario.sprites.currentFrame];

@@ -6,9 +6,10 @@ goog.require('goog.dom');
  *
  * @type {number} width
  * @type {number} height
+ * @type {Function=} onRender
  * @constructor
  */
-elt.graphics.AnimRenderer = function(width, height) {
+elt.graphics.AnimRenderer = function(width, height, onRender) {
     this.canvas = goog.dom.createDom('canvas', {width: width, height: height});
     this.ctx = this.canvas.getContext('2d');
     this.ctx.imageSmoothingEnabled = false;
@@ -16,7 +17,7 @@ elt.graphics.AnimRenderer = function(width, height) {
     this.resizeTimer = null;
     this.aspRation = width / height;
 
-    this.onRender = goog.nullFunction;
+    this.onRender = onRender || goog.nullFunction;
 
     this.resize();
 };
@@ -67,5 +68,4 @@ elt.graphics.AnimRenderer.prototype.attr = function(name, val) {
  */
 elt.graphics.AnimRenderer.prototype.render = function(now) {
     this.onRender(now);
-    requestAnimationFrame(this.render.bind(this));
 };

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Loop - Game Engine Development</title>
+    <script src="/lib/closure-library/closure/goog/base.js"></script>
+    <script src="/js/app/deps.js"></script>
+    <link rel="stylesheet" href="css/elt.css">
+</head>
+<body>
+<script>
+    goog.require('elt.graphics.AnimRenderer');
+    goog.require('elt.core.GameLoop');
+    goog.require('elt.io.get');
+    goog.require('elt.io.img');
+    goog.require('goog.dom');
+</script>
+
+<script>
+    var renderer = new elt.graphics.AnimRenderer(800, 450, function(now) {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    });
+
+    var onUpdate = function(now) {
+    };
+
+    var game = new elt.core.GameLoop(32, onUpdate, renderer.onRender.bind(renderer));
+
+    var start = function() {
+        renderer.bindTo(document.body);
+
+        window.addEventListener('resize', renderer.resize.bind(renderer), false);
+        window.addEventListener('orientationchange', renderer.resize.bind(renderer), false);
+
+        game.run();
+    };
+
+    Promise.all([
+                elt.io.getJson('/config/mario-anim.json')]).
+            then(function(resp) {
+//                        resp[0];
+                start();
+            }, function(error) {
+                console.log(error);
+            }
+    );
+</script>
+</body>
+</html>
