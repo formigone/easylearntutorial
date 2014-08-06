@@ -55,16 +55,23 @@ elt.core.Map.prototype.setObjLayer = function(layer) {
 
 elt.core.Map.prototype.render = function(now) {
     var ctx = this.renderer.ctx;
-
-    for (var layer = null, i = 0, len = this.layers.length; i < len; i++) {
+    var layer = null;
+var cX = 1, cY = 0, cW = 5, cH = 3;
+    for (var i = 0, len = this.layers.length; i < len; i++) {
         layer = this.layers[i];
-        for (var w = 0, wLen = layer.tiles.length; w < wLen; w++) {
-            var x = w % layer.width;
-            var y = parseInt(w / layer.width, 10);
+
+        for (var w = 0, wLen = Math.min(layer.tiles.length, cW * cH); w < wLen; w++) {
+            // TODO: Get right sW -- this is not taking Y offset into account
+            var sW = parseInt(cX + w, 10) % (layer.width - cW);
+            cY = parseInt(sW / layer.width, 10);
+
+            console.log(sW, cY, w);
+            var dX = w % layer.width;
+            var dY = parseInt(w / layer.width, 10);
 
             ctx.drawImage(layer.img,
-                layer.atlas[layer.tiles[w]].x, layer.atlas[layer.tiles[w]].y, layer.tileWidth, layer.tileHeight,
-                x * layer.tileWidth, y * layer.tileHeight, layer.tileWidth, layer.tileHeight);
+                layer.atlas[layer.tiles[sW]].x, layer.atlas[layer.tiles[sW]].y, layer.tileWidth, layer.tileHeight,
+                dX * layer.tileWidth, dY * layer.tileHeight, layer.tileWidth, layer.tileHeight);
         }
     }
 };
