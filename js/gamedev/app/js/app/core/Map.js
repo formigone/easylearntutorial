@@ -93,6 +93,10 @@ Tile[2] = Coffset + (1 * w.w) + (i % c.w) = 1 + 10 + 0 = 11
 y = 2 / 2 = 1
 Tile[3] = Coffset + (1 * w.w) + (i % c.w) = 1 + 10 + 1 = 12
 
+w = {w: 10, h: 5}
+c = {w: 2, h: 2, x: 1, y: 1}
+Coffset = c.y * c.w + c.x
+
  */
 
 
@@ -106,14 +110,13 @@ elt.core.Map.prototype.render = function(now) {
         w: 5,
         h: 3,
         x: 1,
-        y: 0,
+        y: 7,
         offset: 0
     };
 
-    camera.offset = camera.y * camera.w + camera.x;
-
     for (var i = 0, len = this.layers.length; i < len; i++) {
         layer = this.layers[i];
+        camera.offset = camera.y * layer.width + camera.x;
 
         for (var w = 0, wLen = Math.min(layer.tiles.length, camera.w * camera.h); w < wLen; w++) {
 //        for (var w = 0, wLen = Math.max(layer.tiles.length, cW * cH); w < wLen; w++) {
