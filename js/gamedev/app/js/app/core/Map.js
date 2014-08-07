@@ -100,23 +100,47 @@ Coffset = c.y * c.w + c.x
  */
 
 
+var camera = {
+    w: 5,
+    h: 3,
+    x: 1,
+    y: 1,
+    offset: 0,
+    calculateOffset: function(layer) {
+        if (this.x < 0) {
+            this.x = 0;
+        }
+
+        if (this.y < 0) {
+            this.y = 0;
+        }
+
+        if (this.y + this.h > layer.height) {
+            this.y = layer.height - this.h;
+        }
+
+        if (this.x + this.w > layer.width) {
+            this.x = layer.width - this.w;
+        }
+
+        return this.y * layer.width + this.x;
+    }
+};
+
 elt.core.Map.prototype.render = function(now) {
     var ctx = this.renderer.ctx;
     var layer = null;
     var x = 0;
     var y = 0;
     var offset = 0;
-    var camera = {
-        w: 5,
-        h: 3,
-        x: 1,
-        y: 7,
-        offset: 0
-    };
+
+    if (Math.random() * 100 > 95) {
+        camera.x = parseInt(Math.random() * 10, 10);
+    }
 
     for (var i = 0, len = this.layers.length; i < len; i++) {
         layer = this.layers[i];
-        camera.offset = camera.y * layer.width + camera.x;
+        camera.offset = camera.calculateOffset(layer);
 
         for (var w = 0, wLen = Math.min(layer.tiles.length, camera.w * camera.h); w < wLen; w++) {
 //        for (var w = 0, wLen = Math.max(layer.tiles.length, cW * cH); w < wLen; w++) {
