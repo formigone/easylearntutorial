@@ -22,12 +22,64 @@
 
 <script>
     var map = null;
-    var renderer = new elt.graphics.AnimRenderer(800, 450, function(now) {
+    var renderer = new elt.graphics.AnimRenderer(800, 448, function(now) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         map.render(now);
     });
 
+    var camera = {
+        w: 25,
+        h: 14,
+        x: 0,
+        y: 2,
+        offset: 0,
+        calculateOffset: function(layer) {
+            if (this.x < 0) {
+                this.x = 0;
+            }
+
+            if (this.y < 0) {
+                this.y = 0;
+            }
+
+            if (this.y + this.h > layer.height) {
+                this.y = layer.height - this.h;
+            }
+
+            if (this.x + this.w > layer.width) {
+                this.x = layer.width - this.w;
+            }
+
+            return this.y * layer.width + this.x;
+        }
+    };
+
+    var keys = {
+        code: {
+            LEFT: 37,
+            UP: 38,
+            RIGHT: 39,
+            DOWN: 40
+        }
+    };
+
     var onUpdate = function(now) {
+        if (keys[keys.code.RIGHT]) {
+            camera.x += 1;
+        }
+
+        if (keys[keys.code.LEFT]) {
+            camera.x -= 1;
+        }
+
+        if (keys[keys.code.UP]) {
+            camera.y -= 1;
+        }
+
+        if (keys[keys.code.DOWN]) {
+            camera.y += 1;
+        }
+        console.log(keys);
     };
 
     var game = new elt.core.GameLoop(32, onUpdate, renderer.onRender.bind(renderer));
@@ -40,6 +92,14 @@
 
         game.run();
     };
+
+    document.body.addEventListener('keydown', function(e){
+        keys[e.keyCode] = true;
+    });
+
+    document.body.addEventListener('keyup', function(e){
+        keys[e.keyCode] = false;
+    });
 
     Promise.all([
                 elt.io.getJson('/config/tile-map-mario-001.json')]).

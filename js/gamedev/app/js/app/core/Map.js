@@ -100,33 +100,6 @@ Coffset = c.y * c.w + c.x
  */
 
 
-var camera = {
-    w: 61,
-    h: 20,
-    x: 0,
-    y: 0,
-    offset: 0,
-    calculateOffset: function(layer) {
-        if (this.x < 0) {
-            this.x = 0;
-        }
-
-        if (this.y < 0) {
-            this.y = 0;
-        }
-
-        if (this.y + this.h > layer.height) {
-            this.y = layer.height - this.h;
-        }
-
-        if (this.x + this.w > layer.width) {
-            this.x = layer.width - this.w;
-        }
-
-        return this.y * layer.width + this.x;
-    }
-};
-
 elt.core.Map.prototype.render = function(now) {
     var ctx = this.renderer.ctx;
     var layer = null;
