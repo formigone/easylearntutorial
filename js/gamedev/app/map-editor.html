@@ -10,14 +10,53 @@
     <link rel="stylesheet" href="css/map-editor.css">
 </head>
 <body>
+
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">File</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="contentContainer">
+    <div class="row">
+        <div class="col-md-9">
+            <div id="stage"></div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="well">
+                <h1>???</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer" role="navigation" id="footerContainer">
+    <div class="container-fluid">
+        <p id="console">out: ></p>
+    </div>
+</div>
+
 <script>
     goog.require('elt.io.get');
     goog.require('elt.io.img');
     goog.require('goog.dom');
     goog.require('goog.events');
 </script>
-
-<div id="stage"></div>
 
 <script>
     var TileMap = function(width, height, tileWidth, tileHeight) {
@@ -32,29 +71,31 @@
         this.init();
     };
 
-    TileMap.prototype.init = function(){
+    TileMap.prototype.init = function() {
         for (var y = 0; y < this.height; y++) {
             var row = goog.dom.createDom('tr');
 
             for (var x = 0; x < this.width; x++) {
                 var cell = goog.dom.createDom('td');
-                var img = goog.dom.createDom('img');
-
-                goog.events.listen(img, goog.events.EventType.MOUSEENTER, this.onHover, true, this);
-                cell.appendChild(img);
+                cell.appendChild(goog.dom.createDom('img'));
                 row.appendChild(cell);
             }
 
             this.table.appendChild(row);
         }
 
-        goog.events.listen(this.table, goog.events.EventType.MOUSEDOWN, function(event){
+        goog.events.listen(this.table, goog.events.EventType.MOUSEENTER, this.onHover, true, this);
+        goog.events.listen(this.table, goog.events.EventType.MOUSEDOWN, function(event) {
+            event.preventDefault();
+
             this.mouseDown = !this.mouseDown;
             this.onHover(event);
-        }, false, this);
+        }, true, this);
     };
 
-    TileMap.prototype.onHover = function(event){
+    TileMap.prototype.onHover = function(event) {
+        event.preventDefault();
+
         if (this.mouseDown) {
             var cell = event.target;
             cell.src = '/img/img-mushroom-red.png';
@@ -68,9 +109,11 @@
     };
 
     var main = function() {
-        var stage = new TileMap(600, 300, 64, 64);
+        var stage = new TileMap(200, 50, 64, 64);
+        var footerContainer = document.getElementById('footerContainer');
+        var contentContainer = document.getElementById('contentContainer');
         var stageEl = document.getElementById('stage');
-        stageEl.style.height = window.innerHeight - 60 + 'px';
+        stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
         stage.bindTo(document.getElementById('stage'));
     };
 

@@ -1,8 +1,8 @@
 #stage {
-    width: 96%;
-    height: 96%;
-    margin: 2% auto;
-    border: 1px solid #333;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #aaa;
     overflow: scroll;
 }
 
@@ -17,4 +17,21 @@
 #stage td img {
     width: 32px;
     height: 32px;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.footer {
+    width: 100%;
+    margin: 20px 0 0;
+    background: #000;
+}
+
+#console {
+    color: #fff;
+    font-family: monospace;
+    padding: 10px 0;
+    margin: 0;
 }
