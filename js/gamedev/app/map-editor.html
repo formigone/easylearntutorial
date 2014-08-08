@@ -4,12 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tile Map Editor- Game Engine Development</title>
-    <script src="/lib/closure-library/closure/goog/base.js"></script>
-    <script src="/js/app/deps.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/map-editor.css">
+    <script src="/lib/angularjs.min.js"></script>
 </head>
-<body>
+<body ng-app="MapEditor">
 
 <div class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
@@ -34,12 +33,19 @@
 <div class="container-fluid" id="contentContainer">
     <div class="row">
         <div class="col-md-9">
-            <div id="stage"></div>
+            <div class="panel panel-default" ng-controller="TileMap" id="stage">
+                <table>
+                    <tr ng-repeat="y in height">
+                        <td ng-repeat="x in width"><img/></td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <div class="col-md-3">
-            <div class="well">
-                <h1>???</h1>
+            <div class="panel panel-default" ng-controller="TilesetWidget">
+                <div class="panel-body">
+                </div>
             </div>
         </div>
     </div>
@@ -52,13 +58,6 @@
 </div>
 
 <script>
-    goog.require('elt.io.get');
-    goog.require('elt.io.img');
-    goog.require('goog.dom');
-    goog.require('goog.events');
-</script>
-
-<script>
     var TileMap = function(width, height, tileWidth, tileHeight) {
         this.width = width;
         this.height = height;
@@ -67,30 +66,31 @@
 
         this.mouseDown = false;
 
-        this.table = goog.dom.createDom('table');
+        this.table = document.createElement('table');
         this.init();
     };
 
     TileMap.prototype.init = function() {
         for (var y = 0; y < this.height; y++) {
-            var row = goog.dom.createDom('tr');
+            var row = document.createElement('tr');
 
             for (var x = 0; x < this.width; x++) {
-                var cell = goog.dom.createDom('td');
-                cell.appendChild(goog.dom.createDom('img'));
+                var cell = document.createElement('td');
+                cell.appendChild(document.createElement('img'));
                 row.appendChild(cell);
             }
 
             this.table.appendChild(row);
         }
+        /*
+         goog.events.listen(this.table, goog.events.EventType.MOUSEENTER, this.onHover, true, this);
+         goog.events.listen(this.table, goog.events.EventType.MOUSEDOWN, function(event) {
+         event.preventDefault();
 
-        goog.events.listen(this.table, goog.events.EventType.MOUSEENTER, this.onHover, true, this);
-        goog.events.listen(this.table, goog.events.EventType.MOUSEDOWN, function(event) {
-            event.preventDefault();
-
-            this.mouseDown = !this.mouseDown;
-            this.onHover(event);
-        }, true, this);
+         this.mouseDown = !this.mouseDown;
+         this.onHover(event);
+         }, true, this);
+         */
     };
 
     TileMap.prototype.onHover = function(event) {
@@ -102,22 +102,39 @@
         }
     };
 
-    TileMap.prototype.bindTo = function(container) {
-        // TODO: clear container
+    var app = angular.module('MapEditor', []);
 
-        container.appendChild(this.table);
-    };
+    app.controller('TilesetWidget', ['$scope', '$rootScope', function($scope, $rootScope) {
+    }]);
 
-    var main = function() {
-        var stage = new TileMap(200, 50, 64, 64);
-        var footerContainer = document.getElementById('footerContainer');
-        var contentContainer = document.getElementById('contentContainer');
-        var stageEl = document.getElementById('stage');
-        stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
-        stage.bindTo(document.getElementById('stage'));
-    };
+    app.controller('TileMap', ['$scope', '$rootScope', function($scope, $rootScope) {
+//        var stage = new TileMap(200, 50, 64, 64);
+//        var stageEl = document.getElementById('stage');
+//
+//        stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
+//        stage.bindTo(document.getElementById('stage'));
 
-    main();
+        $scope._width = 100;
+        $scope._height = 25;
+
+        $scope.width = [];
+        $scope.height = [];
+
+        var init = function() {
+            var stageEl = document.getElementById('stage');
+            stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
+
+            for (var x = 0; x < $scope._width; x++) {
+                $scope.width.push(x);
+            }
+
+            for (var y = 0; y < $scope._height; y++) {
+                $scope.height.push(y);
+            }
+        };
+
+        init();
+    }]);
 </script>
 </body>
 </html>
