@@ -1,0 +1,20 @@
+#stage {
+    width: 96%;
+    height: 96%;
+    margin: 2% auto;
+    border: 1px solid #333;
+    overflow: scroll;
+}
+
+#stage table {
+    border-collapse: collapse;
+}
+
+#stage td {
+    border: 1px dotted #aaa;
+}
+
+#stage td img {
+    width: 32px;
+    height: 32px;
+}

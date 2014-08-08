@@ -6,17 +6,75 @@
     <title>Tile Map Editor- Game Engine Development</title>
     <script src="/lib/closure-library/closure/goog/base.js"></script>
     <script src="/js/app/deps.js"></script>
-    <link rel="stylesheet" href="css/elt.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/map-editor.css">
 </head>
 <body>
 <script>
     goog.require('elt.io.get');
     goog.require('elt.io.img');
     goog.require('goog.dom');
+    goog.require('goog.events');
 </script>
 
+<div id="stage"></div>
+
 <script>
-    // TODO: Create map editor
+    var TileMap = function(width, height, tileWidth, tileHeight) {
+        this.width = width;
+        this.height = height;
+        this.tileWidth = width;
+        this.tileHeight = tileHeight;
+
+        this.mouseDown = false;
+
+        this.table = goog.dom.createDom('table');
+        this.init();
+    };
+
+    TileMap.prototype.init = function(){
+        for (var y = 0; y < this.height; y++) {
+            var row = goog.dom.createDom('tr');
+
+            for (var x = 0; x < this.width; x++) {
+                var cell = goog.dom.createDom('td');
+                var img = goog.dom.createDom('img');
+
+                goog.events.listen(img, goog.events.EventType.MOUSEENTER, this.onHover, true, this);
+                cell.appendChild(img);
+                row.appendChild(cell);
+            }
+
+            this.table.appendChild(row);
+        }
+
+        goog.events.listen(this.table, goog.events.EventType.MOUSEDOWN, function(event){
+            this.mouseDown = !this.mouseDown;
+            this.onHover(event);
+        }, false, this);
+    };
+
+    TileMap.prototype.onHover = function(event){
+        if (this.mouseDown) {
+            var cell = event.target;
+            cell.src = '/img/img-mushroom-red.png';
+        }
+    };
+
+    TileMap.prototype.bindTo = function(container) {
+        // TODO: clear container
+
+        container.appendChild(this.table);
+    };
+
+    var main = function() {
+        var stage = new TileMap(600, 300, 64, 64);
+        var stageEl = document.getElementById('stage');
+        stageEl.style.height = window.innerHeight - 60 + 'px';
+        stage.bindTo(document.getElementById('stage'));
+    };
+
+    main();
 </script>
 </body>
 </html>
