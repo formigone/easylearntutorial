@@ -101,10 +101,10 @@ Coffset = c.y * c.w + c.x
 
 
 var camera = {
-    w: 5,
-    h: 3,
-    x: 1,
-    y: 1,
+    w: 61,
+    h: 20,
+    x: 0,
+    y: 0,
     offset: 0,
     calculateOffset: function(layer) {
         if (this.x < 0) {
@@ -134,25 +134,11 @@ elt.core.Map.prototype.render = function(now) {
     var y = 0;
     var offset = 0;
 
-    if (Math.random() * 100 > 95) {
-        camera.x = parseInt(Math.random() * 10, 10);
-    }
-
     for (var i = 0, len = this.layers.length; i < len; i++) {
         layer = this.layers[i];
         camera.offset = camera.calculateOffset(layer);
 
         for (var w = 0, wLen = Math.min(layer.tiles.length, camera.w * camera.h); w < wLen; w++) {
-//        for (var w = 0, wLen = Math.max(layer.tiles.length, cW * cH); w < wLen; w++) {
-            /*
-            // TODO: Get right sW -- this is not taking Y offset into account
-            var sW = parseInt(cX + w, 10) % (layer.width - cW);
-            cY = parseInt(sW / layer.width, 10);
-
-            console.log(sW, cY, w);
-            var dX = w % layer.width;
-            var dY = parseInt(w / layer.width, 10);
-            */
             y = parseInt(w / camera.w, 10);
             x = w % camera.w;
             offset = camera.offset + (y * layer.width) + x;
@@ -160,9 +146,6 @@ elt.core.Map.prototype.render = function(now) {
             ctx.drawImage(layer.img,
                 layer.atlas[layer.tiles[offset]].x, layer.atlas[layer.tiles[offset]].y, layer.tileWidth, layer.tileHeight,
                 x * layer.tileWidth, y * layer.tileHeight, layer.tileWidth, layer.tileHeight);
-//            ctx.drawImage(layer.img,
-//                layer.atlas[layer.tiles[w]].x, layer.atlas[layer.tiles[w]].y, layer.tileWidth, layer.tileHeight,
-//                dX * layer.tileWidth, dY * layer.tileHeight, layer.tileWidth, layer.tileHeight);
         }
     }
 };

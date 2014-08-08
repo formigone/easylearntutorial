@@ -42,7 +42,7 @@
     };
 
     Promise.all([
-                elt.io.getJson('/config/tile-map.json')]).
+                elt.io.getJson('/config/tile-map-mario-001.json')]).
             then(function(resp) {
                 map = elt.core.Map.fromJSON(resp[0], renderer);
                 start();
