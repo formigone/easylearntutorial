@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tile Map Editor- Game Engine Development</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-flat.min.css">
     <link rel="stylesheet" href="css/map-editor.css">
     <script src="/lib/angularjs.min.js"></script>
 </head>
 <body ng-app="MapEditor">
 
-<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -36,7 +37,7 @@
             <div class="panel panel-default" ng-controller="TileMap" id="stage">
                 <table>
                     <tr ng-repeat="y in height">
-                        <td ng-repeat="x in width"><img/></td>
+                        <td ng-repeat="x in width"><img src="/img/clear.png"/></td>
                     </tr>
                 </table>
             </div>
