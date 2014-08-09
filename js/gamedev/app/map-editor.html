@@ -29,7 +29,7 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" ng-click="showDropdown = !showDropdown"><u>F</u>ile</a>
                     <ul class="dropdown-menu" ui-show="showDropdown" role="menu" aria-labelledby="dLabel">
-                        <li><a>New</a></li>
+                        <li><a ng-click="onNewDialog()">New</a></li>
                         <li><a>Save</a></li>
                     </ul>
                 </li>
@@ -42,7 +42,8 @@
     <div class="row">
         <div class="col-md-9">
             <div class="panel panel-default" id="stage">
-                <table ng-mousedown="onPreClick(true, $event)" ng-mouseup="onPreClick(false, $event)" ng-mousemove="onClick($event)">
+                <table ng-mousedown="onPreClick(true, $event)" ng-mouseup="onPreClick(false, $event)"
+                       ng-mousemove="onClick($event)">
                     <tr ng-repeat="(index, value) in cells">
                         <td ng-repeat="(key, x) in value track by key">
                             <img ng-src="{{x.img}}" data-id="{{x.id}}" data-x="{{key}}" data-y="{{index}}"/>
@@ -67,10 +68,43 @@
     </div>
 </div>
 
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">New Map</h3>
+    </div>
+
+    <div class="modal-body">
+        <div class="form-inline" role="form">
+            <div class="form-group">
+                <h4>Map size (in tiles)</h4>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" type="number" ng-model="width">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" type="number" ng-model="height">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok(width, height)">OK</button>
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+
 <script>
     var app = angular.module('MapEditor', ['ui.bootstrap']);
 
-    app.controller('TileMap', ['$scope', '$rootScope', function($scope, $rootScope) {
+    app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $modal, $rootScope) {
         $scope.width = 100;
         $scope.height = 25;
         $scope.cells = [];
@@ -93,9 +127,27 @@
             }
         };
 
-        $scope.init = function() {
-            var stageEl = document.getElementById('stage');
-            stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
+        $scope.onNew = function(width, height) {
+            $scope.width = width;
+            $scope.height = height;
+
+            init();
+        };
+
+        $scope.onNewDialog = function() {
+            var modalInstance = $modal.open({
+                templateUrl: 'myModalContent.html',
+                controller: 'ModalNewCtrl'
+            });
+
+            modalInstance.result.then(function(data) {
+                $scope.onNew(data.width, data.height);
+            }, function() {
+            });
+        };
+
+        var init = function() {
+            $scope.cells = [];
 
             for (var y = 0; y < $scope.height; y++) {
                 $scope.cells[y] = [];
@@ -107,9 +159,25 @@
                     };
                 }
             }
+
+            var stageEl = document.getElementById('stage');
+            stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
         };
 
-        $scope.init();
+        init();
+    }]);
+
+    app.controller('ModalNewCtrl', ['$scope', '$modalInstance', function($scope, $modalInstance) {
+        $scope.width = 42;
+        $scope.height = 23;
+
+        $scope.ok = function(width, height) {
+            $modalInstance.close({width: width, height: height});
+        };
+
+        $scope.cancel = function() {
+            $modalInstance.dismiss('cancel');
+        };
     }]);
 </script>
 </body>
