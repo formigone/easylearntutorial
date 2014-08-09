@@ -200,10 +200,17 @@
                 tileCanvas.height = $scope.previewTile.height;
 
                 var tileCtx = tileCanvas.getContext('2d');
+                var x = 0;
+                var y = 0;
 
                 for (var i = 0, len = $scope.previewTile.totalTiles.width * $scope.previewTile.totalTiles.height; i < len; i++) {
+                    x = i % $scope.previewTile.totalTiles.width;
+                    y = parseInt(i / $scope.previewTile.totalTiles.width);
+
                     tileCtx.drawImage($scope.previewImg.img,
-                            $scope.previewTile.margin, $scope.previewTile.margin, $scope.previewTile.width, $scope.previewTile.height,
+                            x * $scope.previewTile.width + $scope.previewTile.margin + x * $scope.previewTile.spacing,
+                            y * $scope.previewTile.height + $scope.previewTile.margin + y * $scope.previewTile.spacing,
+                            $scope.previewTile.width, $scope.previewTile.height,
                             0, 0, tileCanvas.width, tileCanvas.height);
 
                     $scope.tiles[i] = {
@@ -212,7 +219,7 @@
                     };
                 }
 
-                $scope.previewImg.src = $scope.tiles[3].src;
+                $scope.previewImg.src = $scope.tiles[14].src;
             };
 
             var onDataUrlLoaded = function(dataUrl) {
