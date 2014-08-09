@@ -30,7 +30,7 @@
                     <a class="dropdown-toggle" ng-click="showDropdown = !showDropdown"><u>F</u>ile</a>
                     <ul class="dropdown-menu" ui-show="showDropdown" role="menu" aria-labelledby="dLabel">
                         <li><a ng-click="onNewDialog()">New</a></li>
-                        <li><a>Save</a></li>
+                        <li><a ng-click="onSaveDialog()">Save</a></li>
                     </ul>
                 </li>
             </ul>
@@ -57,7 +57,8 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="tilesetPreview">
-                        <canvas id="previewCanvas" ng-mousemove="onHoverPreview($event)" ng-click="onSelectPreview($event)"></canvas>
+                        <canvas id="previewCanvas" ng-mousemove="onHoverPreview($event)"
+                                ng-click="onSelectPreview($event)"></canvas>
                     </div>
 
                     <button class="btn btn-xs btn-primary" ng-click="onPreNewTileset('tilesetInputEl')">New Tileset
@@ -77,6 +78,8 @@
 
                         <p><strong>Tile Height:</strong> <input type="number" ng-model="previewTile.height"/></p>
 
+                        <p><strong>Tile Type:</strong> <input type="number" ng-model="previewTileType"/></p>
+
                         <p>
                             <button class="btn btn-default btn-xs" ng-click="onUpdateTileset()">Update</button>
                         </p>
@@ -93,7 +96,7 @@
     </div>
 </div>
 
-<script type="text/ng-template" id="myModalContent.html">
+<script type="text/ng-template" id="NewMapModalContent.html">
     <div class="modal-header">
         <h3 class="modal-title">New Map</h3>
     </div>
@@ -124,187 +127,242 @@
     </div>
 </script>
 
+<script type="text/ng-template" id="SaveMapModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Save Map</h3>
+    </div>
+
+    <div class="modal-body">
+        <textarea ng-model="content" class="codeTextArea"></textarea>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+    </div>
+</script>
+
 <script>
-    var app = angular.module('MapEditor', ['ui.bootstrap']);
+var app = angular.module('MapEditor', ['ui.bootstrap']);
 
-    app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $modal, $rootScope) {
-        $scope.width = 42;
-        $scope.height = 23;
-        $scope.cells = [];
+app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $modal, $rootScope) {
+    $scope.width = 42;
+    $scope.height = 23;
+    $scope.cells = [];
 
-        $scope.previewImg = {};
-        $scope.tiles = [];
-        $scope.previewTile = {
-            margin: 0,
-            spacing: 2,
-            width: 32,
-            height: 32,
-            totalTiles: {
-                width: 0,
-                height: 0
-            }
-        };
+    $scope.previewImg = {};
+    $scope.tiles = [];
+    $scope.previewTileType = 0;
+    $scope.previewTile = {
+        margin: 0,
+        spacing: 2,
+        width: 32,
+        height: 32,
+        totalTiles: {
+            width: 0,
+            height: 0
+        }
+    };
 
-        $scope.mouseDown = false;
+    $scope.mouseDown = false;
 
-        $scope.onPreClick = function(mouseDown, $event) {
-            $scope.mouseDown = mouseDown;
-            $scope.onClick($event);
-        };
+    $scope.onPreClick = function(mouseDown, $event) {
+        $scope.mouseDown = mouseDown;
+        $scope.onClick($event);
+    };
 
-        $scope.onClick = function($event) {
-            $event.preventDefault();
-            var target = $event.target;
+    $scope.onClick = function($event) {
+        $event.preventDefault();
+        var target = $event.target;
 
-            if ($scope.mouseDown && $scope.previewImg.src && target.nodeName === 'IMG') {
-                var x = target.getAttribute('data-x');
-                var y = target.getAttribute('data-y');
+        if ($scope.mouseDown && $scope.previewImg.src && target.nodeName === 'IMG') {
+            var x = target.getAttribute('data-x');
+            var y = target.getAttribute('data-y');
 
-                $scope.cells[y][x]['img'] = $scope.previewImg.src;
-            }
-        };
+            $scope.cells[y][x]['img'] = $scope.previewImg.src;
+            $scope.cells[y][x]['type'] = $scope.previewTileType;
+        }
+    };
 
-        $scope.onNew = function(width, height) {
-            $scope.width = width;
-            $scope.height = height;
-
-            init();
-        };
-
-        $scope.onPreNewTileset = function(inputElId) {
-            document.getElementById(inputElId).click();
-        };
-
-        $scope.onHoverPreview = function($event) {
-            var x = $event.offsetX;
-            var y = $event.offsetY;
-            // TODO: figure out how to mark current tile
-        };
-
-        $scope.onSelectPreview = function($event) {
-            var x = $event.offsetX;
-            var y = $event.offsetY;
-            var tileX = parseInt((x - $scope.previewTile.margin - parseInt(x / $scope.previewTile.width, 10)) / $scope.previewTile.width, 10);
-            var tileY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
-
-            $scope.previewImg.src = $scope.tiles[tileY * $scope.previewTile.totalTiles.width + tileX].src;
-        };
-
-        $scope.onNewTileset = function(event) {
-            $scope.previewImg = event.target.files[0];
-
-            var _canvas = document.getElementById('previewCanvas');
-            var _ctx = null;
-
-            var getDataUrl = function(file, cb) {
-                var reader = new FileReader();
-
-                reader.onload = function(event) {
-                    return cb(this.result);
-                };
-
-                reader.readAsDataURL($scope.previewImg);
-            };
-
-            var populateTiles = function() {
-                $scope.previewTile.totalTiles.width = parseInt($scope.previewImg.img.width / $scope.previewTile.width, 10);
-                $scope.previewTile.totalTiles.height = parseInt($scope.previewImg.img.height / $scope.previewTile.height, 10);
-
-                var tileCanvas = document.createElement('canvas');
-                tileCanvas.width = $scope.previewTile.width;
-                tileCanvas.height = $scope.previewTile.height;
-
-                var tileCtx = tileCanvas.getContext('2d');
-                var x = 0;
-                var y = 0;
-
-                for (var i = 0, len = $scope.previewTile.totalTiles.width * $scope.previewTile.totalTiles.height; i < len; i++) {
-                    x = i % $scope.previewTile.totalTiles.width;
-                    y = parseInt(i / $scope.previewTile.totalTiles.width);
-
-                    tileCtx.drawImage($scope.previewImg.img,
-                            x * $scope.previewTile.width + $scope.previewTile.margin + x * $scope.previewTile.spacing,
-                            y * $scope.previewTile.height + $scope.previewTile.margin + y * $scope.previewTile.spacing,
-                            $scope.previewTile.width, $scope.previewTile.height,
-                            0, 0, tileCanvas.width, tileCanvas.height);
-
-                    $scope.tiles[i] = {
-                        type: 0,
-                        src: tileCanvas.toDataURL('image/png')
-                    };
-                }
-
-                $scope.previewImg.src = $scope.tiles[0].src;
-            };
-
-            var onDataUrlLoaded = function(dataUrl) {
-                $scope.previewImg.img = new Image();
-                $scope.previewImg.img.src = dataUrl;
-
-                $scope.previewImg.src = dataUrl;
-
-                _canvas.width = $scope.previewImg.img.width;
-                _canvas.height = $scope.previewImg.img.height;
-
-                _ctx = _canvas.getContext('2d');
-                _ctx.webkitImageSmoothingEnabled = false;
-
-                _ctx.drawImage($scope.previewImg.img, 0, 0);
-
-                populateTiles();
-            };
-
-            getDataUrl($scope.previewImg, onDataUrlLoaded);
-        };
-
-        $scope.onUpdateTileset = function() {
-        };
-
-        $scope.onNewDialog = function() {
-            var modalInstance = $modal.open({
-                templateUrl: 'myModalContent.html',
-                controller: 'ModalNewCtrl'
-            });
-
-            modalInstance.result.then(function(data) {
-                $scope.onNew(data.width, data.height);
-            }, function() {
-            });
-        };
-
-        var init = function() {
-            $scope.cells = [];
-
-            for (var y = 0; y < $scope.height; y++) {
-                $scope.cells[y] = [];
-
-                for (var x = 0; x < $scope.width; x++) {
-                    $scope.cells[y][x] = {
-                        id: 0,
-                        img: '/img/clear.png'
-                    };
-                }
-            }
-
-            var stageEl = document.getElementById('stage');
-            stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
-        };
+    $scope.onNew = function(width, height) {
+        $scope.width = width;
+        $scope.height = height;
 
         init();
-    }]);
+    };
 
-    app.controller('ModalNewCtrl', ['$scope', '$modalInstance', function($scope, $modalInstance) {
-        $scope.width = 42;
-        $scope.height = 23;
+    $scope.onPreNewTileset = function(inputElId) {
+        document.getElementById(inputElId).click();
+    };
 
-        $scope.ok = function(width, height) {
-            $modalInstance.close({width: width, height: height});
+    $scope.onHoverPreview = function($event) {
+        var x = $event.offsetX;
+        var y = $event.offsetY;
+        // TODO: figure out how to mark current tile
+    };
+
+    $scope.onSelectPreview = function($event) {
+        var x = $event.offsetX;
+        var y = $event.offsetY;
+        var tileX = parseInt((x - $scope.previewTile.margin - parseInt(x / $scope.previewTile.width, 10)) / $scope.previewTile.width, 10);
+        var tileY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
+
+        $scope.previewImg.src = $scope.tiles[tileY * $scope.previewTile.totalTiles.width + tileX].src;
+    };
+
+    $scope.onNewTileset = function(event) {
+        $scope.previewImg = event.target.files[0];
+
+        var _canvas = document.getElementById('previewCanvas');
+        var _ctx = null;
+
+        var getDataUrl = function(file, cb) {
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                return cb(this.result);
+            };
+
+            reader.readAsDataURL($scope.previewImg);
         };
 
-        $scope.cancel = function() {
-            $modalInstance.dismiss('cancel');
+        var populateTiles = function() {
+            $scope.previewTile.totalTiles.width = parseInt($scope.previewImg.img.width / $scope.previewTile.width, 10);
+            $scope.previewTile.totalTiles.height = parseInt($scope.previewImg.img.height / $scope.previewTile.height, 10);
+
+            var tileCanvas = document.createElement('canvas');
+            tileCanvas.width = $scope.previewTile.width;
+            tileCanvas.height = $scope.previewTile.height;
+
+            var tileCtx = tileCanvas.getContext('2d');
+            var x = 0;
+            var y = 0;
+
+            for (var i = 0, len = $scope.previewTile.totalTiles.width * $scope.previewTile.totalTiles.height; i < len; i++) {
+                x = i % $scope.previewTile.totalTiles.width;
+                y = parseInt(i / $scope.previewTile.totalTiles.width);
+
+                tileCtx.drawImage($scope.previewImg.img,
+                        x * $scope.previewTile.width + $scope.previewTile.margin + x * $scope.previewTile.spacing,
+                        y * $scope.previewTile.height + $scope.previewTile.margin + y * $scope.previewTile.spacing,
+                        $scope.previewTile.width, $scope.previewTile.height,
+                        0, 0, tileCanvas.width, tileCanvas.height);
+
+                $scope.tiles[i] = {
+                    type: 0,
+                    src: tileCanvas.toDataURL('image/png')
+                };
+            }
+
+            $scope.previewImg.src = $scope.tiles[0].src;
         };
-    }]);
+
+        var onDataUrlLoaded = function(dataUrl) {
+            $scope.previewImg.img = new Image();
+            $scope.previewImg.img.src = dataUrl;
+
+            $scope.previewImg.src = dataUrl;
+
+            _canvas.width = $scope.previewImg.img.width;
+            _canvas.height = $scope.previewImg.img.height;
+
+            _ctx = _canvas.getContext('2d');
+            _ctx.webkitImageSmoothingEnabled = false;
+
+            _ctx.drawImage($scope.previewImg.img, 0, 0);
+
+            populateTiles();
+        };
+
+        getDataUrl($scope.previewImg, onDataUrlLoaded);
+    };
+
+    $scope.onUpdateTileset = function() {
+        alert('TODO');
+    };
+
+    $scope.onSaveDialog = function() {
+        $modal.open({
+            templateUrl: 'SaveMapModalContent.html',
+            controller: 'ModalSaveCtrl',
+            resolve: {
+                content: function() {
+                    return $scope;
+                }
+            }
+        });
+    };
+
+    $scope.onNewDialog = function() {
+        var modalInstance = $modal.open({
+            templateUrl: 'NewMapModalContent.html',
+            controller: 'ModalNewCtrl'
+        });
+
+        modalInstance.result.then(function(data) {
+            $scope.onNew(data.width, data.height);
+        }, function() {
+        });
+    };
+
+    var init = function() {
+        $scope.cells = [];
+
+        for (var y = 0; y < $scope.height; y++) {
+            $scope.cells[y] = [];
+
+            for (var x = 0; x < $scope.width; x++) {
+                $scope.cells[y][x] = {
+                    id: 0,
+                    img: '/img/clear.png'
+                };
+            }
+        }
+
+        var stageEl = document.getElementById('stage');
+        stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
+    };
+
+    init();
+}]);
+
+app.controller('ModalNewCtrl', ['$scope', '$modalInstance', function($scope, $modalInstance) {
+    $scope.width = 42;
+    $scope.height = 23;
+
+    $scope.ok = function(width, height) {
+        $modalInstance.close({width: width, height: height});
+    };
+
+    $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+    };
+}]);
+
+app.controller('ModalSaveCtrl', ['$scope', '$modalInstance', 'content', function($scope, $modalInstance, content) {
+    $scope.content = 'Loading';
+
+    var out = {
+        cells: content.cells,
+        width: content.width,
+        height: content.height,
+        tileWidth: content.previewTile.width,
+        tileHeight: content.previewTile.height,
+        img: content.previewImg.name
+    };
+
+    for (var y = 0; y < out.height; y++) {
+        for (var x = 0; x < out.width; x++) {
+            delete out.cells[y][x]['img'];
+        }
+    }
+
+    $scope.content = JSON.stringify(out);
+    console.log(out);
+
+    $scope.ok = function() {
+        $modalInstance.close();
+    };
+}]);
 </script>
 </body>
 </html>
