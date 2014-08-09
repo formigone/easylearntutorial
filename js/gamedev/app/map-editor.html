@@ -57,7 +57,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="tilesetPreview">
-                        <canvas id="previewCanvas"></canvas>
+                        <canvas id="previewCanvas" ng-mousemove="onHoverPreview($event)" ng-click="onSelectPreview($event)"></canvas>
                     </div>
 
                     <button class="btn btn-xs btn-primary" ng-click="onPreNewTileset('tilesetInputEl')">New Tileset
@@ -175,6 +175,21 @@
             document.getElementById(inputElId).click();
         };
 
+        $scope.onHoverPreview = function($event) {
+            var x = $event.offsetX;
+            var y = $event.offsetY;
+            // TODO: figure out how to mark current tile
+        };
+
+        $scope.onSelectPreview = function($event) {
+            var x = $event.offsetX;
+            var y = $event.offsetY;
+            var tileX = parseInt((x - $scope.previewTile.margin - parseInt(x / $scope.previewTile.width, 10)) / $scope.previewTile.width, 10);
+            var tileY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
+
+            $scope.previewImg.src = $scope.tiles[tileY * $scope.previewTile.totalTiles.width + tileX].src;
+        };
+
         $scope.onNewTileset = function(event) {
             $scope.previewImg = event.target.files[0];
 
@@ -219,7 +234,7 @@
                     };
                 }
 
-                $scope.previewImg.src = $scope.tiles[14].src;
+                $scope.previewImg.src = $scope.tiles[0].src;
             };
 
             var onDataUrlLoaded = function(dataUrl) {
