@@ -56,6 +56,12 @@
         <div class="col-md-3">
             <div class="panel panel-default">
                 <div class="panel-body">
+                    <div class="tilesetPreview">
+                        <img ng-src="{{previewImg.src}}"/>
+                    </div>
+
+                    <button class="btn btn-xs btn-primary" ng-click="onPreNewTileset('tilesetInputEl')">New Tileset</button>
+                    <input type="file" id="tilesetInputEl" onchange="angular.element(this).scope().onNewTileset(event)" class="hidden"/>
                 </div>
             </div>
         </div>
@@ -67,7 +73,6 @@
         <p id="console">Map ({{width}}x{{height}})</p>
     </div>
 </div>
-
 
 <script type="text/ng-template" id="myModalContent.html">
     <div class="modal-header">
@@ -100,14 +105,14 @@
     </div>
 </script>
 
-
 <script>
     var app = angular.module('MapEditor', ['ui.bootstrap']);
 
     app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $modal, $rootScope) {
-        $scope.width = 100;
-        $scope.height = 25;
+        $scope.width = 42;
+        $scope.height = 23;
         $scope.cells = [];
+        $scope.previewImg = {};
 
         $scope.mouseDown = false;
 
@@ -118,12 +123,13 @@
 
         $scope.onClick = function($event) {
             $event.preventDefault();
+            var target = $event.target;
 
-            if ($scope.mouseDown) {
-                var x = $event.target.getAttribute('data-x');
-                var y = $event.target.getAttribute('data-y');
+            if ($scope.mouseDown && $scope.previewImg.src && target.nodeName === 'IMG') {
+                var x = target.getAttribute('data-x');
+                var y = target.getAttribute('data-y');
 
-                $scope.cells[y][x]['img'] = '/img/img-mushroom-red.png';
+                $scope.cells[y][x]['img'] = $scope.previewImg.src;
             }
         };
 
@@ -132,6 +138,21 @@
             $scope.height = height;
 
             init();
+        };
+
+        $scope.onPreNewTileset = function(inputElId) {
+            document.getElementById(inputElId).click();
+        };
+
+        $scope.onNewTileset = function(event) {
+            var reader = new FileReader();
+            $scope.previewImg = event.target.files[0];
+
+            reader.onload = function(event){
+                $scope.previewImg.src = this.result;
+            };
+
+            reader.readAsDataURL($scope.previewImg);
         };
 
         $scope.onNewDialog = function() {
