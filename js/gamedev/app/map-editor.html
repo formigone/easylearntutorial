@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="MapEditor">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/bootstrap-flat.min.css">
     <link rel="stylesheet" href="css/map-editor.css">
     <script src="/lib/angularjs.min.js"></script>
+    <script src="/lib/ui-bootstrap-tpls-0.11.0.min.js"></script>
 </head>
-<body ng-app="MapEditor">
+<body ng-controller="TileMap">
 
 <div class="navbar" role="navigation">
     <div class="container-fluid">
@@ -23,9 +24,15 @@
             <a class="navbar-brand" href="#">Project name</a>
         </div>
 
-        <div class="navbar-collapse collapse">
+        <div>
             <ul class="nav navbar-nav">
-                <li><a href="#">File</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" ng-click="showDropdown = !showDropdown"><u>F</u>ile</a>
+                    <ul class="dropdown-menu" ui-show="showDropdown" role="menu" aria-labelledby="dLabel">
+                        <li><a>New</a></li>
+                        <li><a>Save</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -34,17 +41,19 @@
 <div class="container-fluid" id="contentContainer">
     <div class="row">
         <div class="col-md-9">
-            <div class="panel panel-default" ng-controller="TileMap" id="stage">
-                <table>
-                    <tr ng-repeat="y in height">
-                        <td ng-repeat="x in width"><img src="/img/clear.png"/></td>
+            <div class="panel panel-default" id="stage">
+                <table ng-mousedown="onPreClick(true, $event)" ng-mouseup="onPreClick(false, $event)" ng-mousemove="onClick($event)">
+                    <tr ng-repeat="(index, value) in cells">
+                        <td ng-repeat="(key, x) in value track by key">
+                            <img ng-src="{{x.img}}" data-id="{{x.id}}" data-x="{{key}}" data-y="{{index}}"/>
+                        </td>
                     </tr>
                 </table>
             </div>
         </div>
 
         <div class="col-md-3">
-            <div class="panel panel-default" ng-controller="TilesetWidget">
+            <div class="panel panel-default">
                 <div class="panel-body">
                 </div>
             </div>
@@ -54,87 +63,53 @@
 
 <div class="footer" role="navigation" id="footerContainer">
     <div class="container-fluid">
-        <p id="console">out: ></p>
+        <p id="console">Map ({{width}}x{{height}})</p>
     </div>
 </div>
 
 <script>
-    var TileMap = function(width, height, tileWidth, tileHeight) {
-        this.width = width;
-        this.height = height;
-        this.tileWidth = width;
-        this.tileHeight = tileHeight;
-
-        this.mouseDown = false;
-
-        this.table = document.createElement('table');
-        this.init();
-    };
-
-    TileMap.prototype.init = function() {
-        for (var y = 0; y < this.height; y++) {
-            var row = document.createElement('tr');
-
-            for (var x = 0; x < this.width; x++) {
-                var cell = document.createElement('td');
-                cell.appendChild(document.createElement('img'));
-                row.appendChild(cell);
-            }
-
-            this.table.appendChild(row);
-        }
-        /*
-         goog.events.listen(this.table, goog.events.EventType.MOUSEENTER, this.onHover, true, this);
-         goog.events.listen(this.table, goog.events.EventType.MOUSEDOWN, function(event) {
-         event.preventDefault();
-
-         this.mouseDown = !this.mouseDown;
-         this.onHover(event);
-         }, true, this);
-         */
-    };
-
-    TileMap.prototype.onHover = function(event) {
-        event.preventDefault();
-
-        if (this.mouseDown) {
-            var cell = event.target;
-            cell.src = '/img/img-mushroom-red.png';
-        }
-    };
-
-    var app = angular.module('MapEditor', []);
-
-    app.controller('TilesetWidget', ['$scope', '$rootScope', function($scope, $rootScope) {
-    }]);
+    var app = angular.module('MapEditor', ['ui.bootstrap']);
 
     app.controller('TileMap', ['$scope', '$rootScope', function($scope, $rootScope) {
-//        var stage = new TileMap(200, 50, 64, 64);
-//        var stageEl = document.getElementById('stage');
-//
-//        stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
-//        stage.bindTo(document.getElementById('stage'));
+        $scope.width = 100;
+        $scope.height = 25;
+        $scope.cells = [];
 
-        $scope._width = 100;
-        $scope._height = 25;
+        $scope.mouseDown = false;
 
-        $scope.width = [];
-        $scope.height = [];
+        $scope.onPreClick = function(mouseDown, $event) {
+            $scope.mouseDown = mouseDown;
+            $scope.onClick($event);
+        };
 
-        var init = function() {
-            var stageEl = document.getElementById('stage');
-            stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
+        $scope.onClick = function($event) {
+            $event.preventDefault();
 
-            for (var x = 0; x < $scope._width; x++) {
-                $scope.width.push(x);
-            }
+            if ($scope.mouseDown) {
+                var x = $event.target.getAttribute('data-x');
+                var y = $event.target.getAttribute('data-y');
 
-            for (var y = 0; y < $scope._height; y++) {
-                $scope.height.push(y);
+                $scope.cells[y][x]['img'] = '/img/img-mushroom-red.png';
             }
         };
 
-        init();
+        $scope.init = function() {
+            var stageEl = document.getElementById('stage');
+            stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
+
+            for (var y = 0; y < $scope.height; y++) {
+                $scope.cells[y] = [];
+
+                for (var x = 0; x < $scope.width; x++) {
+                    $scope.cells[y][x] = {
+                        id: 0,
+                        img: '/img/clear.png'
+                    };
+                }
+            }
+        };
+
+        $scope.init();
     }]);
 </script>
 </body>
