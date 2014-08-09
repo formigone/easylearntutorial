@@ -57,11 +57,30 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="tilesetPreview">
-                        <img ng-src="{{previewImg.src}}"/>
+                        <canvas id="previewCanvas"></canvas>
                     </div>
 
-                    <button class="btn btn-xs btn-primary" ng-click="onPreNewTileset('tilesetInputEl')">New Tileset</button>
-                    <input type="file" id="tilesetInputEl" onchange="angular.element(this).scope().onNewTileset(event)" class="hidden"/>
+                    <button class="btn btn-xs btn-primary" ng-click="onPreNewTileset('tilesetInputEl')">New Tileset
+                    </button>
+                    <input type="file" id="tilesetInputEl" onchange="angular.element(this).scope().onNewTileset(event)"
+                           class="hidden"/>
+
+                    <div ng-show="previewImg.src">
+                        <hr/>
+                        <p><strong>Filename:</strong> {{previewImg.name}}</p>
+
+                        <p><strong>Margin:</strong> <input type="number" ng-model="previewTile.margin"/></p>
+
+                        <p><strong>Spacing:</strong> <input type="number" ng-model="previewTile.spacing"/></p>
+
+                        <p><strong>Tile Width:</strong> <input type="number" ng-model="previewTile.width"/></p>
+
+                        <p><strong>Tile Height:</strong> <input type="number" ng-model="previewTile.height"/></p>
+
+                        <p>
+                            <button class="btn btn-default btn-xs" ng-click="onUpdateTileset()">Update</button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,7 +131,19 @@
         $scope.width = 42;
         $scope.height = 23;
         $scope.cells = [];
+
         $scope.previewImg = {};
+        $scope.tiles = [];
+        $scope.previewTile = {
+            margin: 0,
+            spacing: 2,
+            width: 32,
+            height: 32,
+            totalTiles: {
+                width: 0,
+                height: 0
+            }
+        };
 
         $scope.mouseDown = false;
 
@@ -145,14 +176,66 @@
         };
 
         $scope.onNewTileset = function(event) {
-            var reader = new FileReader();
             $scope.previewImg = event.target.files[0];
 
-            reader.onload = function(event){
-                $scope.previewImg.src = this.result;
+            var _canvas = document.getElementById('previewCanvas');
+            var _ctx = null;
+
+            var getDataUrl = function(file, cb) {
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    return cb(this.result);
+                };
+
+                reader.readAsDataURL($scope.previewImg);
             };
 
-            reader.readAsDataURL($scope.previewImg);
+            var populateTiles = function() {
+                $scope.previewTile.totalTiles.width = parseInt($scope.previewImg.img.width / $scope.previewTile.width, 10);
+                $scope.previewTile.totalTiles.height = parseInt($scope.previewImg.img.height / $scope.previewTile.height, 10);
+
+                var tileCanvas = document.createElement('canvas');
+                tileCanvas.width = $scope.previewTile.width;
+                tileCanvas.height = $scope.previewTile.height;
+
+                var tileCtx = tileCanvas.getContext('2d');
+
+                for (var i = 0, len = $scope.previewTile.totalTiles.width * $scope.previewTile.totalTiles.height; i < len; i++) {
+                    tileCtx.drawImage($scope.previewImg.img,
+                            $scope.previewTile.margin, $scope.previewTile.margin, $scope.previewTile.width, $scope.previewTile.height,
+                            0, 0, tileCanvas.width, tileCanvas.height);
+
+                    $scope.tiles[i] = {
+                        type: 0,
+                        src: tileCanvas.toDataURL('image/png')
+                    };
+                }
+
+                $scope.previewImg.src = $scope.tiles[3].src;
+            };
+
+            var onDataUrlLoaded = function(dataUrl) {
+                $scope.previewImg.img = new Image();
+                $scope.previewImg.img.src = dataUrl;
+
+                $scope.previewImg.src = dataUrl;
+
+                _canvas.width = $scope.previewImg.img.width;
+                _canvas.height = $scope.previewImg.img.height;
+
+                _ctx = _canvas.getContext('2d');
+                _ctx.webkitImageSmoothingEnabled = false;
+
+                _ctx.drawImage($scope.previewImg.img, 0, 0);
+
+                populateTiles();
+            };
+
+            getDataUrl($scope.previewImg, onDataUrlLoaded);
+        };
+
+        $scope.onUpdateTileset = function() {
         };
 
         $scope.onNewDialog = function() {
