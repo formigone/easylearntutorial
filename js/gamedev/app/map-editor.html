@@ -248,7 +248,7 @@ app.directive('eltTilemapStage', function() {
                 for (var i = 0, len = $scope.mapCols * $scope.mapRows; i < len; i++) {
                     $scope.mapGrid[i] = {
                         type: 0,
-                        index: 0
+                        index: -1
                     };
                 }
 
@@ -284,6 +284,18 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
     $scope.previewImg = {};
     $scope.tiles = [];
     $scope.previewTileType = 0;
+
+    $scope.previewMarker = {
+        hoverX: 0,
+        hoverY: 0,
+        setX: 0,
+        setY: 0,
+        hoverLineStyle: '#c00',
+        setLineStyle: '#000',
+        setFillStyle: 'rgba(250, 250, 250, 0.75)',
+        ctx: null
+    };
+
     $scope.previewTile = {
         margin: 0,
         spacing: 2,
@@ -332,7 +344,40 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
     $scope.onHoverPreview = function($event) {
         var x = $event.offsetX;
         var y = $event.offsetY;
-        // TODO: figure out how to mark current tile
+        $scope.previewMarker.hoverX = parseInt((x - $scope.previewTile.margin - parseInt(x / $scope.previewTile.width, 10)) / $scope.previewTile.width, 10);
+        $scope.previewMarker.hoverY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
+
+        if ($scope.previewMarker.ctx != null) {
+            $scope.previewMarker.ctx.clearRect(0, 0, $scope.previewImg.width, $scope.previewImg.height);
+            $scope.previewMarker.ctx.drawImage($scope.previewImg.img, 0, 0);
+            $scope.previewMarker.ctx.lineWidth = $scope.previewTile.spacing;
+            $scope.previewMarker.ctx.strokeStyle = $scope.previewMarker.setLineStyle;
+            $scope.previewMarker.ctx.fillStyle = $scope.previewMarker.setFillStyle;
+            $scope.previewMarker.ctx.beginPath();
+
+            $scope.previewMarker.ctx.fillRect(
+                    $scope.previewMarker.setX * $scope.previewTile.width + $scope.previewMarker.setX * $scope.previewTile.spacing + $scope.previewTile.margin,
+                    $scope.previewMarker.setY * $scope.previewTile.height + $scope.previewMarker.setY * $scope.previewTile.spacing + $scope.previewTile.margin,
+                    $scope.previewTile.width,
+                    $scope.previewTile.height);
+
+            $scope.previewMarker.ctx.rect(
+                    $scope.previewMarker.setX * $scope.previewTile.width + $scope.previewMarker.setX * $scope.previewTile.spacing + $scope.previewTile.margin,
+                    $scope.previewMarker.setY * $scope.previewTile.height + $scope.previewMarker.setY * $scope.previewTile.spacing + $scope.previewTile.margin,
+                    $scope.previewTile.width,
+                    $scope.previewTile.height);
+
+            $scope.previewMarker.ctx.strokeStyle = $scope.previewMarker.hoverLineStyle;
+            $scope.previewMarker.ctx.beginPath();
+
+            $scope.previewMarker.ctx.rect(
+                    $scope.previewMarker.hoverX * $scope.previewTile.width + $scope.previewMarker.hoverX * $scope.previewTile.spacing + $scope.previewTile.margin,
+                    $scope.previewMarker.hoverY * $scope.previewTile.height + $scope.previewMarker.hoverY * $scope.previewTile.spacing + $scope.previewTile.margin,
+                    $scope.previewTile.width,
+                    $scope.previewTile.height);
+
+            $scope.previewMarker.ctx.stroke();
+        }
     };
 
     $scope.onSelectPreview = function($event) {
@@ -341,6 +386,9 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
         var tileX = parseInt((x - $scope.previewTile.margin - parseInt(x / $scope.previewTile.width, 10)) / $scope.previewTile.width, 10);
         var tileY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
         var i = tileY * $scope.previewTile.totalTiles.width + tileX;
+
+        $scope.previewMarker.setX = parseInt((x - $scope.previewTile.margin - parseInt(x / $scope.previewTile.width, 10)) / $scope.previewTile.width, 10);
+        $scope.previewMarker.setY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
 
         $scope.previewImg.src = $scope.tiles[i].src;
         $scope.cellImg = $scope.previewImg.src;
@@ -408,6 +456,7 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
             _ctx.webkitImageSmoothingEnabled = false;
 
             _ctx.drawImage($scope.previewImg.img, 0, 0);
+            $scope.previewMarker.ctx = _ctx;
 
             populateTiles();
         };
