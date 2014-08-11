@@ -42,14 +42,15 @@
     <div class="row">
         <div class="col-md-9">
             <div class="panel panel-default" id="stage">
-                <table ng-mousedown="onPreClick(true, $event)" ng-mouseup="onPreClick(false, $event)"
-                       ng-mousemove="onClick($event)">
-                    <tr ng-repeat="(index, value) in cells">
-                        <td ng-repeat="(key, x) in value track by key">
-                            <img ng-src="{{x.img}}" data-id="{{x.id}}" data-x="{{key}}" data-y="{{index}}"/>
-                        </td>
-                    </tr>
-                </table>
+                <elt-tilemap-stage map-cols="1000" map-rows="200"></elt-tilemap-stage>
+                <!--<table ng-mousedown="onPreClick(true, $event)" ng-mouseup="onPreClick(false, $event)"-->
+                <!--ng-mousemove="onClick($event)">-->
+                <!--<tr ng-repeat="(index, value) in cells">-->
+                <!--<td ng-repeat="(key, x) in value track by key">-->
+                <!--<img ng-src="{{x.img}}" data-id="{{x.id}}" data-x="{{key}}" data-y="{{index}}"/>-->
+                <!--</td>-->
+                <!--</tr>-->
+                <!--</table>-->
             </div>
         </div>
 
@@ -143,6 +144,63 @@
 
 <script>
 var app = angular.module('MapEditor', ['ui.bootstrap']);
+
+app.directive('eltTilemapStage', function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        template: '<canvas></canvas>',
+        controller: function($scope, $element) {
+            $scope.tileWidth = $scope.tileWidth || 32;
+            $scope.tileHeight = $scope.tileHeight || 32;
+            $scope.mapCols = $scope.mapCols || 10;
+            $scope.mapRows = $scope.mapRows || 10;
+            $scope.moveSensitivity = $scope.moveSensitivity || 10;
+
+            var moveTimer;
+            var canvas = $element[0];
+            canvas.width = $scope.tileWidth * $scope.mapCols;
+            canvas.height = $scope.tileHeight * $scope.mapRows;
+
+            var ctx = canvas.getContext('2d');
+
+            var getTile = function(worldX, worldY) {
+                var pos = {
+                    x: parseInt(worldX / $scope.tileWidth, 10),
+                    y: parseInt(worldY / $scope.tileHeight, 10)
+                };
+
+                return pos;
+            };
+
+            var drawGrid = function(){
+            };
+
+            canvas.addEventListener('click', function(event) {
+                ctx.fillStyle = '#c00';
+                ctx.fillRect(event.offsetX - 50, event.offsetY - 50, 100, 100);
+            }, false);
+
+            canvas.addEventListener('mousemove', function(event){
+                event.preventDefault();
+                clearTimeout(moveTimer);
+
+                moveTimer = setTimeout(function(){
+                    ctx.fillStyle = '#00c';
+                    var pos = getTile(event.offsetX, event.offsetY);
+
+                    ctx.fillRect(pos.x * $scope.tileWidth + pos.x, pos.y * $scope.tileHeight + pos.y, $scope.tileWidth, $scope.tileHeight);
+                }, $scope.moveSensitivity);
+            }, false);
+        },
+        scope: {
+            tileWidth: '=?',
+            tileHeight: '=?',
+            mapCols: '=?',
+            mapRows: '=?'
+        }
+    };
+});
 
 app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $modal, $rootScope) {
     $scope.width = 42;
