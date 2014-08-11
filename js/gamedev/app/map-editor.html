@@ -244,7 +244,7 @@ app.directive('eltTilemapStage', function() {
                 }
             }, false);
 
-            var init = function(){
+            var init = function() {
                 for (var i = 0, len = $scope.mapCols * $scope.mapRows; i < len; i++) {
                     $scope.mapGrid[i] = {
                         type: 0,
@@ -436,7 +436,11 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
 
                 $scope.tiles[i] = {
                     type: 0,
-                    src: tileCanvas.toDataURL('image/png')
+                    src: tileCanvas.toDataURL('image/png'),
+                    atlas: [
+                        x * $scope.previewTile.width + $scope.previewTile.margin + x * $scope.previewTile.spacing,
+                        y * $scope.previewTile.height + $scope.previewTile.margin + y * $scope.previewTile.spacing
+                    ]
                 };
             }
 
@@ -497,19 +501,6 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
             new Layer($scope.width, $scope.height, 1)
         ];
 
-//        $scope.cells = [];
-
-//        for (var y = 0; y < $scope.height; y++) {
-//            $scope.cells[y] = [];
-
-//            for (var x = 0; x < $scope.width; x++) {
-//                $scope.cells[y][x] = {
-//                    id: 0,
-//                    img: '/img/clear.png'
-//                };
-//            }
-//        }
-
         var stageEl = document.getElementById('stage');
         stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
     };
@@ -533,21 +524,35 @@ app.controller('ModalNewCtrl', ['$scope', '$modalInstance', function($scope, $mo
 app.controller('ModalSaveCtrl', ['$scope', '$modalInstance', 'content', function($scope, $modalInstance, content) {
     $scope.content = 'Loading';
 
+    var layers = content.layers;
+
     var out = {
-        layers: content.layers,
-//        cells: content.cells,
+        layers: [],
         width: content.width,
-        height: content.height,
-        tileWidth: content.previewTile.width,
-        tileHeight: content.previewTile.height,
-        img: content.previewImg.name
+        height: content.height
     };
 
-//    for (var y = 0; y < out.height; y++) {
-//        for (var x = 0; x < out.width; x++) {
-//            delete out.cells[y][x]['img'];
-//        }
-//    }
+    for (var i = 0, len = layers.length; i < len; i++) {
+        out.layers[i] = {
+            width: content.width,
+            height: content.height,
+            tileWidth: content.previewTile.width,
+            tileHeight: content.previewTile.height,
+            img: content.previewImg.name,
+            atlas: [],
+            tiles: [],
+            types: []
+        };
+
+        for (var w = 0; w < layers[i].grid.length; w++) {
+            out.layers[i].tiles[w] = layers[i].grid[w].index;
+            out.layers[i].types[w] = layers[i].grid[w].type;
+        }
+
+        for (var z = 0; z < content.tiles.length; z++) {
+            out.layers[i].atlas[z] = content.tiles[z].atlas;
+        }
+    }
 
     $scope.content = JSON.stringify(out);
 

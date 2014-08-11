@@ -79,7 +79,6 @@
         if (keys[keys.code.DOWN]) {
             camera.y += 1;
         }
-        console.log(keys);
     };
 
     var game = new elt.core.GameLoop(32, onUpdate, renderer.onRender.bind(renderer));
@@ -102,9 +101,11 @@
     });
 
     Promise.all([
-                elt.io.getJson('/config/tile-map-mario-001.json')]).
+                elt.io.getJson('/config/tile-map-mario-002.json')]).
             then(function(resp) {
                 map = elt.core.Map.fromJSON(resp[0], renderer);
+                camera.w = Math.min(camera.w, map.width);
+                camera.h = Math.min(camera.h, map.height);
                 start();
             }, function(error) {
                 console.log(error);
