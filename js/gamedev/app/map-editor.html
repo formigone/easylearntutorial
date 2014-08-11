@@ -43,7 +43,7 @@
         <div class="col-md-9">
             <div class="panel panel-default" id="stage">
                 <div ng-repeat="layer in layers">
-                    <elt-tilemap-stage map-cols="width" map-rows="height" map-grid="{{layer.grid}}" cell-img="drawImg"></elt-tilemap-stage>
+                    <elt-tilemap-stage map-cols="width" map-rows="height" map-grid="layer.grid" cell-img="cellImg" cell-type="previewTileType"></elt-tilemap-stage>
                 </div>
                 <!--<table ng-mousedown="onPreClick(true, $event)" ng-mouseup="onPreClick(false, $event)"-->
                 <!--ng-mousemove="onClick($event)">-->
@@ -215,6 +215,8 @@ app.directive('eltTilemapStage', function() {
                 var pos = getTile(worldX, worldY);
                 img.src = $scope.cellImg;
                 ctx.drawImage(img, pos.x * $scope.tileWidth + pos.x, pos.y * $scope.tileHeight + pos.y, $scope.tileWidth, $scope.tileHeight);
+
+                $scope.mapGrid[pos.y * $scope.mapCols + pos.x]['type'] = $scope.cellType;
             };
 
             canvas.addEventListener('mousedown', function(event) {
@@ -237,14 +239,27 @@ app.directive('eltTilemapStage', function() {
                 }
             }, false);
 
-            drawGrid();
+            var init = function(){
+                for (var i = 0, len = $scope.mapCols * $scope.mapRows; i < len; i++) {
+                    $scope.mapGrid[i] = {
+                        type: 0,
+                        index: 0
+                    };
+                }
+
+                drawGrid();
+            };
+
+            init();
         },
         scope: {
             tileWidth: '=?',
             tileHeight: '=?',
-            mapCols: '=mapCols',
-            mapRows: '=mapRows',
-            cellImg: '=cellImg'
+            mapGrid: '=',
+            mapCols: '=',
+            mapRows: '=',
+            cellImg: '=',
+            cellType: '='
         }
     };
 });
@@ -252,7 +267,7 @@ app.directive('eltTilemapStage', function() {
 app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $modal, $rootScope) {
     $scope.width = 42;
     $scope.height = 23;
-    $scope.cells = [];
+//    $scope.cells = [];
 
 
     $scope.layers = [
@@ -275,25 +290,26 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
     };
 
     $scope.mouseDown = false;
-    $scope.drawImg = '/img/clear.png';
+    $scope.cellImg = '/img/clear.png';
+    $scope.cellType = 1;
 
-    $scope.onPreClick = function(mouseDown, $event) {
-        $scope.mouseDown = mouseDown;
-        $scope.onClick($event);
-    };
+//    $scope.onPreClick = function(mouseDown, $event) {
+//        $scope.mouseDown = mouseDown;
+//        $scope.onClick($event);
+//    };
 
-    $scope.onClick = function($event) {
-        $event.preventDefault();
-        var target = $event.target;
+//    $scope.onClick = function($event) {
+//        $event.preventDefault();
+//        var target = $event.target;
 
-        if ($scope.mouseDown && $scope.previewImg.src && target.nodeName === 'IMG') {
-            var x = target.getAttribute('data-x');
-            var y = target.getAttribute('data-y');
+//        if ($scope.mouseDown && $scope.previewImg.src && target.nodeName === 'IMG') {
+//            var x = target.getAttribute('data-x');
+//            var y = target.getAttribute('data-y');
 
-            $scope.cells[y][x]['img'] = $scope.previewImg.src;
-            $scope.cells[y][x]['type'] = $scope.previewTileType;
-        }
-    };
+//            $scope.cells[y][x]['img'] = $scope.previewImg.src;
+//            $scope.cells[y][x]['type'] = $scope.previewTileType;
+//        }
+//    };
 
     $scope.onNew = function(width, height) {
         $scope.width = width;
@@ -319,7 +335,8 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
         var tileY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
 
         $scope.previewImg.src = $scope.tiles[tileY * $scope.previewTile.totalTiles.width + tileX].src;
-        $scope.drawImg = $scope.previewImg.src;
+        $scope.cellImg = $scope.previewImg.src;
+        $scope.cellType = $scope.previewTileType;
     };
 
     $scope.onNewTileset = function(event) {
@@ -422,18 +439,18 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
             new Layer($scope.width, $scope.height, 1)
         ];
 
-        $scope.cells = [];
+//        $scope.cells = [];
 
-        for (var y = 0; y < $scope.height; y++) {
-            $scope.cells[y] = [];
+//        for (var y = 0; y < $scope.height; y++) {
+//            $scope.cells[y] = [];
 
-            for (var x = 0; x < $scope.width; x++) {
-                $scope.cells[y][x] = {
-                    id: 0,
-                    img: '/img/clear.png'
-                };
-            }
-        }
+//            for (var x = 0; x < $scope.width; x++) {
+//                $scope.cells[y][x] = {
+//                    id: 0,
+//                    img: '/img/clear.png'
+//                };
+//            }
+//        }
 
         var stageEl = document.getElementById('stage');
         stageEl.style.height = (window.innerHeight - contentContainer.offsetTop - footerContainer.offsetHeight - (footerContainer.offsetTop - contentContainer.offsetHeight - contentContainer.offsetTop)) + 'px';
@@ -459,7 +476,8 @@ app.controller('ModalSaveCtrl', ['$scope', '$modalInstance', 'content', function
     $scope.content = 'Loading';
 
     var out = {
-        cells: content.cells,
+        layers: content.layers,
+//        cells: content.cells,
         width: content.width,
         height: content.height,
         tileWidth: content.previewTile.width,
@@ -467,14 +485,13 @@ app.controller('ModalSaveCtrl', ['$scope', '$modalInstance', 'content', function
         img: content.previewImg.name
     };
 
-    for (var y = 0; y < out.height; y++) {
-        for (var x = 0; x < out.width; x++) {
-            delete out.cells[y][x]['img'];
-        }
-    }
+//    for (var y = 0; y < out.height; y++) {
+//        for (var x = 0; x < out.width; x++) {
+//            delete out.cells[y][x]['img'];
+//        }
+//    }
 
     $scope.content = JSON.stringify(out);
-    console.log(out);
 
     $scope.ok = function() {
         $modalInstance.close();
