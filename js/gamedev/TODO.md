@@ -9,3 +9,7 @@ NOW:
 LATER:
  1. Add layers
  2. Make image preview a directive
+
+**Camera**
+ 1. Define in world coordinate space
+ 2. Move independent of entities

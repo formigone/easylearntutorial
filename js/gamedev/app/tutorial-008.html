@@ -10,6 +10,9 @@
 </head>
 <body>
 <script>
+    goog.require('elt.core.Entity');
+    goog.require('elt.components.Physics');
+    goog.require('elt.graphics.AnimSprite');
     goog.require('elt.graphics.AnimRenderer');
     goog.require('elt.core.GameLoop');
     goog.require('elt.core.Map');
@@ -21,17 +24,24 @@
 </script>
 
 <script>
+    var mario = null;
+    var scale = 1.75;
     var map = null;
     var renderer = new elt.graphics.AnimRenderer(800, 448, function(now) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         map.render(now);
+
+        var frame = mario.sprites.frames[mario.sprites.currentFrame];
+        this.ctx.drawImage(mario.sprites.img,
+                frame.x, frame.y, frame.width, frame.height,
+                mario.x, mario.y, frame.width * scale, frame.height * scale);
     });
 
     var camera = {
         w: 25,
         h: 14,
         x: 0,
-        y: 5,
+        y: 6,
         offset: 0,
         calculateOffset: function(layer) {
             if (this.x < 0) {
@@ -50,7 +60,7 @@
                 this.x = layer.width - this.w;
             }
 
-            return this.y * layer.width + this.x;
+            return parseInt(this.y, 10) * layer.width + parseInt(this.x, 10);
         }
     };
 
@@ -59,25 +69,38 @@
             LEFT: 37,
             UP: 38,
             RIGHT: 39,
-            DOWN: 40
+            DOWN: 40,
+            SPACE: 32
         }
     };
 
     var onUpdate = function(now) {
+        mario.sprites.delta = now - mario.sprites.lastTime;
+        mario.update(mario.sprites.delta);
+
         if (keys[keys.code.RIGHT]) {
-            camera.x += 1;
+            if (mario.sprites.delta > mario.sprites.frames[mario.sprites.currentFrame].delay) {
+                mario.sprites.currentFrame = (mario.sprites.currentFrame + 1) % mario.sprites.frames.length;
+                mario.sprites.lastTime = now;
+            }
+
+            if (mario.x - camera.x / 32 > 350) {
+                camera.x += 0.25;
+            }
+        } else {
+            mario.sprites.currentFrame = 0;
         }
 
         if (keys[keys.code.LEFT]) {
-            camera.x -= 1;
+            camera.x -= 0.5;
         }
 
         if (keys[keys.code.UP]) {
-            camera.y -= 1;
+            camera.y -= 0.5;
         }
 
         if (keys[keys.code.DOWN]) {
-            camera.y += 1;
+            camera.y += 0.5;
         }
     };
 
@@ -101,11 +124,36 @@
     });
 
     Promise.all([
-                elt.io.getJson('/config/tile-map-mario-003.json')]).
+                elt.io.getJson('/config/tile-map-mario-004.json'),
+                elt.io.getJson('/config/mario-anim.json'),
+                elt.io.img('/img/sprite-mario-bros.png')]).
             then(function(resp) {
                 map = elt.core.Map.fromJSON(resp[0], renderer);
                 camera.w = Math.min(camera.w, map.width);
                 camera.h = Math.min(camera.h, map.height);
+
+                var standing = resp[1].frames.standing.right;
+                var running = resp[1].frames.running.right;
+                var frames = [];
+
+                frames.push(new elt.graphics.AnimSpriteFrame(100,
+                        standing[0].x, standing[0].y,
+                        standing[0].width, standing[0].height)
+                );
+
+                for (var i = 0, len = running.length; i < len; i++) {
+                    frames.push(new elt.graphics.AnimSpriteFrame(100,
+                            running[i].x, running[i].y,
+                            running[i].width, running[i].height)
+                    );
+                }
+
+                var comps = [
+                        new elt.components.Physics(0.05)
+                ];
+
+                mario = new elt.core.Entity(32 * 5.5, 32 * 10.25, new elt.graphics.AnimSprite(resp[2], frames), comps);
+
                 start();
             }, function(error) {
                 console.log(error);
