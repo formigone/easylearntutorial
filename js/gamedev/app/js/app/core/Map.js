@@ -116,9 +116,11 @@ elt.core.Map.prototype.render = function(now) {
             x = w % camera.w;
             offset = camera.offset + (y * layer.width) + x;
 
-            ctx.drawImage(layer.img,
-                layer.atlas[layer.tiles[offset]].x, layer.atlas[layer.tiles[offset]].y, layer.tileWidth, layer.tileHeight,
-                x * layer.tileWidth, y * layer.tileHeight, layer.tileWidth, layer.tileHeight);
+            if (layer.tiles[offset] >= 0) {
+                ctx.drawImage(layer.img,
+                    layer.atlas[layer.tiles[offset]].x, layer.atlas[layer.tiles[offset]].y, layer.tileWidth, layer.tileHeight,
+                    x * layer.tileWidth, y * layer.tileHeight, layer.tileWidth, layer.tileHeight);
+            }
         }
     }
 };
