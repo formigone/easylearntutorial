@@ -47,14 +47,6 @@
                             map-cols="width" map-rows="height" map-grid="layer.grid"
                             cell-img="cellImg" cell-type="previewTileType" cell-index="cellIndex"></elt-tilemap-stage>
                 </div>
-                <!--<table ng-mousedown="onPreClick(true, $event)" ng-mouseup="onPreClick(false, $event)"-->
-                <!--ng-mousemove="onClick($event)">-->
-                <!--<tr ng-repeat="(index, value) in cells">-->
-                <!--<td ng-repeat="(key, x) in value track by key">-->
-                <!--<img ng-src="{{x.img}}" data-id="{{x.id}}" data-x="{{key}}" data-y="{{index}}"/>-->
-                <!--</td>-->
-                <!--</tr>-->
-                <!--</table>-->
             </div>
         </div>
 
@@ -71,9 +63,11 @@
                     <input type="file" id="tilesetInputEl" onchange="angular.element(this).scope().onNewTileset(event)"
                            class="hidden"/>
 
-                    <div ng-show="previewImg.src">
+                    <div ng-show="previewImg.src.length > 0">
                         <hr/>
                         <p><strong>Filename:</strong> {{previewImg.name}}</p>
+
+                        <p><strong>File Path:</strong> <input type="text" ng-model="previewTile.path"/></p>
 
                         <p><strong>Margin:</strong> <input type="number" ng-model="previewTile.margin"/></p>
 
@@ -172,8 +166,8 @@ app.directive('eltTilemapStage', function() {
 
             var moveTimer;
             var canvas = $element[0];
-            canvas.width = $scope.tileWidth * $scope.mapCols;
-            canvas.height = $scope.tileHeight * $scope.mapRows;
+            canvas.width = $scope.tileWidth * $scope.mapCols + $scope.mapCols;
+            canvas.height = $scope.tileHeight * $scope.mapRows + $scope.mapRows;
 
             var ctx = canvas.getContext('2d');
             var img = new Image();
@@ -270,16 +264,13 @@ app.directive('eltTilemapStage', function() {
     };
 });
 
-app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $modal, $rootScope) {
+app.controller('TileMap', ['$scope', '$modal', function($scope, $modal) {
     $scope.width = 42;
     $scope.height = 23;
-//    $scope.cells = [];
-
 
     $scope.layers = [
         new Layer($scope.width, $scope.height, 1)
     ];
-
 
     $scope.previewImg = {};
     $scope.tiles = [];
@@ -297,6 +288,7 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
     };
 
     $scope.previewTile = {
+        path: '/img/',
         margin: 0,
         spacing: 2,
         width: 32,
@@ -312,24 +304,6 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
     $scope.cellType = 1;
     $scope.cellIndex = 0;
 
-//    $scope.onPreClick = function(mouseDown, $event) {
-//        $scope.mouseDown = mouseDown;
-//        $scope.onClick($event);
-//    };
-
-//    $scope.onClick = function($event) {
-//        $event.preventDefault();
-//        var target = $event.target;
-
-//        if ($scope.mouseDown && $scope.previewImg.src && target.nodeName === 'IMG') {
-//            var x = target.getAttribute('data-x');
-//            var y = target.getAttribute('data-y');
-
-//            $scope.cells[y][x]['img'] = $scope.previewImg.src;
-//            $scope.cells[y][x]['type'] = $scope.previewTileType;
-//        }
-//    };
-
     $scope.onNew = function(width, height) {
         $scope.width = width;
         $scope.height = height;
@@ -342,8 +316,8 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
     };
 
     $scope.onHoverPreview = function($event) {
-        var x = $event.offsetX;
-        var y = $event.offsetY;
+        var x = $event.offsetX || 1;
+        var y = $event.offsetY || 1;
         $scope.previewMarker.hoverX = parseInt((x - $scope.previewTile.margin - parseInt(x / $scope.previewTile.width, 10)) / $scope.previewTile.width, 10);
         $scope.previewMarker.hoverY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
 
@@ -381,8 +355,8 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
     };
 
     $scope.onSelectPreview = function($event) {
-        var x = $event.offsetX;
-        var y = $event.offsetY;
+        var x = $event.offsetX || 0;
+        var y = $event.offsetY || 0;
         var tileX = parseInt((x - $scope.previewTile.margin - parseInt(x / $scope.previewTile.width, 10)) / $scope.previewTile.width, 10);
         var tileY = parseInt((y - $scope.previewTile.margin - parseInt(y / $scope.previewTile.height, 10)) / $scope.previewTile.height, 10);
         var i = tileY * $scope.previewTile.totalTiles.width + tileX;
@@ -463,6 +437,9 @@ app.controller('TileMap', ['$scope', '$modal', '$rootScope', function($scope, $m
             $scope.previewMarker.ctx = _ctx;
 
             populateTiles();
+            $scope.onHoverPreview({});
+            $scope.onSelectPreview({});
+            $scope.$apply();
         };
 
         getDataUrl($scope.previewImg, onDataUrlLoaded);
@@ -538,7 +515,7 @@ app.controller('ModalSaveCtrl', ['$scope', '$modalInstance', 'content', function
             height: content.height,
             tileWidth: content.previewTile.width,
             tileHeight: content.previewTile.height,
-            img: content.previewImg.name,
+            img: content.previewTile.path + content.previewImg.name,
             atlas: [],
             tiles: [],
             types: []
