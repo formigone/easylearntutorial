@@ -103,7 +103,7 @@
     Promise.all([
                 elt.io.getJson('/config/tile-map-mario-003.json')]).
             then(function(resp) {
-                map = elt.core.Map.fromJSON(resp[0], renderer);
+                map = elt.core.Map.fromJSON(resp[0], renderer, camera);
                 camera.w = Math.min(camera.w, map.width);
                 camera.h = Math.min(camera.h, map.height);
                 start();

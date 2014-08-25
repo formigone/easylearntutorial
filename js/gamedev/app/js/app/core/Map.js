@@ -8,22 +8,24 @@ goog.require('goog.dom');
  * @type {number}width
  * @type {number}height
  * @type {elt.graphics.AnimRenderer} renderer
- * @type {Object}tileType
+ * @type {Object} camera
+ * @type {Object} tileType
  * @constructor
  */
-elt.core.Map = function(width, height, renderer, tileType) {
+elt.core.Map = function(width, height, renderer, camera, tileType) {
     this.width = width;
     this.height = height;
 
     this.renderer = renderer;
+    this.camera = camera;
     this.layers = [];
     this.objLayer = [];
 
     this.tileType = tileType || {};
 };
 
-elt.core.Map.fromJSON = function(obj, renderer) {
-    var map = new elt.core.Map(obj.width, obj.height, renderer, obj.tileTypes);
+elt.core.Map.fromJSON = function(obj, renderer, camera) {
+    var map = new elt.core.Map(obj.width, obj.height, renderer, camera, obj.tileTypes);
 
     for (var i = 0, len = obj.layers.length; i < len; i++) {
         var atlas = [];
@@ -109,12 +111,12 @@ elt.core.Map.prototype.render = function(now) {
 
     for (var i = 0, len = this.layers.length; i < len; i++) {
         layer = this.layers[i];
-        camera.offset = camera.calculateOffset(layer);
+        this.camera.offset = this.camera.calculateOffset(layer);
 
-        for (var w = 0, wLen = Math.min(layer.tiles.length, camera.w * camera.h); w < wLen; w++) {
-            y = parseInt(w / camera.w, 10);
-            x = w % camera.w;
-            offset = camera.offset + (y * layer.width) + x;
+        for (var w = 0, wLen = Math.min(layer.tiles.length, this.camera.w * this.camera.h); w < wLen; w++) {
+            y = parseInt(w / this.camera.w, 10);
+            x = w % this.camera.w;
+            offset = this.camera.offset + (y * layer.width) + x;
 
             if (layer.tiles[offset] >= 0) {
                 ctx.drawImage(layer.img,
