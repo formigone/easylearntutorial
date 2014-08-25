@@ -17,8 +17,10 @@ elt.core.MapLayer = function(width, height, tileWidth, tileHeight, img, atlas, t
     this.tileWidth = tileWidth;
     this.tileHeight = tileHeight;
 
+    this.maxX = this.width * this.tileWidth;
+    this.maxY = this.height * this.tileHeight;
+
     this.img = img;
     this.atlas = atlas;
     this.tiles = tiles;
 };
-

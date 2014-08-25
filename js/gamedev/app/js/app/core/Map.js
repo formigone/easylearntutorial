@@ -8,7 +8,7 @@ goog.require('goog.dom');
  * @type {number}width
  * @type {number}height
  * @type {elt.graphics.AnimRenderer} renderer
- * @type {Object} camera
+ * @type {elt.core.Camera} camera
  * @type {Object} tileType
  * @constructor
  */
@@ -18,6 +18,7 @@ elt.core.Map = function(width, height, renderer, camera, tileType) {
 
     this.renderer = renderer;
     this.camera = camera;
+    /** @type {Array.<elt.core.MapLayer>} this.layers */
     this.layers = [];
     this.objLayer = [];
 
@@ -111,11 +112,11 @@ elt.core.Map.prototype.render = function(now) {
 
     for (var i = 0, len = this.layers.length; i < len; i++) {
         layer = this.layers[i];
-        this.camera.offset = this.camera.calculateOffset(layer);
+        this.camera.calculateOffset(layer);
 
-        for (var w = 0, wLen = Math.min(layer.tiles.length, this.camera.w * this.camera.h); w < wLen; w++) {
-            y = parseInt(w / this.camera.w, 10);
-            x = w % this.camera.w;
+        for (var w = 0, wLen = Math.min(layer.tiles.length, this.camera.width * this.camera.height); w < wLen; w++) {
+            y = parseInt(w / this.camera.width, 10);
+            x = w % this.camera.width;
             offset = this.camera.offset + (y * layer.width) + x;
 
             if (layer.tiles[offset] >= 0) {

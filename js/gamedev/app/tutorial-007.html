@@ -13,6 +13,7 @@
     goog.require('elt.graphics.AnimRenderer');
     goog.require('elt.core.GameLoop');
     goog.require('elt.core.Map');
+    goog.require('elt.core.Camera');
     goog.require('elt.core.MapLayer');
     goog.require('elt.core.MapTile');
     goog.require('elt.io.get');
@@ -21,38 +22,41 @@
 </script>
 
 <script>
+    /** @type {elt.core.Map} map */
     var map = null;
     var renderer = new elt.graphics.AnimRenderer(800, 448, function(now) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         map.render(now);
     });
 
-    var camera = {
-        w: 25,
-        h: 14,
-        x: 0,
-        y: 5,
-        offset: 0,
-        calculateOffset: function(layer) {
-            if (this.x < 0) {
-                this.x = 0;
-            }
+//    var camera = {
+//        w: 25,
+//        h: 14,
+//        x: 0,
+//        y: 5,
+//        offset: 0,
+//        calculateOffset: function(layer) {
+//            if (this.x < 0) {
+//                this.x = 0;
+//            }
+//
+//            if (this.y < 0) {
+//                this.y = 0;
+//            }
+//
+//            if (this.y + this.h > layer.height) {
+//                this.y = layer.height - this.h;
+//            }
+//
+//            if (this.x + this.w > layer.width) {
+//                this.x = layer.width - this.w;
+//            }
+//
+//            return this.y * layer.width + this.x;
+//        }
+//    };
 
-            if (this.y < 0) {
-                this.y = 0;
-            }
-
-            if (this.y + this.h > layer.height) {
-                this.y = layer.height - this.h;
-            }
-
-            if (this.x + this.w > layer.width) {
-                this.x = layer.width - this.w;
-            }
-
-            return this.y * layer.width + this.x;
-        }
-    };
+    var camera = new elt.core.Camera(0, 0, 25, 14);
 
     var keys = {
         code: {
@@ -104,8 +108,8 @@
                 elt.io.getJson('/config/tile-map-mario-003.json')]).
             then(function(resp) {
                 map = elt.core.Map.fromJSON(resp[0], renderer, camera);
-                camera.w = Math.min(camera.w, map.width);
-                camera.h = Math.min(camera.h, map.height);
+                camera.width = Math.min(camera.width, map.width);
+                camera.height = Math.min(camera.height, map.height);
                 start();
             }, function(error) {
                 console.log(error);
