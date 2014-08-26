@@ -4,11 +4,11 @@ goog.provide('elt.core.Camera');
  *
  * @constructor
  */
-elt.core.Camera = function(x, y, widthTiles, heightTiles) {
+elt.core.Camera = function(x, y, cols, rows) {
     this.x = x;
     this.y = y;
-    this.width = widthTiles;
-    this.height = heightTiles;
+    this.cols = cols;
+    this.rows = rows;
 
     this.offset = 0;
 };
@@ -18,8 +18,8 @@ elt.core.Camera = function(x, y, widthTiles, heightTiles) {
  * @type {elt.core.MapLayer} layer
  */
 elt.core.Camera.prototype.calculateOffset = function(layer) {
-    var widthPx = this.width * layer.tileWidth;
-    var heightPx = this.height * layer.tileHeight;
+    var width = this.cols * layer.tileWidth;
+    var height = this.rows * layer.tileHeight;
 
     if (this.x < 0) {
         this.x = 0;
@@ -29,13 +29,13 @@ elt.core.Camera.prototype.calculateOffset = function(layer) {
         this.y = 0;
     }
 
-    if (this.y + heightPx > layer.maxY) {
-        this.y = 100;
-    }
+//    if (this.y + heightPx > layer.maxY) {
+//        this.y = 100;
+//    }
+//
+//    if (this.x + widthPx > layer.maxX) {
+//        this.x = layer.maxX - this.width;
+//    }
 
-    if (this.x + widthPx > layer.maxX) {
-        this.x = layer.maxX - this.width;
-    }
-
-    this.offset = this.y * layer.width + this.x;
+    this.offset = parseInt(this.y / layer.tileHeight, 10) * layer.width + parseInt(this.x / layer.tileWidth, 10);
 };

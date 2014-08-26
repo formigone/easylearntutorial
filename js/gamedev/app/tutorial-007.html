@@ -56,7 +56,7 @@
 //        }
 //    };
 
-    var camera = new elt.core.Camera(0, 0, 25, 14);
+    var camera = new elt.core.Camera(0, 50, 25, 14);
 
     var keys = {
         code: {
@@ -69,19 +69,19 @@
 
     var onUpdate = function(now) {
         if (keys[keys.code.RIGHT]) {
-            camera.x += 1;
+            camera.x += 3;
         }
 
         if (keys[keys.code.LEFT]) {
-            camera.x -= 1;
+            camera.x -= 3;
         }
 
         if (keys[keys.code.UP]) {
-            camera.y -= 1;
+            camera.y -= 3;
         }
 
         if (keys[keys.code.DOWN]) {
-            camera.y += 1;
+            camera.y += 3;
         }
     };
 

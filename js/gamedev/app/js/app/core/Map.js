@@ -114,9 +114,9 @@ elt.core.Map.prototype.render = function(now) {
         layer = this.layers[i];
         this.camera.calculateOffset(layer);
 
-        for (var w = 0, wLen = Math.min(layer.tiles.length, this.camera.width * this.camera.height); w < wLen; w++) {
-            y = parseInt(w / this.camera.width, 10);
-            x = w % this.camera.width;
+        for (var w = 0, wLen = Math.min(layer.tiles.length, this.camera.cols * this.camera.rows); w < wLen; w++) {
+            y = parseInt(w / this.camera.cols, 10);
+            x = w % this.camera.cols;
             offset = this.camera.offset + (y * layer.width) + x;
 
             if (layer.tiles[offset] >= 0) {
