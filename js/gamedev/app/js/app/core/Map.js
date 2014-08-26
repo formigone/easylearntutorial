@@ -114,15 +114,17 @@ elt.core.Map.prototype.render = function(now) {
         layer = this.layers[i];
         this.camera.calculateOffset(layer);
 
-        for (var w = 0, wLen = Math.min(layer.tiles.length, this.camera.cols * this.camera.rows); w < wLen; w++) {
-            y = parseInt(w / this.camera.cols, 10);
-            x = w % this.camera.cols;
+//        for (var w = 0, wLen = Math.min(layer.tiles.length, this.camera.cols * this.camera.rows); w < wLen; w++) {
+        // Render 1 extra row beyond viewport
+        for (var w = 0, wLen = (this.camera.cols + 1) * (this.camera.rows + 1); w < wLen; w++) {
+            y = parseInt(w / (this.camera.cols + 1), 10);
+            x = w % (this.camera.cols + 1);
             offset = this.camera.offset + (y * layer.width) + x;
 
             if (layer.tiles[offset] >= 0) {
                 ctx.drawImage(layer.img,
                     layer.atlas[layer.tiles[offset]].x, layer.atlas[layer.tiles[offset]].y, layer.tileWidth, layer.tileHeight,
-                    x * layer.tileWidth, y * layer.tileHeight, layer.tileWidth, layer.tileHeight);
+                    x * layer.tileWidth - (this.camera.x % layer.tileWidth), y * layer.tileHeight - (this.camera.y % layer.tileHeight), layer.tileWidth, layer.tileHeight);
             }
         }
     }

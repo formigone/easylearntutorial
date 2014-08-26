@@ -29,34 +29,8 @@
         map.render(now);
     });
 
-//    var camera = {
-//        w: 25,
-//        h: 14,
-//        x: 0,
-//        y: 5,
-//        offset: 0,
-//        calculateOffset: function(layer) {
-//            if (this.x < 0) {
-//                this.x = 0;
-//            }
-//
-//            if (this.y < 0) {
-//                this.y = 0;
-//            }
-//
-//            if (this.y + this.h > layer.height) {
-//                this.y = layer.height - this.h;
-//            }
-//
-//            if (this.x + this.w > layer.width) {
-//                this.x = layer.width - this.w;
-//            }
-//
-//            return this.y * layer.width + this.x;
-//        }
-//    };
-
     var camera = new elt.core.Camera(0, 50, 25, 14);
+    var CAMERA_SPEED = 10;
 
     var keys = {
         code: {
@@ -69,19 +43,19 @@
 
     var onUpdate = function(now) {
         if (keys[keys.code.RIGHT]) {
-            camera.x += 3;
+            camera.x += CAMERA_SPEED;
         }
 
         if (keys[keys.code.LEFT]) {
-            camera.x -= 3;
+            camera.x -= CAMERA_SPEED;
         }
 
         if (keys[keys.code.UP]) {
-            camera.y -= 3;
+            camera.y -= CAMERA_SPEED;
         }
 
         if (keys[keys.code.DOWN]) {
-            camera.y += 3;
+            camera.y += CAMERA_SPEED;
         }
     };
 
