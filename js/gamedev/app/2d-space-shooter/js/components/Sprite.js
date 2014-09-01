@@ -28,8 +28,8 @@ Packt.Components.Sprite = function(pEntity, pImgSrc, pWidth, pHeight) {
 	this.update = function() {
 		if (ctx && entity.isActive()) {
 			var pos = entity.getPosition();
-			ctx.drawImage(img, sX, sY, sWidth, sHeight, pos.x, pos.y, width, height);
-		}
+            ctx.drawImage(img, sX, sY, sWidth, sHeight, pos.x, pos.y, width, height);
+        }
 	};
 
 	this.getSize = function() {

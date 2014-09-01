@@ -1,11 +1,16 @@
 (function main(){
-alert("Thanks for playing my game. \n\nFor a better experience, \nuse Google Chrome and resize the window to about 900 pixels wide");
 	var WIDTH = document.body.offsetWidth;
 	var HEIGHT = document.body.offsetHeight;
 	var MAX_ENEMIES = 15;
+    var global_score = 0;
 
 	var canvas = new Packt.Canvas(WIDTH, HEIGHT);
 	document.body.appendChild(canvas.getCanvas());
+
+    // ugly, but good enough for now
+    var global_ctx = canvas.getContext('2d');
+    global_ctx.fillStyle = '#fff';
+    global_ctx.font = '2em Monospace';
 
 	var playerEnergy = new Packt.Widgets.EnergyBar("energyBar");
 	document.body.appendChild(playerEnergy.getElement());
@@ -18,7 +23,7 @@ alert("Thanks for playing my game. \n\nFor a better experience, \nuse Google Chr
 	var playerStrengthComp = new Packt.Components.Strength(player, 0, 100);
 	var playerMoveComp = new Packt.Components.Drag(player, canvas);
 	var playerPhysComp = new Packt.Components.Physics(player);
-	var playerSpriteComp = new Packt.Components.Sprite(player, "./img/fighter.png", 64, 64);
+	var playerSpriteComp = new Packt.Components.Sprite(player, "./img/fighter.png", 32, 32);
 	playerSpriteComp.setCtx(canvas.getContext());
 	playerSpriteComp.setSpriteCoords(64 * 3, 0, 64, 64);
 	player.addComponent("sprite", playerSpriteComp);
@@ -42,7 +47,7 @@ alert("Thanks for playing my game. \n\nFor a better experience, \nuse Google Chr
 		var offset = i % (WIDTH / 75 >> 0);
 		var x = 50 * offset + 25 + (25 * offset);
 		var y = -50 * i + 25 + (-50 * i);
-		enMan.add(x, y, {});
+		enMan.add(x, y, 32, 32, {});
 	}
 
 	var phy = new Packt.PhysicsManager();
@@ -54,12 +59,17 @@ alert("Thanks for playing my game. \n\nFor a better experience, \nuse Google Chr
 		if (playerStrengthComp.getEnergy() < 0) {
 			document.body.classList.add("zoomOut");
 
-			var ctx = canvas.getContext();
-			ctx.globalAlpha -= 0.01;
+//			var ctx = canvas.getContext();
+//			ctx.globalAlpha -= 0.5;
 
-			if (ctx.globaAlpha < 0.0) {
+//			if (ctx.globaAlpha < 0.0) {
 				gameLoop.setRunning(false);
-			}
+            setTimeout(function(){
+                if (confirm('Play again?')) {
+                    window.location.reload();
+                }
+            }, 3000);
+//			}
 		}
 
 		// Add everyone to the physics manager to check for collision
@@ -74,7 +84,7 @@ alert("Thanks for playing my game. \n\nFor a better experience, \nuse Google Chr
 		}
 
 		// Update positions
-		enMan.update();
+		global_score += enMan.update();
 		player.update();
 
 		// Check for collisions
@@ -92,6 +102,9 @@ alert("Thanks for playing my game. \n\nFor a better experience, \nuse Google Chr
 
 		player.draw();
 		playerEnergy.setEnergy(playerStrengthComp.getEnergy());
+
+        // manually draw score
+        global_ctx.fillText('Score: ' + global_score, 15, 70);
 	});
 
 	gameLoop.run();

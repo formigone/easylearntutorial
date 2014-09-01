@@ -9,7 +9,7 @@ Packt.EnemyManager = function(canvas) {
 		return entities;
 	};
 
-	function addEnemies(x, y, components) {
+	function addEnemies(x, y, width, height, components) {
 		var entity = new Packt.Entity(Packt.ENTITY_TYPES.SHIP, x || 0, y || -100);
 		for (var c in components) {
 			entity.addComponent(c, components[c]);
@@ -18,7 +18,7 @@ Packt.EnemyManager = function(canvas) {
 		var strengthComp = new Packt.Components.Strength(entity, 0.5, 25);
 		var physComp = new Packt.Components.Physics(entity);
 		var mockMove = new Packt.Components.Move(entity, (Math.random() * 5 >> 0) + 2);
-		var spriteComp = new Packt.Components.Sprite(entity, "./img/enemy-red.png", 64, 64);
+		var spriteComp = new Packt.Components.Sprite(entity, "./img/enemy-red.png", width, height);
 		spriteComp.setCtx(canvas.getContext());
 		spriteComp.setSpriteCoords(0, 0, 64, 64);
 		entity.addComponent("sprite", spriteComp);
@@ -51,6 +51,8 @@ Packt.EnemyManager = function(canvas) {
 
 	this.update = function() {
 		var enemiesDeleted = 0;
+        var deleted = [];
+
 		for (var i = 0, len = entities.length; i < len; i++) {
 			try {
 				entities[i].update();
@@ -58,8 +60,8 @@ Packt.EnemyManager = function(canvas) {
 				var pos = entities[i].getPosition();
 
 				if (pos.y > worldHeight + 100 || !entities[i].isActive()) {
-					entities.splice(i, 1);
 					enemiesDeleted++;
+                    deleted.push(i);
 				}
 
 				if (pos.x < -100) {
@@ -73,12 +75,23 @@ Packt.EnemyManager = function(canvas) {
 		}
 
 		if (enemiesDeleted > 0) {
+            var e = [];
+            for (var i = 0, len = entities.length; i < len; i++) {
+                if (deleted.indexOf(i) < 0) {
+                    e.push(entities[i]);
+                }
+            }
+
+            entities = e;
+
 			for (var i = 0; i < enemiesDeleted; i++) {
-				var offset = (Math.random() * 100 >> 0) % (worldWidth / 75 >> 0);
+				var offset = parseInt(Math.random() * 100, 10) % parseInt(worldWidth / 75, 10);
 				var x = 50 * offset + 25 + (25 * offset);
 				var y = 0 - Math.random() * 100 - 100; 
-				addEnemies(x, y, {});
+				addEnemies(x, y, 32, 32, {});
 			}
 		}
+
+        return enemiesDeleted;
 	};
 };
