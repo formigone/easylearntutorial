@@ -1,0 +1,20 @@
+CACHE MANIFEST
+
+# HTML5 Snake, Version 2.0.0
+
+CACHE:
+index.html
+js/next-empty.worker.js
+js/renderer.class.js
+js/snake.class.js
+img/block-green.png
+img/fruit-01.png
+fonts/geo.woff
+fonts/vt323.woff
+css/style.css
+
+NETWORK:
+*
+
+FALLBACK:
+fallback.html

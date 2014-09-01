@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "Geo";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Geo"), local("Geo-Regular"), url("../fonts/geo.woff") format("woff");
+}
+
+@font-face {
+  font-family: "VT323";
+  font-style: normal;
+  font-weight: 400;
+  src: local("VT323"), local("VT323-Regular"), url("../fonts/vt323.woff") format("woff");
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   background: #eee;
+   overflow: hidden;
+   overflow-y: auto;
+}
+
+h1 {
+   text-align: center;
+   font-family: Geo, Arial;
+   font-size: 4em;
+   padding: 0;
+   margin: 20px 0;
+   color: #0c0;
+   font-weight: 400;
+}
+
+#scores {
+   width: 960px;
+   margin: 20px auto;
+   overflow: auto;
+}
+
+#scores h3 {
+   font-weight: 300;
+   font-family: VT323, Arial;
+   font-size: 2em;
+   margin: 0;
+   padding: 0;
+   float: left;
+   color: #333;
+}
+
+#scores h3:last-child {
+   float: right;
+}
+
+#gameMenu {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 999;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.88);
+   overflow: auto;
+   -webkit-transition: all 0.5s;
+}
+
+#gameMenu h3 {
+   color: #fff;
+   font-family: Geo, Arial;
+   font-size: 15em;
+   margin: 0;
+   padding: 0;
+   text-align: center;
+}
+
+#gameMenu button {
+   cursor: pointer;
+   display: block;
+   margin: 20px auto;
+   padding: 10px 50px;
+   outline: none;
+   border: 0;
+   background: #0c0;
+   font-family: Geo, Arial;
+   font-size: 5em;
+   color: #ff0;
+   text-shadow: 2px 2px 0 #555;
+}
+
+#gameMenu button:hover {
+   text-shadow: -2px -2px 0 #555;
+}
+
+#gameMenu.show {
+   top: 0;
+   opacity: 1.0;
+}
+
+#gameMenu.hide {
+   top: -110%;
+   opacity: 0.0;
+}
+
+canvas {
+   background: #fff;
+   display: block;
+   margin: 20px auto;
+   cursor: none;
+   box-shadow: 0 15px 42px #aaa;
+}
+
+#screenShots {
+   overflow: auto;
+   margin: -5px 10px 10px;
+}
+
+#screenShots img {
+   display: block;
+   float: left;
+   margin: 10px;
+   width: 15%;
+   background: #fff;
+}

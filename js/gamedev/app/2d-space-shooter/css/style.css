@@ -1,0 +1,53 @@
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+@-webkit-keyframes NebulaBg {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 1300% 600%;
+	}
+}
+
+body {
+	background: url("../img/space-bg-01.jpg") repeat;
+	-webkit-transition: box-shadow 8s;
+
+	-webkit-animation: NebulaBg;
+	-webkit-animation-duration: 500s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.zoomOut {
+	box-shadow: inset 0 500px 1000px #fff;
+}
+
+canvas {
+	margin: 0;
+}
+
+.energyBar {
+	position: absolute;
+	top: 2%;
+	left: 4%;
+	z-index: 99999;
+	width: 92%;
+	height: 25px;
+	border: 1px solid #ff5;
+	background: #c00;
+	overflow: hidden;
+}
+
+.energyBar div {
+	background: #ff5;
+	height: 100%;
+	width: 100%;
+	-webkit-transition: width 0.2s;
+}
