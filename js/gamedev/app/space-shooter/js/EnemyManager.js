@@ -10,7 +10,7 @@ rokko.EnemyManager = function(canvas) {
 	};
 
 	function addEnemies(x, y, width, height, components) {
-		var entity = new rokko.Entity(rokko.ENTITY_TYPES.SHIP, x || 0, y || -100);
+		var entity = new rokko.Entity(rokko.ENTITY_TYPES.SHIP, x || 0, y || 30);
 		for (var c in components) {
 			entity.addComponent(c, components[c]);
 		};

@@ -1,13 +1,27 @@
 (function main(){
-	var WIDTH = 640;//document.body.offsetWidth;
-	var HEIGHT = 960;//document.body.offsetHeight;
-	var MAX_ENEMIES = 15;
+	var SCREEN_WIDTH = document.body.offsetWidth;
+	var SCREEN_HEIGHT = document.body.offsetHeight;
+	var CANVAS_WIDTH = 640;//document.body.offsetWidth;
+	var CANVAS_HEIGHT = 960;//document.body.offsetHeight;
+	var MAX_ENEMIES = 75;
+	var MAX_SHOTS = 10;
+	var PLAYER_WIDTH = 32;
+	var PLAYER_HEIGHT = 32;
     var global_score = 0;
 
-	var canvas = new rokko.Canvas(WIDTH, HEIGHT);
+    var BG_X = 0;
+    var BG_Y = 0;
+    var BG_SPEED_X = 0.1;
+    var BG_SPEED_Y = 0.75;
+
+	var canvas = new rokko.Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
 	document.body.appendChild(canvas.getCanvas());
 
     // ugly, but good enough for now
+    var global_canvas = document.body;
+    global_canvas.style.backgroundPositionX = 0;
+    global_canvas.style.backgroundPositionY = 0;
+
     var global_ctx = canvas.getContext('2d');
     global_ctx.fillStyle = '#fff';
     global_ctx.font = '2em Monospace';
@@ -16,14 +30,14 @@
 	document.body.appendChild(playerEnergy.getElement());
 
 	var player = new rokko.Entity(rokko.ENTITY_TYPES.SHIP,
-			canvas.getWidth() / 2,
-			canvas.getHeight() - 100);
+			SCREEN_WIDTH / 2,
+			SCREEN_HEIGHT - 64);
 
-	var playerLaserGunComp = new rokko.Components.LaserGun(player, canvas, 10);
+	var playerLaserGunComp = new rokko.Components.LaserGun(player, canvas, MAX_SHOTS);
 	var playerStrengthComp = new rokko.Components.Strength(player, 0, 100);
 	var playerMoveComp = new rokko.Components.Drag(player, canvas);
 	var playerPhysComp = new rokko.Components.Physics(player);
-	var playerSpriteComp = new rokko.Components.Sprite(player, "./img/fighter.png", 32, 32);
+	var playerSpriteComp = new rokko.Components.Sprite(player, "./img/fighter.png", PLAYER_WIDTH, PLAYER_HEIGHT);
 	playerSpriteComp.setCtx(canvas.getContext());
 	playerSpriteComp.setSpriteCoords(64 * 3, 0, 64, 64);
 	player.addComponent("sprite", playerSpriteComp);
@@ -38,13 +52,15 @@
 
 		var pos = player.getPosition();
 		var laserGun = player.getComponent("laserGun");
-		laserGun.add(pos.x + 28, pos.y);
-		laserGun.update();
+
+        laserGun.add(pos.x + PLAYER_WIDTH * 0.5 - 4, pos.y + 10);
+
+        laserGun.update();
 	});
 
 	var enMan = new rokko.EnemyManager(canvas);
 	for (var i = 0; i < MAX_ENEMIES; i++) {
-		var offset = i % (WIDTH / 75 >> 0);
+		var offset = i % (CANVAS_WIDTH / 75 >> 0);
 		var x = 50 * offset + 25 + (25 * offset);
 		var y = -50 * i + 25 + (-50 * i);
 		enMan.add(x, y, 32, 32, {});
@@ -105,6 +121,10 @@
 
         // manually draw score
         global_ctx.fillText('Score: ' + global_score, 15, 70);
+        global_canvas.style.backgroundPositionX = parseInt(BG_X, 10) + 'px';
+        global_canvas.style.backgroundPositionY = parseInt(BG_Y, 10) + 'px';
+        BG_X -= BG_SPEED_X;
+        BG_Y += BG_SPEED_Y;
 	});
 
 	gameLoop.run();

@@ -26,7 +26,7 @@ rokko.Components.LaserGun = function(entity, canvas, maxShots) {
 		if (time - timeLastShot >= shotsPerSec) {
 			if (shots.length < MAX_SHOTS) {
 				var shot = new rokko.Entity(rokko.ENTITY_TYPES.BULLET, x, y);
-				var spriteComp = new rokko.Components.Sprite(shot, "./img/laser-blue.png", 8, 32);
+				var spriteComp = new rokko.Components.Sprite(shot, "./img/laser_blue.png", 8, 16);
 				spriteComp.setCtx(canvas.getContext());
 				var strengthComp = new rokko.Components.Strength(shot, 10, 0);
 				var physComp = new rokko.Components.Physics(shot);
