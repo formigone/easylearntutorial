@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Loop</title>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #aaa;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            margin: 2.5% auto 0;
+            padding: 0;
+            background: #fff;
+            box-shadow: 0 0 20px #333;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var canvas = document.createElement('canvas');
+    canvas.width = 900;
+    canvas.height = 500;
+    var ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.fillStyle = '#eee';
+    document.body.appendChild(canvas);
+
+    var MAX_ENTITIES = 10;
+
+    var Box = function(x, y, w, h, dx, dy, dirX, dirY, color, ctx) {
+        this.x = x;
+        this.y = y;
+        this.dirX = dirX;
+        this.dirY = dirY;
+        this.width = w;
+        this.height = h;
+        this.dx = dx;
+        this.dy = dy;
+        this.color = color;
+        this.ctx = ctx;
+        this.ticks = 0;
+        this.calColor();
+    };
+
+    Box.prototype.calColor = function(){
+        this._color = '#' + this.color.toString(16) + this.color.toString(16) + this.color.toString(16);
+    };
+
+    Box.prototype.update = function(dt) {
+        this.x += this.dx * dt * this.dirX;
+        this.y += this.dy * dt * this.dirY;
+
+        if (this.x < 0) {
+            this.x = 0;
+            this.dirX = 1;
+        }
+
+        if (this.x + this.width > canvas.width) {
+            this.x = canvas.width - this.width;
+            this.dirX = -1;
+        }
+
+        if (this.y < 0) {
+            this.y = 0;
+            this.dirY = 1;
+        }
+
+        if (this.y + this.height > canvas.height) {
+            this.y = canvas.height - this.height;
+            this.dirY = -1;
+        }
+    };
+
+    Box.prototype.draw = function(){
+        ctx.fillStyle = this._color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    };
+
+    var Gl = function(timeSpeed) {
+        this.MAX_TIME = 1.0 / 60.0;
+        this.timeSpeed = timeSpeed || 1;
+        this.lastTime = 0;
+
+        this.entities = [];
+    };
+
+    Gl.prototype.tick = function(now) {
+        var dt = (now - this.lastTime) * 0.001;
+        requestAnimationFrame(this.tick.bind(this));
+
+        if (dt > this.MAX_TIME) {
+            dt = this.MAX_TIME;
+        }
+
+        for (var i = 0, len = this.entities.length; i < len; i++) {
+            this.entities[i].update(dt * this.timeSpeed);
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0, len = this.entities.length; i < len; i++) {
+            this.entities[i].draw();
+        }
+
+        ctx.fillStyle = '#000';
+        ctx.fillText('tS: ' + this.timeSpeed, 10, 10);
+        ctx.fillText('entities: ' + this.entities.length, 10, 20);
+
+        this.lastTime = now;
+    };
+
+    var gl = new Gl(5);
+
+    for (var i = 0; i < MAX_ENTITIES; i++) {
+        var x = Math.random() * canvas.width;
+        var y = Math.random() * canvas.height;
+        var dx = Math.random() * 30 + 3;
+        var dy = Math.random() * 30 + 3;
+        var dirX = (parseInt(Math.random() * 2) % 2) > 0 ? 1 : -1;
+        var dirY = (parseInt(Math.random() * 2) % 2) > 0 ? 1 : -1;
+        var color = parseInt(Math.random() * 155) + 100;
+        gl.entities.push(new Box(x, y, 5, 5, dx, dy, dirX, dirY, color, ctx));
+    }
+
+    var more = function(){
+        for (var i = 0; i < 25; i++) {
+            var x = Math.random() * canvas.width;
+            var y = Math.random() * canvas.height;
+            var dx = Math.random() * 30 + 3;
+            var dy = Math.random() * 30 + 3;
+            var dirX = (parseInt(Math.random() * 2) % 2) > 0 ? 1 : -1;
+            var dirY = (parseInt(Math.random() * 2) % 2) > 0 ? 1 : -1;
+            var color = parseInt(Math.random() * 205) + 50;
+            gl.entities.push(new Box(x * 0.1, y * 0.1, 5, 5, dx, dy, dirX, dirY, color, ctx));
+        }
+
+        setTimeout(more, 50);
+    };
+
+    var less = function(){
+        var len = gl.entities.length - 1;
+        while (len--) {
+            var i = len;
+            gl.entities[i].width *= 1.01;
+            gl.entities[i].dx += 0.5;
+            gl.entities[i].dy += 0.25;
+            gl.entities[i].height *= 1.01;
+            gl.entities[i].color += 5;
+            gl.entities[i].ticks++;
+            gl.entities[i].calColor();
+            if (gl.entities[i].ticks > 50 || gl.entities[i].color > 250) {
+                gl.entities.splice(i, 1);
+            }
+        }
+
+        setTimeout(less, 100);
+    };
+
+    document.body.addEventListener('keydown', function(e){
+        switch(e.keyCode) {
+            case 38:
+                gl.timeSpeed += 0.25;
+                break;
+            case 40:
+                gl.timeSpeed -= 0.25;
+                break;
+        }
+
+        if (gl.timeSpeed < -12.5) {
+            gl.timeSpeed = -12.25;
+        }
+    });
+
+    more();
+    less();
+    gl.tick(0);
+</script>
+</body>
+</html>
