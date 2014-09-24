@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Space Shooter: V2</title>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #aaa;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var Renderer = function(width, height) {
+        this.canvas = document.createElement('canvas');
+        this.ctx = null;
+
+        this.init(width, height);
+    };
+
+    Renderer.prototype.init = function(width, height){
+        this.canvas.width = width;
+        this.canvas.height = height;
+        this.ctx = this.canvas.getContext('2d');
+    };
+
+    Renderer.prototype.render = function(entities) {
+        var entity;
+        var sprite;
+
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        // Render BG
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+        for (var i = 0, len = entities.length; i < len; i++) {
+            entity = entities[i];
+            sprite = entity.sprite;
+            this.ctx.drawImage(sprite.img, sprite.x, sprite.y, sprite.width, sprite.height, entity.x, entity.y, entity.width, entity.height);
+        }
+    };
+
+    var Entity = function(x, y, width, height, dx, dy, sprite) {
+        this.x = x;
+        this.y = y;
+        this.dx = dx;
+        this.dy = dy;
+        this.width = width;
+        this.height = height;
+
+        this.sprite = sprite;
+    };
+
+    var Sprite = function(img, x, y, width, height) {
+        this.img = new Image();
+        this.img.src = img;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    };
+
+    var Game = function(renderer) {
+        this.lastTime = 0;
+        this.dt = 0;
+        this.timeSpeed = 1;
+        this.MAX_TIME = 1.0 / 60.0;
+
+        this.isPlaying = false;
+
+        this.entities = [];
+        this.renderer = renderer;
+    };
+
+    Game.prototype.tick = function(now) {
+        this.dt = (now - this.lastTime) * 0.001;
+        requestAnimationFrame(this.tick.bind(this));
+
+        if (this.dt > this.MAX_TIME) {
+            this.dt = this.MAX_TIME;
+        }
+
+        this.renderer.render(this.entities);
+    };
+
+    Game.prototype.bindTo = function(element){
+        element.appendChild(this.renderer.canvas);
+    };
+
+    Game.prototype.start = function(){
+        if (!this.isPlaying) {
+            this.isPlaying = true;
+            this.tick(0);
+        }
+    };
+
+
+    // - - - - - - -
+
+    var block = new Sprite('/img/tiles.png', 32, 0, 16, 16);
+    var player = new Entity(100, 100, 32, 32, 10, 10, block);
+    var renderer = new Renderer(900, 500);
+    var game = new Game(renderer);
+    game.entities.push(player);
+    game.bindTo(document.body);
+    game.start();
+</script>
+</body>
+</html>
