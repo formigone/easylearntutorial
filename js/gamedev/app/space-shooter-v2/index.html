@@ -13,10 +13,18 @@
             background: #aaa;
             overflow: hidden;
         }
+
+        canvas {
+            display: block;
+            margin: 50px auto;
+        }
     </style>
 </head>
 <body>
 <script>
+    var WORLD_OUTER_WIDTH = 900;
+    var WORLD_OUTER_HEIGHT = 500;
+
     var Renderer = function(width, height) {
         this.canvas = document.createElement('canvas');
         this.ctx = null;
@@ -46,15 +54,88 @@
         }
     };
 
-    var Entity = function(x, y, width, height, dx, dy, sprite) {
+    var Entity = function(x, y, width, height, dx, dy, sprite, controller) {
         this.x = x;
         this.y = y;
         this.dx = dx;
         this.dy = dy;
         this.width = width;
         this.height = height;
+        this.halfWidth = parseInt(width * 0.5, 10);
+        this.halfHeight = parseInt(height * 0.5, 10);
 
         this.sprite = sprite;
+        this.controller = controller || {};
+    };
+
+    Entity.prototype.update = function(dt) {
+        if (this.controller.mouseDown) {
+            var dx = this.controller.targetX - this.x;
+            var dy = this.controller.targetY - this.y;
+            var len = Math.sqrt(dx * dx + dy * dy);
+            var _len = 1 / len;
+
+            // HOR
+            if (len < this.width) {
+                this.x = this.controller.targetX - this.halfWidth;
+            } else {
+                this.x += dx * _len * dt * this.dx;
+            }
+
+            if (this.controller.targetX < this.width) {
+                this.x = this.halfWidth;
+            }
+
+            if (this.x > WORLD_OUTER_WIDTH - this.width) {
+                this.x = WORLD_OUTER_WIDTH - this.width - this.halfWidth;
+            }
+
+            // VERT
+            if (len < this.height) {
+                this.y = this.controller.targetY - this.halfHeight;
+            } else {
+                this.y += dy * _len * dt * this.dy;
+            }
+
+            if (this.controller.targetY < this.height) {
+                this.y = this.halfHeight;
+            }
+
+            if (this.y > WORLD_OUTER_HEIGHT - this.height) {
+                this.y = WORLD_OUTER_HEIGHT - this.height - this.halfHeight;
+            }
+
+        }
+    };
+
+    Entity.prototype.addComponent = function(componentName, component) {
+        this.components[componentName] = component;
+    };
+
+    var Controller = function() {
+        this.mouseDown = false;
+        this.targetX = 0;
+        this.targetY = 0;
+    };
+
+    Controller.componentName = 'Controller';
+
+    Controller.prototype.bindToMouse = function(element) {
+        var self = this;
+        element.addEventListener('mousedown', function(e){
+            self.targetX = e.offsetX;
+            self.targetY = e.offsetY;
+            self.mouseDown = true;
+        });
+
+        element.addEventListener('mousemove', function(e){
+            self.targetX = e.offsetX;
+            self.targetY = e.offsetY;
+        });
+
+        element.addEventListener('mouseup', function(e){
+            self.mouseDown = false;
+        });
     };
 
     var Sprite = function(img, x, y, width, height) {
@@ -86,6 +167,10 @@
             this.dt = this.MAX_TIME;
         }
 
+        for (var i = 0, len = this.entities.length; i < len; i++) {
+            this.entities[i].update(this.dt);
+        }
+
         this.renderer.render(this.entities);
     };
 
@@ -103,10 +188,15 @@
 
     // - - - - - - -
 
-    var block = new Sprite('/img/tiles.png', 32, 0, 16, 16);
-    var player = new Entity(100, 100, 32, 32, 10, 10, block);
-    var renderer = new Renderer(900, 500);
+    var spriteRed = new Sprite('/img/tiles.png', 32, 0, 16, 16);
+    var spriteBlue = new Sprite('/img/tiles.png', 16, 0, 16, 16);
+    var controller = new Controller();
+    var player = new Entity(100, 100, 32, 32, 1500, 1500, spriteBlue, controller);
+    var renderer = new Renderer(WORLD_OUTER_WIDTH, WORLD_OUTER_HEIGHT);
     var game = new Game(renderer);
+
+    controller.bindToMouse(renderer.canvas);
+
     game.entities.push(player);
     game.bindTo(document.body);
     game.start();
