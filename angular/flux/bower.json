@@ -1,0 +1,16 @@
+{
+  "name": "elt-ng-flux",
+  "version": "0.0.0",
+  "homepage": "https://github.com/formigone/easylearntutorial",
+  "authors": [
+    "Rodrigo Silveira <rsilveira@deseretdigital.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

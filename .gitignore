@@ -4,3 +4,6 @@ node_modules/
 /**/lib/closure-library
 .idea
 compiler.jar
+bower_components/
+npm-debug.log
+

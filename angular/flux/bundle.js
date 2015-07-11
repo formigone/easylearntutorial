@@ -47,7 +47,6 @@
 	var angular = __webpack_require__(1);
 
 	console.log(angular.noop);
-	console.log('here');
 
 
 /***/ },
