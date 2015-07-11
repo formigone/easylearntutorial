@@ -1,17 +1,218 @@
 <!doctype html>
 <html lang="eng">
-    <head>
-        <meta charset="utf-8">
-        <link rel="icon" href="nes-favicon.png" sizes="16x16" type="image/png">
-        <title>WhatsApp Clone in Angular.js</title>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="nes-favicon.png" sizes="16x16" type="image/png">
+    <title>WhatsApp Clone in Angular.js</title>
 
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-    </head>
-    <body>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.min.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/roboto.min.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="alert-material-grey-300">
+
+<div class="alert-material-teal fakeNav"></div>
+
+<div class="container" id="mainContainer">
+    <div class="row">
+        <div class="col-md-4 panelHeight">
+            <div class="media alert-material-grey-300 padLight round-tl">
+                <div class="media-left padLeft">
+                    <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                </div>
+                <div class="media-body padVer">
+                    <h4 class="media-heading">Media heading</h4>
+
+                    <p class="text-muted">Producing a tutorial</p>
+                </div>
+            </div>
+
+            <div class="form-group alert-material-grey-100 noMarg padMed">
+                <input type="email" class="form-control" placeholder="Search or start new chat">
+            </div>
 
 
+            <div class="conversationsContainer">
 
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="bundle.js"></script>
-    </body>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+                <div class="media alert-material-white padLight noMarg mediaHover finger">
+                    <div class="media-left padLeft">
+                        <img class="media-object img-circle" src="/img/user-icon.png" width="40" height="40">
+                    </div>
+                    <div class="media-body padVer borderBottom">
+                        <h4 class="media-heading pull-left">Media heading</h4>
+                        <small class="text-muted pull-right">13:29</small>
+                        <div class="clearfix"></div>
+                        <p class="text-muted">[them:] Last message</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 round-tr borderLeft panelHeight round-br">
+            <div class="alert-material-white panelHeight blankCanvas">
+                    <h1>No conversation selected</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="bundle.js"></script>
+</body>
 </html>

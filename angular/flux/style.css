@@ -1,0 +1,110 @@
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+}
+
+.finger {
+    cursor: pointer;
+}
+
+.fakeNav {
+    height: 127px;
+}
+
+#mainContainer {
+    margin-top: -108px;
+}
+
+#mainContainer > .row {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.06), 0 2px 5px 0 rgba(0,0,0,.2);
+}
+
+#mainContainer > .row > div {
+    padding: 0;
+}
+
+.panelHeight {
+    height: 762px;
+}
+
+.round-tl {
+    border-top-left-radius: 3px;
+}
+
+.round-tr {
+    border-top-right-radius: 3px;
+}
+
+.round-bl {
+    border-bottom-left-radius: 3px;
+}
+
+.round-br {
+    border-bottom-right-radius: 3px;
+}
+
+.noPad {
+    padding: 0 !important;
+}
+
+.padHor {
+    padding: 0 15px !important;
+}
+
+.padLeft {
+    padding: 10px 10px 10px 0 !important;
+}
+
+.padVer {
+    padding: 10px 0 !important;
+}
+
+.media-body p {
+    margin: 0;
+}
+
+.padLight {
+    padding: 0 20px;
+}
+
+.padMed {
+    padding: 10px 20px;
+}
+
+.noMarg {
+    margin: 0;
+}
+
+.borderBottom {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.borderLeft {
+    border-left: 1px solid #e0e0e0;
+}
+
+.mediaHover:hover {
+    background: #e0e0e0;
+}
+
+.conversationsContainer {
+    height: 650px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.blankCanvas {
+    text-align: center;
+    color: #aaa;
+    font-weight: 300 !important;
+    text-shadow: 0 5px 150px #333;
+    padding: 40% 0 0;
+}
