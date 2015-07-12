@@ -54,4 +54,5 @@ Interestingly enough, these components map faily easily to Angular constructs:
 
 ## UserBadge directive
 
+Saturday, 11. July 2015 04:22PM 
 

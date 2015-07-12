@@ -1,3 +1,8 @@
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -91,12 +96,20 @@
     border-left: 1px solid #e0e0e0;
 }
 
+.borderLeftDark {
+    border-left: 1px solid #cdcdcd;
+}
+
+.borderRightDark {
+    border-right: 1px solid #cfcfcf;
+}
+
 .mediaHover:hover {
     background: #e0e0e0;
 }
 
 .conversationsContainer {
-    height: 650px;
+    height: 629px;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -107,4 +120,23 @@
     font-weight: 300 !important;
     text-shadow: 0 5px 150px #333;
     padding: 40% 0 0;
+}
+
+.conversationCanvas {
+    height: 620px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.text-highlight {
+    color: #009688;
+    font-weight: 800;
+}
+
+.wrapAuto {
+    overflow: auto;
+}
+
+.text-light {
+    color: #eee;
 }
