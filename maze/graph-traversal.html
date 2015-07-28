@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head><title>Graph Traversal</title>
+<style>canvas { width : 100%;}</style>
 </head>
 <body>
 
@@ -297,7 +298,7 @@ function drawPoint(renderer, point, width, height, useOnColor, onColor, offColor
 	ctx.restore();
 }
 
-function go(delay, path, renderer, map, start, target) {
+function go(slider, path, renderer, map, start, target) {
 	var pos = 0;
 
 	function render(){
@@ -309,7 +310,7 @@ function go(delay, path, renderer, map, start, target) {
 		}
 
 		pos += 1;
-		setTimeout(render, delay);
+		setTimeout(render, slider.value);
 
 		drawPoint(renderer, target, map.cellWidth, map.cellHeight, pos % 50 > 30, '#0c0', '#c00');
 	}
@@ -343,11 +344,27 @@ fetchMaze('/maze-001.json')
 		btn01.textContent = 'Breadth-first';
 		btn01.addEventListener('click', start.bind(null, 'breadth-first'));
 		document.body.appendChild(btn01);
+
+		var slider = document.createElement('input');
+		slider.type = 'range';
+		slider.min = 0;
+		slider.max = 100;
+		slider.step = 5;
+		slider.value = 10;
+		document.body.appendChild(slider);
+
+		var label = document.createElement('span');
+		label.textContent = slider.value;
+		document.body.appendChild(label);
+
+		slider.addEventListener('change', function(){
+			label.textContent = this.value;
+		});
 		// go(50, path, renderer, map, makePoint(startPos), makePoint(targetPos));
 
 		function start(algorithm) {
 			path = calculatePath(map, startPos, targetPos, algorithm);
-			go(50, path, renderer, map, makePoint(startPos), makePoint(targetPos));
+			go(slider, path, renderer, map, makePoint(startPos), makePoint(targetPos));
 		}
 	});
 
