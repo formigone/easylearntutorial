@@ -340,6 +340,21 @@ fetchMaze('/maze-001.json')
 	});
 
 </script>
-
+<h1>Maze pathfinding in JavaScript</h1>
+<p>The two most common strategies used to traverse a graph data structure (commonly used to represent a map or a maze) are:</p>
+<ul>
+<li>Depth-first search</li>
+<li>Breadth-first search</li>
+</ul>
+<p>Neither is better than the other; some times (depending on the map and the target) one works better than the other, meaning that the path is found faster (less operations).</p>
+<h2>Depth-first search in JavaScript</h2>
+<p>In order to traverse a graph using depth-first traversal, we need a stack. The algorithm is pretty simple: first visit the starting node; check if that node is the one you're looking for. If so, you're done! Otherwise, push all of that node's adjacent nodes (if they haven't been visited yet) onto the stack. Next, check if all of the current node's adjacent nodes have been visited. If they have, pop whatever node is at the top of the stack, and continue. Now you pop off the next node on top of the stack, and repeat the process for that node.<p>
+<h2>Breadth-first search in JavaScript</h2>
+<p>In order to traverse a graph using breadth-first traversal, we use a queue instead of the stack. The algorithm is easy: take the starting node and check if you've found what you're looking for. If no, mark that node as visited. Next, add all of that node's adjacent nodes (if they haven't been visited yet) to the end of the queue (using the enqueue operation). Next, dequeue the node at the front of the queue, and repeat the process. Note that in breadth-first searching, we never backtrack (move backwards), like we do with a stack in depth-first searching.</p>
+<hr/>
+<p>Copyright &copy; 2015 <a href="http://www.rodrigo-silveira.com">Rodrigo Silveira</a>. All rights reserved.</p>
+<hr/>
+<h1>JavaScript Pathfinding Demo</h1>
+<p>In this example, I have a previously generated maze, represented as a 2D array (an array of arrays). The queue and stack classes were created using native arrays. I also have an abstract graph class where I store the maze represented as a tree (which is a type of a graph). I then use either BFS or DFS to find the path from the root of the graph down to the target node. Next, I draw the maze in a canvas, and fill in each path through the solution in a different frame so we can visualize the pathfinding algorithm.</p>
 </body>
 
