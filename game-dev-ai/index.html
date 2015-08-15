@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8">
+    <title>Game Development Artificial Intelligence Lessons</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div id="gameContainer">
+    <h1>Game Development Artificial Intelligence Lessons</h1>
+
+    <button id="decisionMaking">Decision Making</button>
+</div>
+
+<script src="app.js"></script>
+<script src="decisionMaking.js"></script>
+<script>
+    var container = document.getElementById('gameContainer');
+    var btn = document.getElementById('decisionMaking');
+    var renderer = new Renderer(800, 600);
+
+    btn.addEventListener('click', function(){
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+
+        container.appendChild(renderer.canvas);
+        var scene = new DecisionMaking(renderer);
+    });
+</script>
+</body>
+</html>
