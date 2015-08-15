@@ -6,4 +6,4 @@ node_modules/
 compiler.jar
 bower_components/
 npm-debug.log
-
+*.hot-update.j*

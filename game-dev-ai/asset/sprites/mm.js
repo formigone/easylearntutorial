@@ -1,32 +1,23 @@
-const Phaser = require('phaser');
-// We are here
-var Test = function(){
-    this.player = null;
-    this.heroState = {
-        standingRight: 'standingRight',
-        runningRight: 'runningRight',
-        jumpingRight: 'jumpingRight',
-
-        standingLeft: 'standingLeft',
-        runningLeft: 'runningLeft',
-        jumpingLeft: 'jumpingLeft'
-    };
-};
-
-Test.prototype = {
-    preload: function() {
-        this.load.atlasJSONHash('mm', '/img/megaman.gif', '/asset/sprites/megaman.json');
+module.exports = {
+    preload: function (game) {
+        game.load.atlasJSONHash('mm', '/img/megaman.gif', '/res/megaman.json');
     },
-    create: function() {
-        const heroState = this.heroState;
-        let player = game.add.sprite(250, 250, 'mm');
-        player.scale.x = 3;
-        player.scale.y = 3;
+    get: function (game, x, y) {
+        var heroState = {
+            standingRight: 'standingRight',
+            runningRight: 'runningRight',
+            jumpingRight: 'jumpingRight',
 
-        player.anchor.set(0.5, 0.5);
-        player.heroState = heroState;
+            standingLeft: 'standingLeft',
+            runningLeft: 'runningLeft',
+            jumpingLeft: 'jumpingLeft'
+        };
 
-        player.animations.add(heroState.standingRight, [
+        var hero = game.add.sprite(x, y, 'mm');
+        hero.anchor.set(0.5, 0.5);
+        hero.heroState = heroState;
+
+        hero.animations.add(heroState.standingRight, [
             'standingRight',
             'standingRight',
             'standingRight',
@@ -77,28 +68,16 @@ Test.prototype = {
             'standingRightBlink'
         ], 16, true, false);
 
-        player.animations.add(heroState.runningRight, [
+        hero.animations.add(heroState.runningRight, [
             'runningRight0',
             'runningRight1',
             'runningRight2',
         ], 10, true, false);
 
-        player.animations.add(heroState.jumpingRight, [
+        hero.animations.add(heroState.jumpingRight, [
             'jumpingRight'
         ], 1, true, false);
 
-        this.player = player;
-    },
-    update: function() {
-        const player = this.player;
-        player.animations.play(this.heroState.runningRight);
-        player.x += 4;
-        if (player.x > 800) {
-            player.x = -25;
-        }
+        return hero;
     }
 };
-
-const game = new Phaser.Game(800, 600, Phaser.AUTO, 'elt', null, false, false);
-game.state.add('Test', Test);
-game.state.start('Test');

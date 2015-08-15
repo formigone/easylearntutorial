@@ -4,7 +4,8 @@
   "description": "Game development lessons",
   "scripts": {
     "build": "./node_modules/.bin/webpack -d -p --progress --colors",
-    "watch": "./node_modules/.bin/webpack -watch --progress --colors"
+    "watch": "./node_modules/.bin/webpack -watch --progress --colors",
+    "along": "rm *hot-update*"
   },
   "author": "Rodrigo Silveira",
   "dependencies": {
