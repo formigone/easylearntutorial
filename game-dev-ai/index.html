@@ -15,27 +15,6 @@
 </head>
 <body>
 
-<div id="gameContainer">
-    <h1>Game Development Artificial Intelligence Lessons</h1>
-
-    <button id="decisionMaking">Decision Making</button>
-</div>
-
-<script src="app.js"></script>
-<script src="decisionMaking.js"></script>
-<script>
-    var container = document.getElementById('gameContainer');
-    var btn = document.getElementById('decisionMaking');
-    var renderer = new Renderer(800, 600);
-
-    btn.addEventListener('click', function(){
-        while (container.firstChild) {
-            container.removeChild(container.firstChild);
-        }
-
-        container.appendChild(renderer.canvas);
-        var scene = new DecisionMaking(renderer);
-    });
-</script>
+<script src="dist/bundle.r.js"></script>
 </body>
 </html>
