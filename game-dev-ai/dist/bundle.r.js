@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e7b83ec112fc124993ea"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "dc15611cd847252787da"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -544,15 +544,16 @@
 /******/ 	return hotCreateRequire(0)(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var Phaser = __webpack_require__(1);
-	// We are here
-	var Test = function Test() {
+	/*
+	var Test = function(){
 	    this.player = null;
 	    this.heroState = {
 	        standingRight: 'standingRight',
@@ -566,28 +567,83 @@
 	};
 
 	Test.prototype = {
-	    preload: function preload() {
+	    preload: function() {
 	        this.load.atlasJSONHash('mm', '/img/megaman.gif', '/asset/sprites/megaman.json');
 	    },
-	    create: function create() {
-	        var heroState = this.heroState;
-	        var player = game.add.sprite(250, 250, 'mm');
+	    create: function() {
+	        const heroState = this.heroState;
+	        let player = game.add.sprite(250, 250, 'mm');
 	        player.scale.x = 3;
 	        player.scale.y = 3;
 
 	        player.anchor.set(0.5, 0.5);
 	        player.heroState = heroState;
 
-	        player.animations.add(heroState.standingRight, ['standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRight', 'standingRightBlink'], 16, true, false);
+	        player.animations.add(heroState.standingRight, [
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRight',
+	            'standingRightBlink'
+	        ], 16, true, false);
 
-	        player.animations.add(heroState.runningRight, ['runningRight0', 'runningRight1', 'runningRight2'], 10, true, false);
+	        player.animations.add(heroState.runningRight, [
+	            'runningRight0',
+	            'runningRight1',
+	            'runningRight2',
+	        ], 10, true, false);
 
-	        player.animations.add(heroState.jumpingRight, ['jumpingRight'], 1, true, false);
+	        player.animations.add(heroState.jumpingRight, [
+	            'jumpingRight'
+	        ], 1, true, false);
 
 	        this.player = player;
 	    },
-	    update: function update() {
-	        var player = this.player;
+	    update: function() {
+	        const player = this.player;
 	        player.animations.play(this.heroState.runningRight);
 	        player.x += 4;
 	        if (player.x > 800) {
@@ -595,16 +651,135 @@
 	        }
 	    }
 	};
+	*/
 
-	var game = new Phaser.Game(800, 600, Phaser.AUTO, 'elt', null, false, false);
-	game.state.add('Test', Test);
-	game.state.start('Test');
+	var game = new Phaser.Game(800, 450, Phaser.AUTO, 'elt', null, false, false);
+	game.state.add('Intro', __webpack_require__(2));
+	game.state.add('Placeholder', __webpack_require__(641));
+	game.state.start('Intro');
+	//game.state.start('Placeholder');
 
 /***/ },
-/* 1 */
+
+/***/ 1:
 /***/ function(module, exports) {
 
 	module.exports = Phaser;
 
+/***/ },
+
+/***/ 2:
+/***/ function(module, exports) {
+
+	/**
+	 * @inherits Phaser.Game
+	 * @constructor
+	 */
+	'use strict';
+
+	function Copyright() {
+	    this.style = {
+	        font: '2em "Press Start 2P"',
+	        fill: '#fff',
+	        align: 'center'
+	    };
+
+	    this.styleSub = {
+	        font: '1.25em "Press Start 2P"',
+	        fill: '#555',
+	        align: 'center'
+	    };
+
+	    this.text = [];
+	    this.delayBeforeFadeout_ms = 1000;
+	    this.fullyLoaded = false;
+	    this.startFadingOut = false;
+	    this.fadeRate = 0.008;
+	    this.done = false;
+	}
+
+	Copyright.prototype.create = function () {
+	    this.text.push(this.add.text(this.world.centerX, 80, 'GAME DEVELOPMENT COURSE: GDC 221', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 120, 'FREE GAME DEVELOPMENT LESSONS', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 240, '(C) EASY LEARN TUTORIAL  2015.', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 280, 'ALL RIGHTS RESERVED.', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 320, 'WWW.EASYLEARNTUTORIAL.COM.', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 400, 'MEGA MAN AND ALL RELATED ITEMS ARE COPYRIGHT OF CAPCOM.', this.styleSub));
+
+	    this.text.forEach(function (txt) {
+	        txt.anchor.set(0.5);
+	        txt.alpha = 0;
+	    });
+	};
+
+	Copyright.prototype.update = function () {
+	    var _this = this;
+
+	    if (this.done) {
+	        this.state.start('Placeholder');
+	    }
+
+	    this.text.forEach(function (txt) {
+	        if (!_this.startFadingOut && txt.alpha < 1.0) {
+	            txt.alpha += _this.fadeRate;
+	        } else if (!_this.fullyLoaded) {
+	            _this.fullyLoaded = true;
+	            setTimeout(function (_) {
+	                _this.startFadingOut = true;
+	            }, _this.delayBeforeFadeout_ms);
+	        }
+
+	        if (_this.startFadingOut && txt.alpha > 0.0) {
+	            txt.alpha -= _this.fadeRate;
+	        }
+
+	        if (_this.startFadingOut && txt.alpha <= 0.0) {
+	            _this.done = true;
+	        }
+	    });
+	};
+
+	module.exports = Copyright;
+
+/***/ },
+
+/***/ 641:
+/***/ function(module, exports) {
+
+	/**
+	 * @inherits Phaser.Game
+	 * @constructor
+	 */
+	'use strict';
+
+	function Placeholder() {
+	    this.style = {
+	        font: '2em "Press Start 2P"',
+	        fill: '#fff',
+	        align: 'center'
+	    };
+
+	    this.text = {};
+	    this.textSize = 1;
+	    this.dir = 1;
+	}
+
+	Placeholder.prototype.create = function () {
+	    this.text = this.add.text(this.world.centerX, this.world.centerY, 'PLACEHOLDER SCENE', this.style);
+	    this.text.anchor.set(0.5);
+	};
+
+	Placeholder.prototype.update = function () {
+	    this.text.scale.set(this.textSize, this.textSize);
+	    this.textSize += 0.03 * this.dir;
+
+	    if (this.textSize > 1.75 || this.textSize < 0.5) {
+	        this.dir *= -1;
+	    }
+	};
+
+	module.exports = Placeholder;
+
 /***/ }
-/******/ ]);
+
+/******/ });

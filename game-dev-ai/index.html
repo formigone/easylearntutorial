@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Game Development Artificial Intelligence Lessons</title>
+
     <style>
         html, body {
             width: 100%;
@@ -10,16 +11,38 @@
             padding: 0;
             margin: 0;
             background: #eee;
+            font-size: 12px;
         }
         canvas {
             display: block;
-            margin: 0 auto;
+            margin: 50px auto;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Press Start 2P';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Press Start 2P'), local('PressStart2P-Regular'), url(asset/fonts/press-start-2p.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
         }
     </style>
 </head>
 <body>
 
+<div id="assetLoader">
+    <h1 style="font-family: 'Press Start 2P'">Game Development Course: GDC 221</h1>
+</div>
+
 <script src="node_modules/phaser/dist/phaser.js"></script>
+<script>
+    var assetLoader = document.getElementById('assetLoader');
+    assetLoader.style.position = 'absolute';
+    assetLoader.style.top = '-999px';
+    assetLoader.style.width = '1px';
+    assetLoader.style.height = '1px';
+    assetLoader.style.overflow = 'hidden';
+</script>
 <script src="dist/bundle.r.js"></script>
 </body>
 </html>

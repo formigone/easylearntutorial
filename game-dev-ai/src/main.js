@@ -1,5 +1,5 @@
 const Phaser = require('phaser');
-// We are here
+/*
 var Test = function(){
     this.player = null;
     this.heroState = {
@@ -98,7 +98,10 @@ Test.prototype = {
         }
     }
 };
+*/
 
-const game = new Phaser.Game(800, 600, Phaser.AUTO, 'elt', null, false, false);
-game.state.add('Test', Test);
-game.state.start('Test');
+const game = new Phaser.Game(800, 450, Phaser.AUTO, 'elt', null, false, false);
+game.state.add('Intro', require('./scenes/Copyright'));
+game.state.add('Placeholder', require('./scenes/Placeholder'));
+game.state.start('Intro');
+//game.state.start('Placeholder');
