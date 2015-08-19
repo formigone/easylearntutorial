@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dc15611cd847252787da"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5b8194ab1c1d1d09ab9e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -544,9 +544,8 @@
 /******/ 	return hotCreateRequire(0)(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -654,21 +653,20 @@
 	*/
 
 	var game = new Phaser.Game(800, 450, Phaser.AUTO, 'elt', null, false, false);
+	game.state.add('Placeholder', __webpack_require__(3));
 	game.state.add('Intro', __webpack_require__(2));
-	game.state.add('Placeholder', __webpack_require__(641));
+	game.state.add('Main', __webpack_require__(4));
 	game.state.start('Intro');
-	//game.state.start('Placeholder');
+	//game.state.start('Main');
 
 /***/ },
-
-/***/ 1:
+/* 1 */
 /***/ function(module, exports) {
 
 	module.exports = Phaser;
 
 /***/ },
-
-/***/ 2:
+/* 2 */
 /***/ function(module, exports) {
 
 	/**
@@ -742,8 +740,7 @@
 	module.exports = Copyright;
 
 /***/ },
-
-/***/ 641:
+/* 3 */
 /***/ function(module, exports) {
 
 	/**
@@ -780,6 +777,53 @@
 
 	module.exports = Placeholder;
 
-/***/ }
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
 
-/******/ });
+	/**
+	 * @inherits Phaser.Game
+	 * @constructor
+	 */
+	'use strict';
+
+	function Main() {
+	    this.style = {
+	        font: '2em "Press Start 2P"',
+	        fill: '#fff',
+	        align: 'center'
+	    };
+
+	    this.styleSub = {
+	        font: '1.25em "Press Start 2P"',
+	        fill: '#555',
+	        align: 'center'
+	    };
+
+	    this.text = [];
+	    this.delayBeforeFadeout_ms = 1000;
+	    this.fullyLoaded = false;
+	    this.startFadingOut = false;
+	    this.fadeRate = 0.008;
+	    this.done = false;
+	}
+
+	Main.prototype.create = function () {
+	    this.text.push(this.add.text(this.world.centerX, 80, 'GAME DEVELOPMENT COURSE: GDC 221', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 120, 'FREE GAME DEVELOPMENT LESSONS', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 240, '(C) EASY LEARN TUTORIAL  2015.', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 280, 'ALL RIGHTS RESERVED.', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 320, 'WWW.EASYLEARNTUTORIAL.COM.', this.style));
+	    this.text.push(this.add.text(this.world.centerX, 400, 'MEGA MAN AND ALL RELATED ITEMS ARE COPYRIGHT OF CAPCOM.', this.styleSub));
+	};
+
+	Main.prototype.update = function () {
+	    if (this.done) {
+	        this.state.start('Placeholder');
+	    }
+	};
+
+	module.exports = Main;
+
+/***/ }
+/******/ ]);
