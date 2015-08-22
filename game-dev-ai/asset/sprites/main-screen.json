@@ -2,10 +2,50 @@
   "frames": {
     "logo": {
       "frame": {
-        "x": 0,
-        "y": 0,
-        "w": 350,
-        "h": 250
+        "x": 3,
+        "y": 5,
+        "w": 441,
+        "h": 120
+      },
+      "rotated": false,
+      "trimmed": false
+    },
+    "arrow": {
+      "frame": {
+        "x": 2,
+        "y": 167,
+        "w": 12,
+        "h": 20
+      },
+      "rotated": false,
+      "trimmed": false
+    },
+    "startLearning": {
+      "frame": {
+        "x": 1,
+        "y": 125,
+        "w": 250,
+        "h": 18
+      },
+      "rotated": false,
+      "trimmed": false
+    },
+    "aboutElt": {
+      "frame": {
+        "x": 1,
+        "y": 146,
+        "w": 160,
+        "h": 18
+      },
+      "rotated": false,
+      "trimmed": false
+    },
+    "mascot": {
+      "frame": {
+        "x": 255,
+        "y": 124,
+        "w": 128,
+        "h": 150
       },
       "rotated": false,
       "trimmed": false

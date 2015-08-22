@@ -39,7 +39,7 @@ Copyright.prototype.create = function () {
 
 Copyright.prototype.update = function () {
     if (this.done) {
-        this.state.start('Placeholder');
+        this.state.start('Main');
     }
 
     this.text.forEach(txt => {
