@@ -5,7 +5,12 @@ const Phaser = require('phaser');
  * @constructor
  */
 function Main() {
-    this.text = [];
+    this.sprites = [];
+    this.keys = {};
+    this.options = {};
+    this.optionArrow = {};
+    this.selectedOption = 0;
+
     this.delayBeforeFadeout_ms = 1000;
     this.fullyLoaded = false;
     this.startFadingOut = false;
@@ -20,20 +25,27 @@ Main.prototype.preload = function(){
 
 Main.prototype.create = function () {
     this.add.audio('bgMusic').play();
-    
-    this.text.push(this.add.sprite(this.world.centerX, 125, 'atlas', 'logo'));
-    this.text.push(this.add.sprite(185, 285, 'atlas', 'arrow'));
-    this.text.push(this.add.sprite(210, 284, 'atlas', 'startLearning'));
-    this.text.push(this.add.sprite(210, 320, 'atlas', 'aboutElt'));
-    this.text.push(this.add.sprite(556, 300, 'atlas', 'mascot'));
 
-    this.text.forEach(txt => {
-        txt.anchor.set(0.5);
-        txt.alpha = 0;
+    this.keys['up'] = this.input.keyboard.addKey(Phaser.Keyboard.UP);
+    this.keys['down'] = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+
+    this.optionArrow = this.add.sprite(185, 285, 'atlas', 'arrow');
+    this.options.startLearning = this.add.sprite(210, 284, 'atlas', 'startLearning');
+    this.options.aboutElt = this.add.sprite(210, 320, 'atlas', 'aboutElt');
+
+    this.sprites.push(this.add.sprite(this.world.centerX, 125, 'atlas', 'logo'));
+    this.sprites.push(this.add.sprite(556, 300, 'atlas', 'mascot'));
+    this.sprites.push(this.optionArrow);
+    this.sprites.push(this.options.startLearning);
+    this.sprites.push(this.options.aboutElt);
+
+    this.sprites.forEach(sprite => {
+        sprite.anchor.set(0.5, 0.5);
+        sprite.alpha = 0;
     });
 
-    this.text[2].anchor.set(0, 0.5);
-    this.text[3].anchor.set(0, 0.5);
+    this.options.startLearning.anchor.set(0, 0.5);
+    this.options.aboutElt.anchor.set(0, 0.5);
 };
 
 Main.prototype.update = function() {
@@ -41,11 +53,21 @@ Main.prototype.update = function() {
        // this.state.start('Placeholder');
     }
 
-    this.text.forEach(txt => {
-        if (!this.startFadingOut && txt.alpha < 1.0) {
-            txt.alpha += this.fadeRate;
-        }
-    });
+    if (!this.startFadingOut) {
+        this.sprites.forEach(sprite => {
+            if (sprite.alpha < 1.0) {
+                sprite.alpha += this.fadeRate;
+            }
+        });
+    }
+
+    if (this.keys.up.isDown) {
+        this.selectedOption = 0;
+    } else if (this.keys.down.isDown) {
+        this.selectedOption = 1;
+    }
+
+    this.optionArrow.y = (this.selectedOption === 0) ? 285 : 321;
 };
 
 module.exports = Main;

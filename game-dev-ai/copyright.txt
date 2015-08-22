@@ -1,0 +1,4 @@
+/**
+* @author       Rodrigo Silveira <webmaster@rodrigo-silveira.com>
+* @copyright    2015 Rodrigo Silveira.
+*/
