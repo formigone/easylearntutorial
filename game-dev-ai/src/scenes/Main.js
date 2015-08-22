@@ -19,8 +19,8 @@ function Main() {
 }
 
 Main.prototype.preload = function(){
-    this.load.audio('bgMusic', ['/asset/audio/mm3-intro-yt.HeVva6ddNAc.danielsymphonies.mp3']);
-    this.load.atlasJSONHash('atlas', '/asset/img/main-screen-0.0.3.png', '/asset/sprites/main-screen.json');
+    this.load.audio('bgMusic', ['asset/audio/mm3-intro-yt.HeVva6ddNAc.danielsymphonies.mp3']);
+    this.load.atlasJSONHash('atlas', 'asset/img/main-screen-0.0.3.png', 'asset/sprites/main-screen.json');
 };
 
 Main.prototype.create = function () {

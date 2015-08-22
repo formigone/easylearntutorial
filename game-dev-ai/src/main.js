@@ -100,7 +100,10 @@ Test.prototype = {
 };
 */
 
-const game = new Phaser.Game(800, 450, Phaser.AUTO, 'elt', null, false, false);
+const game = new Phaser.Game(800, 450, Phaser.AUTO, 'gdc221Container', false, false);
+
+game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+
 game.state.add('Placeholder', require('./scenes/Placeholder'));
 game.state.add('Intro', require('./scenes/Copyright'));
 game.state.add('Main', require('./scenes/Main'));

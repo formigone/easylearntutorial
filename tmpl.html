@@ -13,21 +13,6 @@
     <script src="http://easylearntutorial.com/public/js/bootstrap.js"></script>
     <link href='http://easylearntutorial.com/favicon.ico' rel='icon' type='image/x-icon'/>
     <!--[if lt IE 9]> <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="//oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> <![endif]-->
-    <style>
-        /* latin */
-        @font-face {
-            font-family: 'Press Start 2P';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Press Start 2P'), local('PressStart2P-Regular'), url(asset/fonts/press-start-2p.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-        }
-
-        canvas {
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 <body>
 <div class="navbar navbar-default navbar-fixed-top">
@@ -74,39 +59,9 @@
 
         <div class="mt"></div>
         <div class="col-xm-12 centered">
-            <div id="gdc221AssetsContainer"></div>
-            <div id="gdc221Container" style="background: #000; width: 100%; height: 450px;"></div>
-            <p><br/>
-                <button class="btn btn-primary" id="play">Start Game</button>
-                <button class="btn btn-info" disabled id="goFullScreen">Full screen</button>
-                <a class="btn btn-link" href="/series/watch/57/2d-game-development-from-scratch">Watch course videos</a>
-                <script>
-                    var startBtn = document.getElementById('play');
-                    var fsBtn = document.getElementById('goFullScreen');
-                    var elem = document.getElementById('gdc221Container');
-                    var canvas = elem.getElementsByTagName('canvas') || [null];
-
-                    startBtn.addEventListener('click', function(){
-                        var script = document.createElement('script');
-                        script.src = 'http://easylearntutorial.com/html5-games/gdc-221-introToAi/dist/bundle.r.js';
-                        document.body.appendChild(script);
-                        fsBtn.removeAttribute('disabled');
-                        startBtn.setAttribute('disabled', true);
-                    });
-
-                    fsBtn.addEventListener('click', function(){
-                        if (elem.requestFullscreen) {
-                            elem.requestFullscreen();
-                        } else if (elem.msRequestFullscreen) {
-                            elem.msRequestFullscreen();
-                        } else if (elem.mozRequestFullScreen) {
-                            elem.mozRequestFullScreen();
-                        } else if (elem.webkitRequestFullscreen) {
-                            elem.webkitRequestFullscreen();
-                        }
-                    });
-                </script>
-            </p>
+            <div id="gdc221Container"></div>
+            <button class="btn btn-primary">Full-screen</button>
+            <p><br/></p>
         </div>
         <div class="clearfix"></div>
     </div>
@@ -116,16 +71,6 @@
         <div class="row"><p>Copyright &copy; 2015 EasyLearnTutorial. All rights reserved.</p></div>
     </div>
 </div>
-
-<script src="http://easylearntutorial.com/html5-games/gdc-221-introToAi/node_modules/phaser/dist/phaser.js"></script>
-<script>
-    var assetLoader = document.getElementById('gdc221AssetsContainer');
-    assetLoader.style.position = 'absolute';
-    assetLoader.style.top = '-999px';
-    assetLoader.style.width = '1px';
-    assetLoader.style.height = '1px';
-    assetLoader.style.overflow = 'hidden';
-</script>
 <script>
 
     (function (i, s, o, g, r, a, m) {
