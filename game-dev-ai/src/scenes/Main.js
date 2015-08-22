@@ -1,43 +1,22 @@
+const Phaser = require('phaser');
+
 /**
  * @inherits Phaser.Game
  * @constructor
  */
 function Main() {
-    this.style = {
-        font: '2em "Press Start 2P"',
-        fill: '#fff',
-        align: 'center'
-    };
-
-    this.styleSub = {
-        font: '1.25em "Press Start 2P"',
-        fill: '#555',
-        align: 'center'
-    };
-
-    this.text = [];
-    this.delayBeforeFadeout_ms = 1000;
-    this.fullyLoaded = false;
-    this.startFadingOut = false;
-    this.fadeRate = 0.008;
-    this.done = false;
 }
 
-Main.prototype.create = function () {
-    this.text.push(this.add.text(this.world.centerX, 80, 'GAME DEVELOPMENT COURSE: GDC 221', this.style));
-    this.text.push(this.add.text(this.world.centerX, 120, 'FREE GAME DEVELOPMENT LESSONS', this.style));
-    this.text.push(this.add.text(this.world.centerX, 240, '(C) EASY LEARN TUTORIAL  2015.', this.style));
-    this.text.push(this.add.text(this.world.centerX, 280, 'ALL RIGHTS RESERVED.', this.style));
-    this.text.push(this.add.text(this.world.centerX, 320, 'WWW.EASYLEARNTUTORIAL.COM.', this.style));
-    this.text.push(this.add.text(this.world.centerX, 400, 'MEGA MAN AND ALL RELATED ITEMS ARE COPYRIGHT OF CAPCOM.', this.styleSub));
+Main.prototype.preload = function(){
+    this.load.audio('bgMusic', ['/asset/audio/mm3-intro-yt.HeVva6ddNAc.danielsymphonies.mp3']);
+    this.load.atlasJSONHash('atlas', '/asset/img/main-screen-0.0.3.png', '/asset/sprites/main-screen.json');
+    this.load.image('img', '/asset/img/main-screen-0.0.3.png');
 };
 
-Main.prototype.update = function () {
-    if (this.done) {
-        this.state.start('Placeholder');
-    }
-
-
+Main.prototype.create = function () {
+    this.add.audio('bgMusic').play();
+    const logo = this.add.sprite(0, 0, 'atlas', 'logo');
+    this.add.sprite(100, 100, 'img');
 };
 
 module.exports = Main;

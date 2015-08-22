@@ -104,5 +104,5 @@ const game = new Phaser.Game(800, 450, Phaser.AUTO, 'elt', null, false, false);
 game.state.add('Placeholder', require('./scenes/Placeholder'));
 game.state.add('Intro', require('./scenes/Copyright'));
 game.state.add('Main', require('./scenes/Main'));
-game.state.start('Intro');
+game.state.start('Main');
 //game.state.start('Main');

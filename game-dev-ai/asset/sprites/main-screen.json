@@ -1,0 +1,14 @@
+{
+  "frames": {
+    "logo": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 350,
+        "h": 250
+      },
+      "rotated": false,
+      "trimmed": false
+    }
+  }
+}
