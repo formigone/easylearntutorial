@@ -12,7 +12,9 @@
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://easylearntutorial.com/public/js/bootstrap.js"></script>
     <link href='http://easylearntutorial.com/favicon.ico' rel='icon' type='image/x-icon'/>
-    <!--[if lt IE 9]> <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="//oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> <![endif]-->
     <style>
         /* latin */
         @font-face {
@@ -61,10 +63,17 @@
 <div id="green">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 centered"><img src="http://www.easylearntutorial.com/html5-games/gdc-221-introToAi/asset/img/gdc221-mascot.png" alt="GDC 221: Intro to AI" style="image-rendering: pixelated; width: 80%"></div>
+            <div class="col-sm-4 centered"><img
+                    src="http://www.easylearntutorial.com/html5-games/gdc-221-introToAi/asset/img/gdc221-mascot.png"
+                    alt="GDC 221: Intro to AI" style="image-rendering: pixelated; width: 80%"></div>
             <div class="col-sm-8"><h1>GDC 221: Introduction to Artificial Intelligence</h1>
-                <p>Game Development Course 221 introduces you to basic concepts related to AI that can be added to your games. The example game we've build to illustrate the concepts taught in this course is a metaphor for Capcom's Mega Man series for Nintendo's NES system.</p>
-                <p>Each lesson has an accompanying level within the game that demonstrates the concept as a mini game (or an example of how it could be used in a real game).</p>
+
+                <p>Game Development Course 221 introduces you to basic concepts related to AI that can be added to your
+                    games. The example game we've build to illustrate the concepts taught in this course is a metaphor
+                    for Capcom's Mega Man series for Nintendo's NES system.</p>
+
+                <p>Each lesson has an accompanying level within the game that demonstrates the concept as a mini game
+                    (or an example of how it could be used in a real game).</p>
             </div>
         </div>
     </div>
@@ -86,15 +95,12 @@
                     var elem = document.getElementById('gdc221Container');
                     var canvas = elem.getElementsByTagName('canvas') || [null];
 
-                    startBtn.addEventListener('click', function(){
-                        var script = document.createElement('script');
-                        script.src = 'http://easylearntutorial.com/html5-games/gdc-221-introToAi/dist/bundle.r.js';
-                        document.body.appendChild(script);
+                    startBtn.addEventListener('click', function () {
+                        kickStart();
                         fsBtn.removeAttribute('disabled');
-                        startBtn.setAttribute('disabled', true);
                     });
 
-                    fsBtn.addEventListener('click', function(){
+                    fsBtn.addEventListener('click', function () {
                         if (elem.requestFullscreen) {
                             elem.requestFullscreen();
                         } else if (elem.msRequestFullscreen) {
@@ -117,7 +123,8 @@
     </div>
 </div>
 
-<script src="http://easylearntutorial.com/html5-games/gdc-221-introToAi/node_modules/phaser/dist/phaser.js"></script>
+<script src="node_modules/phaser/dist/phaser.js"></script>
+<script src="dist/bundle.r.js"></script>
 <script>
     var assetLoader = document.getElementById('gdc221AssetsContainer');
     assetLoader.style.position = 'absolute';
