@@ -1,5 +1,5 @@
 const Phaser = require('phaser');
-const animMM = require('../anim/mm');
+const mm = require('../sprites/mm');
 
 /**
  * @inherits Phaser.Game
@@ -10,8 +10,6 @@ function Falling() {
     this.done = false;
 
     this.player = null;
-    this.facingRight = true;
-    this.heroState = animMM.states;
 }
 
 Falling.prototype.preload = function () {
@@ -27,21 +25,7 @@ Falling.prototype.create = function () {
     this.keys['left'] = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
     this.keys['right'] = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 
-    const heroState = this.heroState;
-    let player = this.add.sprite(250, 250, 'mm');
-
-    player.animations.add(heroState.standingRight, animMM.anim.standingRight.frames, animMM.anim.standingRight.rate, animMM.anim.standingRight.loop, false);
-    player.animations.add(heroState.runningRight, animMM.anim.runningRight.frames, animMM.anim.runningRight.rate, animMM.anim.runningRight.loop, false);
-    player.animations.add(heroState.jumpingRight, animMM.anim.jumpingRight.frames, animMM.anim.jumpingRight.rate, animMM.anim.jumpingRight.loop, false);
-
-    player.scale.x = 5.0;
-    player.scale.y = 5.0;
-
-    player.anchor.set(0.5, 0.5);
-    player.heroState = heroState;
-
-    this.player = player;
-    player.animations.play(this.heroState.standingRight);
+    this.player = mm.instance(this, 250, 250, 'mm');
 };
 
 Falling.prototype.update = function () {
@@ -49,19 +33,7 @@ Falling.prototype.update = function () {
         // this.state.start('Placeholder');
     }
 
-    const player = this.player;
-
-    if (this.keys.up.isDown) {
-        if (this.facingRight) {
-            player.animations.play(this.heroState.jumpingRight);
-        } else {
-            //player.animations.play(this.heroState.jumpingLeft);
-        }
-    } else if (this.keys.up.isUp && this.keys.right.isUp) {
-        player.animations.play(this.heroState.standingRight);
-    } else if (this.keys.right.isDown) {
-        player.animations.play(this.heroState.runningRight);
-    }
+    mm.update(this);
 };
 
 module.exports = Falling;

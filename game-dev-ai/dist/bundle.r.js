@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "165d1b5e035720dac1a8"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f86c8f35bf654aad699c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -877,7 +877,7 @@
 	'use strict';
 
 	var Phaser = __webpack_require__(1);
-	var animMM = __webpack_require__(6);
+	var mm = __webpack_require__(8);
 
 	/**
 	 * @inherits Phaser.Game
@@ -888,8 +888,6 @@
 	    this.done = false;
 
 	    this.player = null;
-	    this.facingRight = true;
-	    this.heroState = animMM.states;
 	}
 
 	Falling.prototype.preload = function () {
@@ -905,21 +903,7 @@
 	    this.keys['left'] = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
 	    this.keys['right'] = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 
-	    var heroState = this.heroState;
-	    var player = this.add.sprite(250, 250, 'mm');
-
-	    player.animations.add(heroState.standingRight, animMM.anim.standingRight.frames, animMM.anim.standingRight.rate, animMM.anim.standingRight.loop, false);
-	    player.animations.add(heroState.runningRight, animMM.anim.runningRight.frames, animMM.anim.runningRight.rate, animMM.anim.runningRight.loop, false);
-	    player.animations.add(heroState.jumpingRight, animMM.anim.jumpingRight.frames, animMM.anim.jumpingRight.rate, animMM.anim.jumpingRight.loop, false);
-
-	    player.scale.x = 5.0;
-	    player.scale.y = 5.0;
-
-	    player.anchor.set(0.5, 0.5);
-	    player.heroState = heroState;
-
-	    this.player = player;
-	    player.animations.play(this.heroState.standingRight);
+	    this.player = mm.instance(this, 250, 250, 'mm');
 	};
 
 	Falling.prototype.update = function () {
@@ -927,19 +911,7 @@
 	        // this.state.start('Placeholder');
 	    }
 
-	    var player = this.player;
-
-	    if (this.keys.up.isDown) {
-	        if (this.facingRight) {
-	            player.animations.play(this.heroState.jumpingRight);
-	        } else {
-	            //player.animations.play(this.heroState.jumpingLeft);
-	        }
-	    } else if (this.keys.up.isUp && this.keys.right.isUp) {
-	            player.animations.play(this.heroState.standingRight);
-	        } else if (this.keys.right.isDown) {
-	            player.animations.play(this.heroState.runningRight);
-	        }
+	    mm.update(this);
 	};
 
 	module.exports = Falling;
@@ -986,6 +958,66 @@
 	            rate: 1,
 	            loop: true
 	        }
+	    }
+	};
+
+/***/ },
+/* 7 */,
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var Phaser = __webpack_require__(1);
+	var animMM = __webpack_require__(6);
+
+	/** @type {Phaser.Game} */
+	var player = null;
+	var states = animMM.states;
+	var anim = animMM.anim;
+	var facingRight = true;
+
+	function init(game, x, y, texture) {
+	    var player = game.add.sprite(x, y, texture);
+
+	    player.animations.add(states.standingRight, anim.standingRight.frames, anim.standingRight.rate, anim.standingRight.loop, false);
+	    player.animations.add(states.runningRight, anim.runningRight.frames, anim.runningRight.rate, anim.runningRight.loop, false);
+	    player.animations.add(states.jumpingRight, anim.jumpingRight.frames, anim.jumpingRight.rate, anim.jumpingRight.loop, false);
+
+	    player.scale.x = 5.0;
+	    player.scale.y = 5.0;
+
+	    player.anchor.set(0.5, 0.5);
+
+	    player.animations.play(states.standingRight);
+
+	    return player;
+	}
+
+	function _update(game) {
+	    if (game.keys.up.isDown) {
+	        if (facingRight) {
+	            player.animations.play(states.jumpingRight);
+	        } else {
+	            player.animations.play(this.states.jumpingLeft);
+	        }
+	    } else if (game.keys.up.isUp && game.keys.right.isUp) {
+	        player.animations.play(states.standingRight);
+	    } else if (game.keys.right.isDown) {
+	        player.animations.play(states.runningRight);
+	    }
+	}
+
+	module.exports = {
+	    instance: function instance(game, x, y, texture) {
+	        if (player === null) {
+	            player = init(game, x, y, texture);
+	        }
+
+	        return player;
+	    },
+	    update: function update(game) {
+	        return _update(game);
 	    }
 	};
 
