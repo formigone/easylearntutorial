@@ -1,134 +1,121 @@
 const Phaser = require('phaser');
 
+const tileKeys = {
+    spike: 0,
+    bgHorHighlight: 1,
+    bgSolid: 2,
+    bgHorLowlight: 3,
+    bgRand_1: 4,
+    bgRand_2: 6,
+    bgRand_3: 7,
+    solid_1: 5,
+    solid_2: 8,
+    solid_3: 9,
+    solid_4: 10,
+    bgSolidTop: 12
+};
+
+const mapTmpl = [
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1],
+    [1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1],
+    [1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1],
+    [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1],
+
+    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1],
+
+    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+];
+
+const mapTmplSize = {
+    width: 25,
+    height: 15
+};
+
+const mapIndexToTile = {
+    1: [
+        tileKeys.solid_1,
+        tileKeys.solid_2,
+        tileKeys.solid_3,
+        tileKeys.solid_4
+    ],
+    0: [
+        tileKeys.bgSolid,
+        tileKeys.bgRand_1,
+        tileKeys.bgRand_1,
+        tileKeys.bgRand_2,
+        tileKeys.bgRand_2,
+        tileKeys.bgRand_2,
+        tileKeys.bgRand_3,
+        tileKeys.bgRand_3
+    ],
+    9: [
+        tileKeys.spike
+    ]
+};
+
 /**
  * @inherits Phaser.Game
  * @constructor
  */
 function Map() {
     this.done = false;
-    this.item = null;
     this.map = null;
+    this.worldSize = {
+        width: 25,
+        height: 100
+    };
+    this.stage = [];
+    this.init();
 }
 
+Map.prototype.init = function(){
+    this.stage = [];
+
+    for (let y = 0; y < this.worldSize.height; y++) {
+        let index = y > 0 ? parseInt(Math.random() * mapTmplSize.height - 1, 10) + 1 : 0;
+        let stageRow = mapTmpl[index]
+            .map(cell => {
+                return mapIndexToTile[cell][parseInt(Math.random() * mapIndexToTile[cell].length, 10)];
+            });
+
+        this.stage.push(stageRow);
+    }
+};
+
 Map.prototype.preload = function(){
-    this.load.spritesheet('needleman', 'asset/img/needleman-tileset-32x32.png', 32, 32, 23);
-    //this.load.spritesheet('ground_1x1.png', 'asset/img/ground_1x1.png', 32, 32);
+    this.load.spritesheet('mm3-wily-02', 'asset/img/mm3-wily-02.png', 32, 32);
 };
 
 Map.prototype.create = function () {
     this.stage.backgroundColor = '#fff';
 
-    //for (let y = 0; y < 20; y++) {
-    //    for (let x = 0; x < 47; x++) {
-    //        this.add.sprite(x * 16, y * 16, 'needleman', x % 23);
-    //    }
-    //}
-
     let map = this.add.tilemap();
-    map.addTilesetImage('needleman');
-    let layer = map.create('test', 10, 20, 32, 32);
+    map.addTilesetImage('mm3-wily-02');
+    let layer = map.create('test', this.worldSize.width, this.worldSize.height, 32, 32);
     layer.resizeWorld();
-    for (let y = 0; y < 10; y++) {
-        for (let x = 0; x < 20; x++) {
-            map.putTile(11, x, y, layer);
-        }
-    }
-    /*
-    map.putTile(4, 0, 0, layer);
-    map.putTile(5, 1, 0, layer);
-    map.putTile(19, 2, 0, layer);
-    map.putTile(11, 3, 0, layer);
-    map.putTile(11, 4, 0, layer);
-    map.putTile(11, 5, 0, layer);
-    map.putTile(11, 6, 0, layer);
-    map.putTile(11, 7, 0, layer);
-    map.putTile(11, 8, 0, layer);
-    map.putTile(11, 9, 0, layer);
-    map.putTile(19, 10, 0, layer);
-    map.putTile(0, 11, 0, layer);
-    map.putTile(1, 12, 0, layer);
 
-    map.putTile(4, 0, 1, layer);
-    map.putTile(5, 1, 1, layer);
-    map.putTile(19, 2, 1, layer);
-    map.putTile(11, 3, 1, layer);
-    map.putTile(11, 4, 1, layer);
-    map.putTile(11, 5, 1, layer);
-    map.putTile(11, 6, 1, layer);
-    map.putTile(11, 7, 1, layer);
-    map.putTile(11, 8, 1, layer);
-    map.putTile(11, 9, 1, layer);
-    map.putTile(19, 10, 1, layer);
-    map.putTile(0, 11, 1, layer);
-    map.putTile(1, 12, 1, layer);
-
-    map.putTile(4, 0, 2, layer);
-    map.putTile(5, 1, 2, layer);
-    map.putTile(20, 2, 2, layer);
-    map.putTile(11, 3, 2, layer);
-    map.putTile(11, 4, 2, layer);
-    map.putTile(11, 5, 2, layer);
-    map.putTile(11, 6, 2, layer);
-    map.putTile(11, 7, 2, layer);
-    map.putTile(11, 8, 2, layer);
-    map.putTile(11, 9, 2, layer);
-    map.putTile(19, 10, 2, layer);
-    map.putTile(0, 11, 2, layer);
-    map.putTile(1, 12, 2, layer);
-
-    map.putTile(4, 0, 3, layer);
-    map.putTile(5, 1, 3, layer);
-    map.putTile(10, 2, 3, layer);
-    map.putTile(11, 3, 3, layer);
-    map.putTile(11, 4, 3, layer);
-    map.putTile(11, 5, 3, layer);
-    map.putTile(11, 6, 3, layer);
-    map.putTile(11, 7, 3, layer);
-    map.putTile(11, 8, 3, layer);
-    map.putTile(11, 9, 3, layer);
-    map.putTile(19, 10, 3, layer);
-    map.putTile(0, 11, 3, layer);
-    map.putTile(1, 12, 3, layer);
-
-    map.putTile(4, 0, 4, layer);
-    map.putTile(5, 1, 4, layer);
-    map.putTile(16, 2, 4, layer);
-    map.putTile(17, 3, 4, layer);
-    map.putTile(11, 4, 4, layer);
-    map.putTile(11, 5, 4, layer);
-    map.putTile(11, 6, 4, layer);
-    map.putTile(11, 7, 4, layer);
-    map.putTile(11, 8, 4, layer);
-    map.putTile(11, 9, 4, layer);
-    map.putTile(19, 10, 4, layer);
-    map.putTile(0, 11, 4, layer);
-    map.putTile(1, 12, 4, layer);
-
-    map.putTile(4, 0, 5, layer);
-    map.putTile(5, 1, 5, layer);
-    map.putTile(10, 2, 5, layer);
-    map.putTile(10, 3, 5, layer);
-    map.putTile(11, 4, 5, layer);
-    map.putTile(11, 5, 5, layer);
-    map.putTile(11, 6, 5, layer);
-    map.putTile(11, 7, 5, layer);
-    map.putTile(11, 8, 5, layer);
-    map.putTile(11, 9, 5, layer);
-    map.putTile(20, 10, 5, layer);
-    map.putTile(0, 11, 5, layer);
-    map.putTile(1, 12, 5, layer);
-*/
-    //for (let y = 0; y < 10; y++) {
-    //    for (let i = 0; i < 23; i++) {
-    //        this.add.sprite(i * 32 + 10, y * 32 + 10, 'needleman', i);
-    //    }
-    //}
+    this.stage.forEach((row, y) => {
+        row.forEach((cell, x) => {
+            map.putTile(cell, x, y, layer);
+        });
+    })
 };
 
 Map.prototype.update = function() {
     if (this.done) {
        // this.state.start('Placeholder');
     }
+
+    this.camera.y += 5;
 };
 
 module.exports = Map;
