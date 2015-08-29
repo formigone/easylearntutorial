@@ -65,8 +65,8 @@
       "frame": {
         "x": 552,
         "y": 8,
-        "w": 23,
-        "h": 26
+        "w": 21,
+        "h": 24
       },
       "rotated": false,
       "trimmed": false
@@ -84,8 +84,8 @@
     "runningLeft0": {
       "frame": {
         "x": 464,
-        "y": 10,
-        "w": 26,
+        "y": 8,
+        "w": 24,
         "h": 24
       },
       "rotated": false,
@@ -95,8 +95,8 @@
       "frame": {
         "x": 442,
         "y": 8,
-        "w": 18,
-        "h": 26
+        "w": 16,
+        "h": 24
       },
       "rotated": false,
       "trimmed": false
@@ -104,8 +104,8 @@
     "runningLeft2": {
       "frame": {
         "x": 416,
-        "y": 10,
-        "w": 23,
+        "y": 8,
+        "w": 21,
         "h": 24
       },
       "rotated": false,
