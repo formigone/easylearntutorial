@@ -18,4 +18,4 @@ window.kickStart = function(){
    }
 };
 
-game.state.start('Map');
+//game.state.start('Map');

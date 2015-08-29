@@ -10,6 +10,7 @@ function Main() {
     this.options = {};
     this.optionArrow = {};
     this.selectedOption = 0;
+    this.bgMusic = {};
 
     this.delayBeforeFadeout_ms = 1000;
     this.fullyLoaded = false;
@@ -24,10 +25,12 @@ Main.prototype.preload = function(){
 };
 
 Main.prototype.create = function () {
-    this.add.audio('bgMusic').play();
+    this.bgMusic = this.add.audio('bgMusic').play();
 
     this.keys['up'] = this.input.keyboard.addKey(Phaser.Keyboard.UP);
     this.keys['down'] = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+    this.keys['enter'] = this.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+    this.keys['spacebar'] = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     this.optionArrow = this.add.sprite(185, 285, 'atlas', 'arrow');
     this.options.startLearning = this.add.sprite(210, 284, 'atlas', 'startLearning');
@@ -51,6 +54,17 @@ Main.prototype.create = function () {
 Main.prototype.update = function() {
     if (this.done) {
        // this.state.start('Placeholder');
+    }
+
+    if (this.keys.enter.isDown || this.keys.spacebar.isDown) {
+        if (this.selectedOption === 0) {
+            this.state.start('Map', true);
+            this.bgMusic.stop();
+        } else {
+            window.location.href = 'http://easylearntutorial.com/about';
+        }
+
+        this.done = true;
     }
 
     if (!this.startFadingOut) {

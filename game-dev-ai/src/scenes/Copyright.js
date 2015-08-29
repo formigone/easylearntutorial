@@ -23,6 +23,10 @@ function Copyright() {
     this.done = false;
 }
 
+Copyright.prototype.preload = function(){
+    this.load.audio('mm3Wily02', ['asset/audio/mm3-wily-02-yt.cJ3hNF3EyGA.mp3']);
+};
+
 Copyright.prototype.create = function () {
     this.text.push(this.add.text(this.world.centerX, 80, 'GAME DEVELOPMENT COURSE: GDC 221', this.style));
     this.text.push(this.add.text(this.world.centerX, 120, 'FREE GAME DEVELOPMENT LESSONS', this.style));

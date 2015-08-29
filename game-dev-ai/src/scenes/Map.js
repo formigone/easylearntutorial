@@ -45,7 +45,7 @@ const mapTmpl = [
     [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1],
 ];
 
 const mapTmplSize = {
@@ -85,7 +85,7 @@ function Map() {
     this.keys = {};
     this.worldSize = {
         width: 25,
-        height: 300
+        height: 100
     };
     this.stage = [];
     this.player = null;
@@ -96,7 +96,11 @@ Map.prototype.init = function(){
     this.stage = [];
 
     for (let y = 0; y < this.worldSize.height; y++) {
-        let index = y > 15 ? (y > 20 ? parseInt(Math.random() * mapTmplSize.height - 1, 10) + 1 : 1) : 0;
+        let index = y > 15 ? (y > 20 ? parseInt(Math.random() * mapTmplSize.height - 2, 10) + 1 : 1) : 0;
+        if (y === this.worldSize.height - 1) {
+            index = mapTmplSize.height - 1;
+        }
+
         let stageRow = mapTmpl[index]
             .map(cell => {
                 return mapIndexToTile[cell][parseInt(Math.random() * mapIndexToTile[cell].length, 10)];
@@ -112,18 +116,25 @@ Map.prototype.preload = function(){
 };
 
 Map.prototype.create = function () {
-    this.stage.backgroundColor = '#fff';
+    this.add.audio('mm3Wily02').play();
 
     let map = this.add.tilemap();
     map.addTilesetImage('mm3-wily-02');
-    let layer = map.create('test', this.worldSize.width, this.worldSize.height, 32, 32);
-    layer.resizeWorld();
+    let layerBg = map.create('background', this.worldSize.width, this.worldSize.height, 32, 32);
+    let layerFg = map.createBlankLayer('foreground', this.worldSize.width, this.worldSize.height, 32, 32);
+    layerFg.resizeWorld();
+    layerBg.scrollFactorY = 0.5;
+    layerFg.scrollFactorY = 1;
 
     this.stage.forEach((row, y) => {
         row.forEach((cell, x) => {
-            map.putTile(cell, x, y, layer);
+            if (cell !== tileKeys.spike && cell !== tileKeys.solid_1 && cell !== tileKeys.solid_2 && cell !== tileKeys.solid_3 && cell !== tileKeys.solid_4) {
+                map.putTile(cell, x, y, layerBg);
+            } else {
+                map.putTile(cell, x, y, layerFg);
+            }
         });
-    })
+    });
 
     this.keys['jump'] = this.input.keyboard.addKey(Phaser.Keyboard.A);
     this.keys['up'] = this.input.keyboard.addKey(Phaser.Keyboard.UP);
@@ -131,7 +142,7 @@ Map.prototype.create = function () {
     this.keys['left'] = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
     this.keys['right'] = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 
-    this.player = new MegaMan(this, this.world.centerX, -32, 'mm', {scale: {x: 2, y: 2}});
+    this.player = new MegaMan(this, this.world.centerX, -550, 'mm', {scale: {x: 2, y: 2}});
     this.player.jumping = true;
     this.camera.follow(this.player.sprite);
 };
