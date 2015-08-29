@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1cf0e7fdde2178e4463e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "21450c99b3000f77fd00"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -551,106 +551,6 @@
 	'use strict';
 
 	var Phaser = __webpack_require__(1);
-	/*
-	var Test = function(){
-	    this.player = null;
-	    this.heroState = {
-	        standingRight: 'standingRight',
-	        runningRight: 'runningRight',
-	        jumpingRight: 'jumpingRight',
-
-	        standingLeft: 'standingLeft',
-	        runningLeft: 'runningLeft',
-	        jumpingLeft: 'jumpingLeft'
-	    };
-	};
-
-	Test.prototype = {
-	    preload: function() {
-	        this.load.atlasJSONHash('mm', '/img/megaman.gif', '/asset/sprites/megaman.json');
-	    },
-	    create: function() {
-	        const heroState = this.heroState;
-	        let player = game.add.sprite(250, 250, 'mm');
-	        player.scale.x = 3;
-	        player.scale.y = 3;
-
-	        player.anchor.set(0.5, 0.5);
-	        player.heroState = heroState;
-
-	        player.animations.add(heroState.standingRight, [
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRight',
-	            'standingRightBlink'
-	        ], 16, true, false);
-
-	        player.animations.add(heroState.runningRight, [
-	            'runningRight0',
-	            'runningRight1',
-	            'runningRight2',
-	        ], 10, true, false);
-
-	        player.animations.add(heroState.jumpingRight, [
-	            'jumpingRight'
-	        ], 1, true, false);
-
-	        this.player = player;
-	    },
-	    update: function() {
-	        const player = this.player;
-	        player.animations.play(this.heroState.runningRight);
-	        player.x += 4;
-	        if (player.x > 800) {
-	            player.x = -25;
-	        }
-	    }
-	};
-	*/
 
 	var game = new Phaser.Game(800, 450, Phaser.AUTO, 'gdc221Container', null, false, false);
 
@@ -659,16 +559,18 @@
 	game.state.add('Placeholder', __webpack_require__(2));
 	game.state.add('Intro', __webpack_require__(3));
 	game.state.add('Falling', __webpack_require__(4));
-	game.state.add('Main', __webpack_require__(6));
+	game.state.add('Main', __webpack_require__(7));
+
+	game.state.add('Map', __webpack_require__(8));
 
 	window.kickStart = function () {
-	    if (!window.didKickStart) {
-	        window.didKickStart = true;
-	        game.state.start('Intro');
-	    }
+	   if (!window.didKickStart) {
+	      window.didKickStart = true;
+	      game.state.start('Intro');
+	   }
 	};
 
-	game.state.start('Falling');
+	game.state.start('Map');
 
 /***/ },
 /* 1 */
@@ -893,7 +795,7 @@
 	'use strict';
 
 	var Phaser = __webpack_require__(1);
-	var animMM = __webpack_require__(7);
+	var animMM = __webpack_require__(6);
 
 	function MegaMan(game, x, y, texture, opt) {
 	    this.sprite = game.add.sprite(x, y, texture);
@@ -960,6 +862,75 @@
 
 /***/ },
 /* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var frameKeys = {
+	    runningRight0: 'runningRight0',
+	    runningRight1: 'runningRight1',
+	    runningRight2: 'runningRight2',
+
+	    standingRightBlink: 'standingRightBlink',
+	    standingRight: 'standingRight',
+
+	    jumpingRight: 'jumpingRight',
+
+	    runningLeft0: 'runningLeft0',
+	    runningLeft1: 'runningLeft1',
+	    runningLeft2: 'runningLeft2',
+
+	    standingLeftBlink: 'standingLeftBlink',
+	    standingLeft: 'standingLeft',
+
+	    jumpingLeft: 'jumpingLeft'
+	};
+
+	module.exports = {
+	    states: {
+	        standingRight: 'standingRight',
+	        runningRight: 'runningRight',
+	        jumpingRight: 'jumpingRight',
+
+	        standingLeft: 'standingLeft',
+	        jumpingLeft: 'jumpingLeft'
+	    },
+	    anim: {
+	        standingRight: {
+	            frames: [frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRightBlink],
+	            rate: 16,
+	            loop: true
+	        },
+	        runningRight: {
+	            frames: [frameKeys.runningRight0, frameKeys.runningRight1, frameKeys.runningRight2],
+	            rate: 10,
+	            loop: true
+	        },
+	        jumpingRight: {
+	            frames: [frameKeys.jumpingRight],
+	            rate: 1,
+	            loop: true
+	        },
+	        standingLeft: {
+	            frames: [frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeftBlink],
+	            rate: 16,
+	            loop: true
+	        },
+	        runningLeft: {
+	            frames: [frameKeys.runningLeft0, frameKeys.runningLeft1, frameKeys.runningLeft2],
+	            rate: 10,
+	            loop: true
+	        },
+	        jumpingLeft: {
+	            frames: [frameKeys.jumpingLeft],
+	            rate: 100,
+	            loop: false
+	        }
+	    }
+	};
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1041,73 +1012,140 @@
 	module.exports = Main;
 
 /***/ },
-/* 7 */
-/***/ function(module, exports) {
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var frameKeys = {
-	    runningRight0: 'runningRight0',
-	    runningRight1: 'runningRight1',
-	    runningRight2: 'runningRight2',
+	var Phaser = __webpack_require__(1);
 
-	    standingRightBlink: 'standingRightBlink',
-	    standingRight: 'standingRight',
+	/**
+	 * @inherits Phaser.Game
+	 * @constructor
+	 */
+	function Map() {
+	    this.done = false;
+	    this.item = null;
+	    this.map = null;
+	}
 
-	    jumpingRight: 'jumpingRight',
-
-	    runningLeft0: 'runningLeft0',
-	    runningLeft1: 'runningLeft1',
-	    runningLeft2: 'runningLeft2',
-
-	    standingLeftBlink: 'standingLeftBlink',
-	    standingLeft: 'standingLeft',
-
-	    jumpingLeft: 'jumpingLeft'
+	Map.prototype.preload = function () {
+	    this.load.spritesheet('needleman', 'asset/img/needleman-tileset-32x32.png', 32, 32, 23);
+	    //this.load.spritesheet('ground_1x1.png', 'asset/img/ground_1x1.png', 32, 32);
 	};
 
-	module.exports = {
-	    states: {
-	        standingRight: 'standingRight',
-	        runningRight: 'runningRight',
-	        jumpingRight: 'jumpingRight',
+	Map.prototype.create = function () {
+	    this.stage.backgroundColor = '#fff';
 
-	        standingLeft: 'standingLeft',
-	        jumpingLeft: 'jumpingLeft'
-	    },
-	    anim: {
-	        standingRight: {
-	            frames: [frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRight, frameKeys.standingRightBlink],
-	            rate: 16,
-	            loop: true
-	        },
-	        runningRight: {
-	            frames: [frameKeys.runningRight0, frameKeys.runningRight1, frameKeys.runningRight2],
-	            rate: 10,
-	            loop: true
-	        },
-	        jumpingRight: {
-	            frames: [frameKeys.jumpingRight],
-	            rate: 1,
-	            loop: true
-	        },
-	        standingLeft: {
-	            frames: [frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeftBlink],
-	            rate: 16,
-	            loop: true
-	        },
-	        runningLeft: {
-	            frames: [frameKeys.runningLeft0, frameKeys.runningLeft1, frameKeys.runningLeft2],
-	            rate: 10,
-	            loop: true
-	        },
-	        jumpingLeft: {
-	            frames: [frameKeys.jumpingLeft],
-	            rate: 100,
-	            loop: false
+	    //for (let y = 0; y < 20; y++) {
+	    //    for (let x = 0; x < 47; x++) {
+	    //        this.add.sprite(x * 16, y * 16, 'needleman', x % 23);
+	    //    }
+	    //}
+
+	    var map = this.add.tilemap();
+	    map.addTilesetImage('needleman');
+	    var layer = map.create('test', 10, 20, 32, 32);
+	    layer.resizeWorld();
+	    for (var y = 0; y < 10; y++) {
+	        for (var x = 0; x < 20; x++) {
+	            map.putTile(11, x, y, layer);
 	        }
 	    }
+	    /*
+	    map.putTile(4, 0, 0, layer);
+	    map.putTile(5, 1, 0, layer);
+	    map.putTile(19, 2, 0, layer);
+	    map.putTile(11, 3, 0, layer);
+	    map.putTile(11, 4, 0, layer);
+	    map.putTile(11, 5, 0, layer);
+	    map.putTile(11, 6, 0, layer);
+	    map.putTile(11, 7, 0, layer);
+	    map.putTile(11, 8, 0, layer);
+	    map.putTile(11, 9, 0, layer);
+	    map.putTile(19, 10, 0, layer);
+	    map.putTile(0, 11, 0, layer);
+	    map.putTile(1, 12, 0, layer);
+	     map.putTile(4, 0, 1, layer);
+	    map.putTile(5, 1, 1, layer);
+	    map.putTile(19, 2, 1, layer);
+	    map.putTile(11, 3, 1, layer);
+	    map.putTile(11, 4, 1, layer);
+	    map.putTile(11, 5, 1, layer);
+	    map.putTile(11, 6, 1, layer);
+	    map.putTile(11, 7, 1, layer);
+	    map.putTile(11, 8, 1, layer);
+	    map.putTile(11, 9, 1, layer);
+	    map.putTile(19, 10, 1, layer);
+	    map.putTile(0, 11, 1, layer);
+	    map.putTile(1, 12, 1, layer);
+	     map.putTile(4, 0, 2, layer);
+	    map.putTile(5, 1, 2, layer);
+	    map.putTile(20, 2, 2, layer);
+	    map.putTile(11, 3, 2, layer);
+	    map.putTile(11, 4, 2, layer);
+	    map.putTile(11, 5, 2, layer);
+	    map.putTile(11, 6, 2, layer);
+	    map.putTile(11, 7, 2, layer);
+	    map.putTile(11, 8, 2, layer);
+	    map.putTile(11, 9, 2, layer);
+	    map.putTile(19, 10, 2, layer);
+	    map.putTile(0, 11, 2, layer);
+	    map.putTile(1, 12, 2, layer);
+	     map.putTile(4, 0, 3, layer);
+	    map.putTile(5, 1, 3, layer);
+	    map.putTile(10, 2, 3, layer);
+	    map.putTile(11, 3, 3, layer);
+	    map.putTile(11, 4, 3, layer);
+	    map.putTile(11, 5, 3, layer);
+	    map.putTile(11, 6, 3, layer);
+	    map.putTile(11, 7, 3, layer);
+	    map.putTile(11, 8, 3, layer);
+	    map.putTile(11, 9, 3, layer);
+	    map.putTile(19, 10, 3, layer);
+	    map.putTile(0, 11, 3, layer);
+	    map.putTile(1, 12, 3, layer);
+	     map.putTile(4, 0, 4, layer);
+	    map.putTile(5, 1, 4, layer);
+	    map.putTile(16, 2, 4, layer);
+	    map.putTile(17, 3, 4, layer);
+	    map.putTile(11, 4, 4, layer);
+	    map.putTile(11, 5, 4, layer);
+	    map.putTile(11, 6, 4, layer);
+	    map.putTile(11, 7, 4, layer);
+	    map.putTile(11, 8, 4, layer);
+	    map.putTile(11, 9, 4, layer);
+	    map.putTile(19, 10, 4, layer);
+	    map.putTile(0, 11, 4, layer);
+	    map.putTile(1, 12, 4, layer);
+	     map.putTile(4, 0, 5, layer);
+	    map.putTile(5, 1, 5, layer);
+	    map.putTile(10, 2, 5, layer);
+	    map.putTile(10, 3, 5, layer);
+	    map.putTile(11, 4, 5, layer);
+	    map.putTile(11, 5, 5, layer);
+	    map.putTile(11, 6, 5, layer);
+	    map.putTile(11, 7, 5, layer);
+	    map.putTile(11, 8, 5, layer);
+	    map.putTile(11, 9, 5, layer);
+	    map.putTile(20, 10, 5, layer);
+	    map.putTile(0, 11, 5, layer);
+	    map.putTile(1, 12, 5, layer);
+	    */
+	    //for (let y = 0; y < 10; y++) {
+	    //    for (let i = 0; i < 23; i++) {
+	    //        this.add.sprite(i * 32 + 10, y * 32 + 10, 'needleman', i);
+	    //    }
+	    //}
 	};
+
+	Map.prototype.update = function () {
+	    if (this.done) {
+	        // this.state.start('Placeholder');
+	    }
+	};
+
+	module.exports = Map;
 
 /***/ }
 /******/ ]);
