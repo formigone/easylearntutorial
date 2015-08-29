@@ -1,4 +1,5 @@
 const Phaser = require('phaser');
+const MegaMan = require('../sprites/mm');
 
 const tileKeys = {
     spike: 0,
@@ -28,16 +29,28 @@ const mapTmpl = [
     [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1],
 
-    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1],
+    [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+
+    [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1],
+    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+
+    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 ];
 
 const mapTmplSize = {
     width: 25,
-    height: 15
+    height: 25
 };
 
 const mapIndexToTile = {
@@ -69,11 +82,13 @@ const mapIndexToTile = {
 function Map() {
     this.done = false;
     this.map = null;
+    this.keys = {};
     this.worldSize = {
         width: 25,
-        height: 100
+        height: 300
     };
     this.stage = [];
+    this.player = null;
     this.init();
 }
 
@@ -81,7 +96,7 @@ Map.prototype.init = function(){
     this.stage = [];
 
     for (let y = 0; y < this.worldSize.height; y++) {
-        let index = y > 0 ? parseInt(Math.random() * mapTmplSize.height - 1, 10) + 1 : 0;
+        let index = y > 15 ? (y > 20 ? parseInt(Math.random() * mapTmplSize.height - 1, 10) + 1 : 1) : 0;
         let stageRow = mapTmpl[index]
             .map(cell => {
                 return mapIndexToTile[cell][parseInt(Math.random() * mapIndexToTile[cell].length, 10)];
@@ -93,6 +108,7 @@ Map.prototype.init = function(){
 
 Map.prototype.preload = function(){
     this.load.spritesheet('mm3-wily-02', 'asset/img/mm3-wily-02.png', 32, 32);
+    this.load.atlasJSONHash('mm', 'asset/img/megaman.gif', '/asset/sprites/megaman.json');
 };
 
 Map.prototype.create = function () {
@@ -108,6 +124,16 @@ Map.prototype.create = function () {
             map.putTile(cell, x, y, layer);
         });
     })
+
+    this.keys['jump'] = this.input.keyboard.addKey(Phaser.Keyboard.A);
+    this.keys['up'] = this.input.keyboard.addKey(Phaser.Keyboard.UP);
+    this.keys['down'] = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+    this.keys['left'] = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+    this.keys['right'] = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
+
+    this.player = new MegaMan(this, this.world.centerX, -32, 'mm', {scale: {x: 2, y: 2}});
+    this.player.jumping = true;
+    this.camera.follow(this.player.sprite);
 };
 
 Map.prototype.update = function() {
@@ -115,7 +141,16 @@ Map.prototype.update = function() {
        // this.state.start('Placeholder');
     }
 
-    this.camera.y += 5;
+    //this.camera.y += 5;
+    this.player.update(this, this.keys);
+
+    if (this.keys['left'].isDown) {
+        this.player.sprite.x -= 3;
+    } else if (this.keys['right'].isDown) {
+        this.player.sprite.x += 3;
+    }
+
+    this.player.sprite.y += 5;
 };
 
 module.exports = Map;

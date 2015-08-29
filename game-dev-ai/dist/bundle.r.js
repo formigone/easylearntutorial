@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "92f1e8beba2dc2b1a96d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a4b9f41ec6c4152dcf16"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -802,6 +802,7 @@
 	    this.states = animMM.states;
 	    this.anim = animMM.anim;
 	    this.facingRight = true;
+	    this.jumping = false;
 
 	    this.init(opt);
 	}
@@ -839,11 +840,11 @@
 	        left: {}
 	    };
 
-	    if (keys.jump.isDown) {
+	    if (keys.jump.isDown || this.jumping) {
 	        sprite.animations.play(this.facingRight ? states.jumpingRight : states.jumpingLeft);
-	    } else if (keys.right.isDown) {
+	    } else if (keys.right.isDown && !this.jumping) {
 	        sprite.animations.play(states.runningRight);
-	    } else if (keys.left.isDown) {
+	    } else if (keys.left.isDown && !this.jumping) {
 	        sprite.animations.play(states.runningLeft);
 	    } else {
 	        sprite.animations.play(this.facingRight ? states.standingRight : states.standingLeft);
@@ -1018,6 +1019,7 @@
 	'use strict';
 
 	var Phaser = __webpack_require__(1);
+	var MegaMan = __webpack_require__(5);
 
 	var tileKeys = {
 	    spike: 0,
@@ -1034,11 +1036,11 @@
 	    bgSolidTop: 12
 	};
 
-	var mapTmpl = [[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
+	var mapTmpl = [[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 9, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 	var mapTmplSize = {
 	    width: 25,
-	    height: 15
+	    height: 25
 	};
 
 	var mapIndexToTile = {
@@ -1054,11 +1056,13 @@
 	function Map() {
 	    this.done = false;
 	    this.map = null;
+	    this.keys = {};
 	    this.worldSize = {
 	        width: 25,
-	        height: 100
+	        height: 300
 	    };
 	    this.stage = [];
+	    this.player = null;
 	    this.init();
 	}
 
@@ -1066,7 +1070,7 @@
 	    this.stage = [];
 
 	    for (var y = 0; y < this.worldSize.height; y++) {
-	        var index = y > 0 ? parseInt(Math.random() * mapTmplSize.height - 1, 10) + 1 : 0;
+	        var index = y > 15 ? y > 20 ? parseInt(Math.random() * mapTmplSize.height - 1, 10) + 1 : 1 : 0;
 	        var stageRow = mapTmpl[index].map(function (cell) {
 	            return mapIndexToTile[cell][parseInt(Math.random() * mapIndexToTile[cell].length, 10)];
 	        });
@@ -1077,6 +1081,7 @@
 
 	Map.prototype.preload = function () {
 	    this.load.spritesheet('mm3-wily-02', 'asset/img/mm3-wily-02.png', 32, 32);
+	    this.load.atlasJSONHash('mm', 'asset/img/megaman.gif', '/asset/sprites/megaman.json');
 	};
 
 	Map.prototype.create = function () {
@@ -1092,14 +1097,32 @@
 	            map.putTile(cell, x, y, layer);
 	        });
 	    });
+
+	    this.keys['jump'] = this.input.keyboard.addKey(Phaser.Keyboard.A);
+	    this.keys['up'] = this.input.keyboard.addKey(Phaser.Keyboard.UP);
+	    this.keys['down'] = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+	    this.keys['left'] = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+	    this.keys['right'] = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
+
+	    this.player = new MegaMan(this, this.world.centerX, -32, 'mm', { scale: { x: 2, y: 2 } });
+	    this.player.jumping = true;
+	    this.camera.follow(this.player.sprite);
 	};
 
 	Map.prototype.update = function () {
-	    if (this.done) {
-	        // this.state.start('Placeholder');
+	    if (this.done) {}
+	    // this.state.start('Placeholder');
+
+	    //this.camera.y += 5;
+	    this.player.update(this, this.keys);
+
+	    if (this.keys['left'].isDown) {
+	        this.player.sprite.x -= 3;
+	    } else if (this.keys['right'].isDown) {
+	        this.player.sprite.x += 3;
 	    }
 
-	    this.camera.y += 5;
+	    this.player.sprite.y += 5;
 	};
 
 	module.exports = Map;
