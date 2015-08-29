@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f86c8f35bf654aad699c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4faf3a2dd01fbf9bd3bf"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -897,13 +897,14 @@
 
 	Falling.prototype.create = function () {
 	    //this.add.audio('bgMusic').play();
+	    this.player = mm.instance(this, 250, 250, 'mm');
 
 	    this.keys['up'] = this.input.keyboard.addKey(Phaser.Keyboard.UP);
 	    this.keys['down'] = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
 	    this.keys['left'] = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
 	    this.keys['right'] = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 
-	    this.player = mm.instance(this, 250, 250, 'mm');
+	    window.p = this.keys['right'];
 	};
 
 	Falling.prototype.update = function () {
@@ -930,7 +931,16 @@
 	    standingRightBlink: 'standingRightBlink',
 	    standingRight: 'standingRight',
 
-	    jumpingRight: 'jumpingRight'
+	    jumpingRight: 'jumpingRight',
+
+	    runningLeft0: 'runningLeft0',
+	    runningLeft1: 'runningLeft1',
+	    runningLeft2: 'runningLeft2',
+
+	    standingLeftBlink: 'standingLeftBlink',
+	    standingLeft: 'standingLeft',
+
+	    jumpingLeft: 'jumpingLeft'
 	};
 
 	module.exports = {
@@ -957,6 +967,21 @@
 	            frames: [frameKeys.jumpingRight],
 	            rate: 1,
 	            loop: true
+	        },
+	        standingLeft: {
+	            frames: [frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeft, frameKeys.standingLeftBlink],
+	            rate: 16,
+	            loop: true
+	        },
+	        runningLeft: {
+	            frames: [frameKeys.runningLeft0, frameKeys.runningLeft1, frameKeys.runningLeft2],
+	            rate: 10,
+	            loop: true
+	        },
+	        jumpingLeft: {
+	            frames: [frameKeys.jumpingLeft],
+	            rate: 100,
+	            loop: false
 	        }
 	    }
 	};
@@ -984,6 +1009,10 @@
 	    player.animations.add(states.runningRight, anim.runningRight.frames, anim.runningRight.rate, anim.runningRight.loop, false);
 	    player.animations.add(states.jumpingRight, anim.jumpingRight.frames, anim.jumpingRight.rate, anim.jumpingRight.loop, false);
 
+	    player.animations.add(states.standingLeft, anim.standingLeft.frames, anim.standingLeft.rate, anim.standingLeft.loop, false);
+	    player.animations.add(states.runningLeft, anim.runningLeft.frames, anim.runningLeft.rate, anim.runningLeft.loop, false);
+	    player.animations.add(states.jumpingLeft, anim.jumpingLeft.frames, anim.jumpingLeft.rate, anim.jumpingLeft.loop, false);
+
 	    player.scale.x = 5.0;
 	    player.scale.y = 5.0;
 
@@ -996,15 +1025,21 @@
 
 	function _update(game) {
 	    if (game.keys.up.isDown) {
-	        if (facingRight) {
-	            player.animations.play(states.jumpingRight);
-	        } else {
-	            player.animations.play(this.states.jumpingLeft);
-	        }
-	    } else if (game.keys.up.isUp && game.keys.right.isUp) {
-	        player.animations.play(states.standingRight);
+	        player.animations.play(facingRight ? states.jumpingRight : states.jumpingLeft);
 	    } else if (game.keys.right.isDown) {
 	        player.animations.play(states.runningRight);
+	    } else if (game.keys.left.isDown) {
+	        player.animations.play(states.runningLeft);
+	    } else {
+	        player.animations.play(facingRight ? states.standingRight : states.standingLeft);
+	    }
+
+	    if (game.keys.right.isDown && !facingRight) {
+	        facingRight = true;
+	    }
+
+	    if (game.keys.left.isDown && facingRight) {
+	        facingRight = false;
 	    }
 	}
 

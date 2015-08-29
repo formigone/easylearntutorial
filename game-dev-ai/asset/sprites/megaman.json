@@ -60,6 +60,57 @@
       "rotated": false,
       "trimmed": false
     },
+
+    "standingLeft": {
+      "frame": {
+        "x": 552,
+        "y": 8,
+        "w": 23,
+        "h": 26
+      },
+      "rotated": false,
+      "trimmed": false
+    },
+    "standingLeftBlink": {
+      "frame": {
+        "x": 522,
+        "y": 8,
+        "w": 23,
+        "h": 26
+      },
+      "rotated": false,
+      "trimmed": false
+    },
+    "runningLeft0": {
+      "frame": {
+        "x": 464,
+        "y": 10,
+        "w": 26,
+        "h": 24
+      },
+      "rotated": false,
+      "trimmed": false
+    },
+    "runningLeft1": {
+      "frame": {
+        "x": 442,
+        "y": 8,
+        "w": 18,
+        "h": 26
+      },
+      "rotated": false,
+      "trimmed": false
+    },
+    "runningLeft2": {
+      "frame": {
+        "x": 416,
+        "y": 10,
+        "w": 23,
+        "h": 24
+      },
+      "rotated": false,
+      "trimmed": false
+    },
     "jumpingLeft": {
       "frame": {
         "x": 385,
@@ -70,56 +121,7 @@
       "rotated": false,
       "trimmed": false
     },
-    "runningLeft0": {
-      "frame": {
-        "x": 464,
-        "y": 0,
-        "w": 0,
-        "h": 0
-      },
-      "rotated": false,
-      "trimmed": false
-    },
-    "runningLeft1": {
-      "frame": {
-        "x": 442,
-        "y": 0,
-        "w": 0,
-        "h": 0
-      },
-      "rotated": false,
-      "trimmed": false
-    },
-    "runningLeft2": {
-      "frame": {
-        "x": 416,
-        "y": 0,
-        "w": 0,
-        "h": 0
-      },
-      "rotated": false,
-      "trimmed": false
-    },
-    "standingLeft": {
-      "frame": {
-        "x": 522,
-        "y": 0,
-        "w": 0,
-        "h": 0
-      },
-      "rotated": false,
-      "trimmed": false
-    },
-    "standingLeftBlink": {
-      "frame": {
-        "x": 552,
-        "y": 0,
-        "w": 0,
-        "h": 0
-      },
-      "rotated": false,
-      "trimmed": false
-    },
+
     "jumpingLeftShoot": {
       "frame": {
         "x": 489,

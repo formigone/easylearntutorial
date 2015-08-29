@@ -6,7 +6,16 @@ const frameKeys = {
     standingRightBlink: 'standingRightBlink',
     standingRight: 'standingRight',
 
-    jumpingRight: 'jumpingRight'
+    jumpingRight: 'jumpingRight',
+
+    runningLeft0: 'runningLeft0',
+    runningLeft1: 'runningLeft1',
+    runningLeft2: 'runningLeft2',
+
+    standingLeftBlink: 'standingLeftBlink',
+    standingLeft: 'standingLeft',
+
+    jumpingLeft: 'jumpingLeft'
 };
 
 module.exports = {
@@ -89,5 +98,75 @@ module.exports = {
             rate: 1,
             loop: true
         },
+        standingLeft: {
+            frames: [
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeft,
+                frameKeys.standingLeftBlink
+            ],
+            rate: 16,
+            loop: true
+        },
+        runningLeft: {
+            frames: [
+                frameKeys.runningLeft0,
+                frameKeys.runningLeft1,
+                frameKeys.runningLeft2
+            ],
+            rate: 10,
+            loop: true
+        },
+        jumpingLeft: {
+            frames: [
+                frameKeys.jumpingLeft
+            ],
+            rate: 100,
+            loop: false
+        }
     }
 };

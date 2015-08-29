@@ -19,13 +19,14 @@ Falling.prototype.preload = function () {
 
 Falling.prototype.create = function () {
     //this.add.audio('bgMusic').play();
+    this.player = mm.instance(this, 250, 250, 'mm');
 
     this.keys['up'] = this.input.keyboard.addKey(Phaser.Keyboard.UP);
     this.keys['down'] = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
     this.keys['left'] = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
     this.keys['right'] = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 
-    this.player = mm.instance(this, 250, 250, 'mm');
+    window.p = this.keys['right'];
 };
 
 Falling.prototype.update = function () {
