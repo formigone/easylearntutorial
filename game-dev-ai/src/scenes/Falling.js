@@ -11,6 +11,7 @@ function Falling() {
 
     this.player = null;
     this.npcs = [];
+    this.filters = null;
 }
 
 Falling.prototype.preload = function () {
@@ -35,7 +36,9 @@ Falling.prototype.create = function () {
     //this.player.sprite.fixedToCamera = true;
 
     for (let i = 0; i < 10; i++) {
-        this.npcs.push(new MegaMan(this, this.rnd.between(-200, 1000), this.rnd.between(-500, 500), 'mm', {scale: {x: 2.25, y: 2.25}}));
+        let npc = new MegaMan(this, this.rnd.between(-200, 1000), this.rnd.between(-500, 500), 'mm', {scale: {x: 2.25, y: 2.25}});
+        npc.speed = Math.random() * 5 + 3 | 0;
+        this.npcs.push(npc);
     }
 
     this.keys['jump'] = this.input.keyboard.addKey(Phaser.Keyboard.A);
@@ -61,12 +64,13 @@ Falling.prototype.update = function () {
     }
 
     this.npcs.forEach((npc, index) => {
+        //npc.sprite.tint = Number('0x' + Number(555555 + index * index * index).toString(16));
         if (index < 10) {
             npc.sprite.y += 3;
         } else if (index < 20 ) {
             npc.sprite.y += 4.5;
         } else {
-            npc.sprite.y += 6;
+            npc.sprite.y += npc.speed;
         }
 
         if (npc.sprite.y > 1000) {
