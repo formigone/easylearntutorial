@@ -112,7 +112,7 @@ Map.prototype.init = function(){
 
 Map.prototype.preload = function(){
     this.load.spritesheet('mm3-wily-02', 'asset/img/mm3-wily-02.png', 32, 32);
-    this.load.atlasJSONHash('mm', 'asset/img/megaman.gif', '/asset/sprites/megaman.json');
+    this.load.atlasJSONHash('mm', 'asset/img/megaman.gif', 'asset/sprites/megaman.json');
 };
 
 Map.prototype.create = function () {

@@ -7,6 +7,7 @@ function MegaMan(game, x, y, texture, opt){
     this.anim = animMM.anim;
     this.facingRight = true;
     this.jumping = false;
+    this.standing = true;
 
     this.init(opt);
 }
@@ -44,11 +45,11 @@ MegaMan.prototype.update = function(game, keys){
         left: {}
     };
 
-    if (keys.jump.isDown || this.jumping) {
+    if ((keys.jump.isDown || this.jumping) && !this.standing) {
         sprite.animations.play(this.facingRight ? states.jumpingRight : states.jumpingLeft);
-    } else if (keys.right.isDown && !this.jumping) {
+    } else if (keys.right.isDown && !this.jumping && this.standing) {
         sprite.animations.play(states.runningRight);
-    } else if (keys.left.isDown && !this.jumping) {
+    } else if (keys.left.isDown && !this.jumping && this.standing) {
         sprite.animations.play(states.runningLeft);
     } else {
         sprite.animations.play(this.facingRight ? states.standingRight : states.standingLeft);

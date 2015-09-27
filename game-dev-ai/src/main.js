@@ -18,4 +18,6 @@ window.kickStart = function(){
    }
 };
 
-//game.state.start('Map');
+
+game.state.add('Col', require('./scenes/Col'));
+game.state.start('Col');
