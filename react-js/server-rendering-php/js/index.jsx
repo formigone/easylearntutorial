@@ -17,19 +17,19 @@ const utils = {
 		return path;
 	},
 
-	fetchDetail(username){
-		$.getJSON('/api/users/' + username)
-			.then(res => {
-				this.dispatch(res, username === '' ? 'users' : 'info');
-			});
-	},
-
 	onPopState(){
 		const path = utils.getPath();
 
 		if (path.length > 0 && path !== 'ready') {
 			utils.fetchDetail(path);
 		}
+	},
+
+	fetchDetail(username){
+		$.getJSON('/api/users/' + username)
+			.then(res => {
+				this.dispatch(res, username === '' ? 'users' : 'info');
+			});
 	},
 
 	subs: [],
@@ -45,39 +45,35 @@ const utils = {
 	}
 };
 
-const App = React.createClass({
-	getDefaultProps(){
-		return {
-			users: [],
-			info: null
-		};
-	},
+global.onpopstate = utils.onPopState;
 
+const App = React.createClass({
 	getInitialState(){
 		return {
-			users: this.props.users,
+			users: this.props.users || [],
 			info: this.props.info
 		};
 	},
 
 	componentDidMount(){
 		utils.subscribe(this.onChange);
-		window.onpopstate = utils.onPopState;
+
 		if (this.state.users.length === 0) {
 			utils.fetchDetail('');
 		}
-		utils.onPopState();
+
+		if (this.state.info === null) {
+			utils.onPopState();
+		}
 	},
 
 	render(){
 		return (
 			<div className="row">
-				<div className="col-sm-9">
 				{this.state.info && (
 					<Detail {...this.state.info}/>
 				)}
-					<List users={this.state.users}/>
-				</div>
+				<List users={this.state.users} active={this.state.info}/>
 			</div>
 		);
 	},
@@ -120,7 +116,8 @@ const UserCell = React.createClass({
 		return {
 			name: '',
 			username: '',
-			company: {}
+			company: {},
+			active: false
 		};
 	},
 
@@ -133,12 +130,12 @@ const UserCell = React.createClass({
 
 	render(){
 		return (
-			<div className="col-lg-6" style={{textAlign:'center'}}>
+			<div className="col-lg-4 cell" style={{backgroundColor: this.props.active ? '#aaeaea' : 'transparent'}}>
               <h2>{this.props.name}</h2>
               <p><strong>{this.props.company.name}</strong></p>
               <p>{this.props.company.catchPhrase}</p>
               <p>
-              	<button className="btn btn-default" onClick={this.navigateToUsername}>View details</button>
+              	<a className="btn btn-default" href={'/users/' + this.props.username} onClick={this.navigateToUsername}>View details</a>
               </p>
             </div>
 		);
@@ -148,17 +145,18 @@ const UserCell = React.createClass({
 const List = React.createClass({
 	getDefaultProps(){
 		return {
-			users: []
+			users: [],
+			active: null
 		};
 	},
 
 	render(){
 		return (
 			<div className="row">
-				{this.props.users.map((user, index) => <UserCell key={index} {...user}/>)}
+				{this.props.users.map((user, index) => <UserCell key={index} {...user} active={this.props.active && user.username === this.props.active.username}/>)}
 			</div>
 		);
 	}
 });
 
-window.App = App;
+global.App = App;

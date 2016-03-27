@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -66,19 +66,19 @@
 
 			return path;
 		},
-		fetchDetail: function fetchDetail(username) {
-			var _this = this;
-
-			$.getJSON('/api/users/' + username).then(function (res) {
-				_this.dispatch(res, username === '' ? 'users' : 'info');
-			});
-		},
 		onPopState: function onPopState() {
 			var path = utils.getPath();
 
 			if (path.length > 0 && path !== 'ready') {
 				utils.fetchDetail(path);
 			}
+		},
+		fetchDetail: function fetchDetail(username) {
+			var _this = this;
+
+			$.getJSON('/api/users/' + username).then(function (res) {
+				_this.dispatch(res, username === '' ? 'users' : 'info');
+			});
 		},
 
 
@@ -94,38 +94,33 @@
 		}
 	};
 
+	global.onpopstate = utils.onPopState;
+
 	var App = React.createClass({
 		displayName: 'App',
-		getDefaultProps: function getDefaultProps() {
-			return {
-				users: [],
-				info: null
-			};
-		},
 		getInitialState: function getInitialState() {
 			return {
-				users: this.props.users,
+				users: this.props.users || [],
 				info: this.props.info
 			};
 		},
 		componentDidMount: function componentDidMount() {
 			utils.subscribe(this.onChange);
-			window.onpopstate = utils.onPopState;
+
 			if (this.state.users.length === 0) {
 				utils.fetchDetail('');
 			}
-			utils.onPopState();
+
+			if (this.state.info === null) {
+				utils.onPopState();
+			}
 		},
 		render: function render() {
 			return React.createElement(
 				'div',
 				{ className: 'row' },
-				React.createElement(
-					'div',
-					{ className: 'col-sm-9' },
-					this.state.info && React.createElement(Detail, this.state.info),
-					React.createElement(List, { users: this.state.users })
-				)
+				this.state.info && React.createElement(Detail, this.state.info),
+				React.createElement(List, { users: this.state.users, active: this.state.info })
 			);
 		},
 		onChange: function onChange(data, dataType) {
@@ -191,7 +186,8 @@
 			return {
 				name: '',
 				username: '',
-				company: {}
+				company: {},
+				active: false
 			};
 		},
 		navigateToUsername: function navigateToUsername(e) {
@@ -203,7 +199,7 @@
 		render: function render() {
 			return React.createElement(
 				'div',
-				{ className: 'col-lg-6', style: { textAlign: 'center' } },
+				{ className: 'col-lg-4 cell', style: { backgroundColor: this.props.active ? '#aaeaea' : 'transparent' } },
 				React.createElement(
 					'h2',
 					null,
@@ -227,8 +223,8 @@
 					'p',
 					null,
 					React.createElement(
-						'button',
-						{ className: 'btn btn-default', onClick: this.navigateToUsername },
+						'a',
+						{ className: 'btn btn-default', href: '/users/' + this.props.username, onClick: this.navigateToUsername },
 						'View details'
 					)
 				)
@@ -240,21 +236,25 @@
 		displayName: 'List',
 		getDefaultProps: function getDefaultProps() {
 			return {
-				users: []
+				users: [],
+				active: null
 			};
 		},
 		render: function render() {
+			var _this2 = this;
+
 			return React.createElement(
 				'div',
 				{ className: 'row' },
 				this.props.users.map(function (user, index) {
-					return React.createElement(UserCell, _extends({ key: index }, user));
+					return React.createElement(UserCell, _extends({ key: index }, user, { active: _this2.props.active && user.username === _this2.props.active.username }));
 				})
 			);
 		}
 	});
 
-	window.App = App;
+	global.App = App;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 1 */

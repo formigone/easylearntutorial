@@ -4,26 +4,38 @@ require_once __DIR__.'/bootstrap.php';
 
 $parts = api\getPath();
 
-$action = 'list';
 $users = api\getData();
 $detail = null;
 
 if ($parts[0] === 'users') {
-	$action = 'detail';
 	$detail = api\getData($parts[1]);
-} else if ($parts[0] === 'api') {
-	if (count($parts) === 2) {
-		$data = api\getData();
-	} else if (count($parts) === 3) {
-		$data = api\getData($parts[2]);
-	}
-	header('Content-type: application/json');
-	echo json_encode($data);
+}
+
+$v8 = new V8Js();
+$props = [
+	'users' => $users, 
+	'info' => $detail
+];
+$propsJson = json_encode($props);
+
+$react = [
+       file_get_contents(__DIR__.'/node_modules/react/dist/react.min.js'),
+       file_get_contents(__DIR__.'/node_modules/react-dom/dist/react-dom.min.js'),
+       file_get_contents(__DIR__.'/bundle.js'),
+       'React.renderToString(React.createElement(App, ' . $propsJson . '))'
+];
+
+try {
+	$reactStr = $v8->executeString(implode(PHP_EOL, $react));
+} catch (Exception $e) {
+	echo '<h1>', $e->getMessage(), '</h1>';
+	echo '<pre>', $e->getTraceAsString(), '</pre>';
 	exit;
 }
 
-?>
-<!DOCTYPE html>
+//$reactStr = null;
+//$propsJson = '{}';
+?><!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -33,10 +45,20 @@ if ($parts[0] === 'users') {
     <title>Easy Learn Tutorial - Isomorphic React.js with PHP</title>
 
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .cell {
+    	text-align: center;
+    	border-bottom: 1px dashed #aaa;
+    }
+    .cell:nth-child(3n + 2) {
+    	border-left: 1px dashed #aaa;
+    	border-right: 1px dashed #aaa;
+    }
+    </style>
   </head>
 
   <body>
-    <div class="container" style="margin-top: 20px;" id="app"></div>
+    <div class="container" style="margin-top: 20px;" id="app"><?= $reactStr; ?></div>
 
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/react/dist/react.js"></script>
@@ -45,9 +67,7 @@ if ($parts[0] === 'users') {
 
     <script>
     ReactDOM.render(
-    	<?php /* React.createElement(App, <?= json_encode(['users' => $users, 'info' => $detail]); ?>), */ ?>
-    	React.createElement(App, {}), 
-    	document.getElementById('app')
+    	React.createElement(App, <?= $propsJson; ?>), document.getElementById('app')
 	);
     </script>
   </body>

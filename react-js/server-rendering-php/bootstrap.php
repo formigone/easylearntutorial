@@ -221,3 +221,17 @@ function getData($username = '')
 
    return [];
 }
+
+$parts = getPath();
+
+if ($parts[0] === 'api') {
+   if (count($parts) === 2) {
+      $data = getData();
+   } else if (count($parts) === 3) {
+      $data = getData($parts[2]);
+   }
+   
+   header('Content-type: application/json');
+   echo json_encode($data);
+   exit;
+}
