@@ -1,0 +1,21 @@
+{
+   "name": "easylearntutorial-react-php",
+   "version": "0.0.1",
+   "scripts": {
+      "watch": "./node_modules/.bin/webpack --watch",
+      "start": "php5 -S localhost:8080"
+   },
+   "devDependencies": {
+      "babel-core": "^6.4.5",
+      "babel-loader": "^6.2.2",
+      "babel-preset-react": "^6.1.18",
+      "babel-preset-es2015": "^6.1.18",
+      "webpack": "^1.12.13"
+   }
+   ,
+   "dependencies": {
+      "jquery": "~2.1.4",
+      "react": "^0.14.x",
+      "react-dom": "^0.14.7"
+   }
+}
