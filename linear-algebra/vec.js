@@ -15,8 +15,8 @@ Vec.prototype.sameSize = function(vec) {
 };
 
 Vec.prototype.toFixed = function(size) {
-	this.comps = this.comps.map(comp => comp.toFixed(size));
-	return this;
+	const comps = this.comps.map(comp => comp.toFixed(size));
+	return new Vec(comps);
 };
 
 Vec.prototype.eq = function(vec) {
