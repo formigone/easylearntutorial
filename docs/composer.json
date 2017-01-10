@@ -1,0 +1,12 @@
+{
+    "name": "formigone/eltcom",
+    "authors": [
+        {
+            "name": "Rodrigo Silveria",
+            "email": "rodrixar@gmail.com"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.0"
+    }
+}
