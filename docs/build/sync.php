@@ -7,6 +7,10 @@
 // -----------------
 
 
+if (php_sapi_name() !== 'cli') {
+    exit();
+}
+
 require_once __DIR__ . '/vendor/autoload.php';
 $key = file_get_contents(__DIR__ . '/../../../.chaves/gdc');
 $channelId = file_get_contents(__DIR__ . '/../../../.chaves/chanId');
