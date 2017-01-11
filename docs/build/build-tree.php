@@ -6,6 +6,10 @@
 // -----------------
 
 
+if (php_sapi_name() !== 'cli') {
+    exit();
+}
+
 const SITEMAP_PATH = 'sitemap.json';
 const DEFAULTS_PATH = 'defs';
 
