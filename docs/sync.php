@@ -1,5 +1,12 @@
 <?php
 
+
+// -----------------
+// Run this file to crawl the channel and generate the `out` file. Then run `build-tree.php` to parse `out`
+// and create the site tree merged with defaults.
+// -----------------
+
+
 require_once __DIR__ . '/vendor/autoload.php';
 $key = file_get_contents(__DIR__ . '/../../../.chaves/gdc');
 $channelId = file_get_contents(__DIR__ . '/../../../.chaves/chanId');
