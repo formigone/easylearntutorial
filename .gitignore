@@ -1,5 +1,7 @@
 out
 sitemap.json
+_site
+.sass-cache/
 vendor
 node_modules/
 /**/node_modules/
