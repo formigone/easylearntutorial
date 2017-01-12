@@ -8,5 +8,10 @@
     ],
     "require": {
         "google/apiclient": "^2.0"
+    },
+    "autoload": {
+        "files": [
+            "utils.php"
+        ]
     }
 }
