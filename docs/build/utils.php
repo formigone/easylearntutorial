@@ -336,7 +336,7 @@ title: ' . str_replace(':', ' -', $row['title']) . '
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>' . $row['title'] . '</h1>
+                <h1>' . $item['title'] . '</h1>
                 <h4>Published on ' . date('l, F j, Y', strtotime($item['publishedAt'])) . '</h4>
                 <h3>Description</h3>
                 <p>' . $item['description'] . '</p>
