@@ -15,7 +15,7 @@ title: GWT Architecture & Best Practices
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Architecture & Best Practices</h1>
+                <h1>Voices That Matter: GWT - Architecture Best Practices</h1>
                 <h4>Published on Thursday, December 27, 2007</h4>
                 <h3>Description</h3>
                 <p>Video of "Architecture Best Practices with Joel Webber" from Pearson Education's Voices That Matter: Google Web Toolkit conference.</p>

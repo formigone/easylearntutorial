@@ -15,7 +15,7 @@ title: React.js Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>React.js Tutorials</h1>
+                <h1>Isomorphic React.js with PHP server-side rendering</h1>
                 <h4>Published on Thursday, March 31, 2016</h4>
                 <h3>Description</h3>
                 <p>Learn how to develop isomorphic React.js applications using a PHP backend. This tutorial is especially handy for those developing React.js apps wanting to do server-side rendering, but without using Node.js or Express.js.

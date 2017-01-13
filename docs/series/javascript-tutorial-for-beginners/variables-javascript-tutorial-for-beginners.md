@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Variables - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>JavaScript variables are named entities that reference values in your code. You can have the following data types natively in Javascript: Strings, Numbers, Booleans, Undefined, and Null. Once you have a variable declared, you can assign it a value by using mathematical notation, such as x = 23;

@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Agile & Pivotal Tracker - Nintendo Game Development</h1>
                 <h4>Published on Thursday, September 26, 2013</h4>
                 <h3>Description</h3>
                 <p>Writing your own Nintendo video games in JavaScript is not a trivial exercise. If you've ever done any 2D game development before, you will know that being organized is key, and having a clear list of goals and objectives is indispensable (if you want to succeed, of course). Any good software engineer or programmer knows that following any methodology is good, but following a good methodology is even better.

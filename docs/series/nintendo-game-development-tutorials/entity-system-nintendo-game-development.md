@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Entity System - Nintendo Game Development</h1>
                 <h4>Published on Friday, September 27, 2013</h4>
                 <h3>Description</h3>
                 <p>Hello, Nintendo Web Framework game developers! In this 2D JavaScript game tutorial, I'll explain the concept of an entity system. In modern object-oriented game development, the idea behind the entity system is that an entity is a very simple JavaScript class that represent things in the game world that can act or be interacted with. For example, in Nintendo's Super Mario Brothers, Mario, Luigi, a mushroom, and Bowser are all examples of entities. All the entity represents is something, somewhere in the game. Some people have the base entity class know how to do a few things on its own such as render itself or move, but normally, an entity class simply represents a location within the game space, and allows you to add and remove components to/from it. An entity is also able to update itself, which normally means it delegates control to all of its components, in act in its behalf in some way or another.

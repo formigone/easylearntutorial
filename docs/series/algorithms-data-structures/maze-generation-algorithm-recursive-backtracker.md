@@ -15,7 +15,7 @@ title: Algorithms & Data Structures
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Algorithms & Data Structures</h1>
+                <h1>Maze Generation Algorithm - Recursive Backtracker</h1>
                 <h4>Published on Sunday, July 13, 2014</h4>
                 <h3>Description</h3>
                 <p>How to generate random mazes using the Recursive Backtracker algorithm. This tutorial describes the simplest maze generator algorithm using a stack and depth-first searching. I show an implementation using JavaScript.

@@ -15,7 +15,7 @@ title: Machine Learning Tutorials - Computer Vision
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Machine Learning Tutorials - Computer Vision</h1>
+                <h1>Image Processing Tutorials #2 HTML5 Canvas & Context 2D Rendering Workflow</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>How to use the 2D HTML5 Canvas tag to draw an image into it, then extract the pixel data in the form of a a color buffer. Also learn how to use image pixels to get descriptors that describe an image very efficiently, so that you can compare different images to find similarities and differences between the two.

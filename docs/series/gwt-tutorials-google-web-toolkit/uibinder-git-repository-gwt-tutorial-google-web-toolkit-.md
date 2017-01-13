@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>UiBinder Git Repository - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Saturday, December 8, 2012</h4>
                 <h3>Description</h3>
                 <p>If you want any of the source code for the demos or programming examples shown in this GWT tutorial series, then you'll need to checkout my GitHub repository. If you're not familiar with GitHub and how to clone repos and so on, that would be a good starting point for you. Also, check my our tutorial on how to use Git and other source code management systems. Git is awesome. If you're a big SVN fan, you should be ashamed of yourself =)

@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Parsing Cookie Values - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Thursday, August 1, 2013</h4>
                 <h3>Description</h3>
                 <p>How do you read JavaScript cookies? The way to get the value of an existing cookie in JavaScript is really easy. Simply read the cookie property of the global document object. Since all cookie key-value pairs are contained in the same string, you will need to parse the string manually in order to get a specific cookie value.

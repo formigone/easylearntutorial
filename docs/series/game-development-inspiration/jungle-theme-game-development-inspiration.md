@@ -15,7 +15,7 @@ title: Game Development Inspiration
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Game Development Inspiration</h1>
+                <h1>Jungle Theme - Game Development Inspiration</h1>
                 <h4>Published on Wednesday, July 9, 2014</h4>
                 <h3>Description</h3>
                 <p>Various screenshots of 2D and 3D games with a jungle theme. The purpose of this video is to provide inspirational video game design visuals and ideas for projects that might aim for the jungle look and feel.

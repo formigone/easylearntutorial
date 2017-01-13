@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP Tutorial 6.2: Instant Search Results</h1>
                 <h4>Published on Saturday, November 17, 2012</h4>
                 <h3>Description</h3>
                 <p>This tutorial will teach you how to implement instant search in your website using PHP, MySQL, and Ajax (using jQuery's abstraction). We'll also use Mustache.js for a template engine. In this second part, we'll go over the back-end PHP script required to make things work on the server side. We start out by defining a database abstraction class to simplify our data access and the serialization of the data that we'll be sending back to the client. Then we test the abstracted class, and explain why this is a useful tool to have.

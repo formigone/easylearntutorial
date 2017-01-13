@@ -15,7 +15,7 @@ title: GWT & Android Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT & Android Game Development Tutorials</h1>
+                <h1>Canvas 2D Rendering Context: GWT & Android Gaming Tutorial 3</h1>
                 <h4>Published on Sunday, July 28, 2013</h4>
                 <h3>Description</h3>
                 <p>Graphics rendering is one of the most basic parts of game development. In HTML5, we use the canvas element.From the canvas element, we can access the pixel data and the rendering API through the CanvasRenderingContext2D object. In GWT, we get a reference to the 2D rendering context through a factory method on the canvas object, which we obtain through canvas.createIfSupported(), canvas.getContext2D(). The default background color of a canvas is transparent, and the default width and height of the canvas element is 300x150 pixels.

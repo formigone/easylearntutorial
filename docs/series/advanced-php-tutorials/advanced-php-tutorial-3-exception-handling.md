@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP Tutorial 3: Exception Handling</h1>
                 <h4>Published on Wednesday, November 28, 2012</h4>
                 <h3>Description</h3>
                 <p>This tutorial is part 1/2 about exception handling in PHP. The video will teach you how to throw, try, and catch exceptions, as well as how to create your own custom exception types. The reason you'd want a custom exception type is so you can catch it individually, and attempt to handle it accordingly. The reason for throwing exceptions is to prevent the program to continue to execute if a certain condition is not met. For example, there's no reason to continue execution of a game if the graphics card doesn't support your 3D rendering engine. How can the player use your program (play your game), if he or she can't see anything?!

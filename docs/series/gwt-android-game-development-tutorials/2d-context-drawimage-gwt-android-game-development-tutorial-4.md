@@ -15,7 +15,7 @@ title: GWT & Android Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT & Android Game Development Tutorials</h1>
+                <h1>2D Context DrawImage: GWT & Android Game Development Tutorial 4</h1>
                 <h4>Published on Sunday, July 28, 2013</h4>
                 <h3>Description</h3>
                 <p>In HTML5 you can use the 2D canvas to draw primitives, as well as blits pixels and render images. What's cool about it is that you can also crop and scale source images, so you don't need to load a large bitmap into memory when rendering into a high definition output screen.</p>

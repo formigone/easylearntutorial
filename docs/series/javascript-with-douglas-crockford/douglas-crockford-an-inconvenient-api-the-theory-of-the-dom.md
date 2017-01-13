@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford: An Inconvenient API - The Theory of the DOM</h1>
                 <h4>Published on Friday, August 26, 2011</h4>
                 <h3>Description</h3>
                 <p>In an internal tech talk at Yahoo! in 2006, Douglas Crockford delves into the sordid history of the DOM: that "vast source of incompatibility, pain and misery" that frontend engineers love to hate.</p>

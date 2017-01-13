@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Draw Component - Nintendo Game Development</h1>
                 <h4>Published on Friday, September 27, 2013</h4>
                 <h3>Description</h3>
                 <p>In this Nintendo Web Framework game development tutorial, we'll look at the draw component. In Rokko.js, the Draw component class is an abstraction over HTML5 canvas so we can draw to the screen. The execute method of this component takes an entity, a timestamp, and renders it to its CanvasRenderingContext2D. Since every entity has an (x, y) position in game space, as well as a Sprite object that graphically represents it, the draw component extracts this information from the entity, and performs the rendering of the entity object.

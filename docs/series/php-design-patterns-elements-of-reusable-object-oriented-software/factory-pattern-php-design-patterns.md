@@ -15,7 +15,7 @@ title: PHP Design Patterns - Elements of Reusable Object-Oriented Software
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>PHP Design Patterns - Elements of Reusable Object-Oriented Software</h1>
+                <h1>Factory Pattern - PHP Design Patterns</h1>
                 <h4>Published on Tuesday, December 11, 2012</h4>
                 <h3>Description</h3>
                 <p>In class-based programming, the factory method pattern is a creation pattern which uses factory methods to deal with the problem of creating objects without specifying the exact class of object that will be created. This is done by creating objects via calling a factory method - either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes - rather than by calling a constructor. Source: Wikipedia

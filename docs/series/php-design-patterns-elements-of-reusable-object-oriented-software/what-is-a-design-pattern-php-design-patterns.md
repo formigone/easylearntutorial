@@ -15,7 +15,7 @@ title: PHP Design Patterns - Elements of Reusable Object-Oriented Software
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>PHP Design Patterns - Elements of Reusable Object-Oriented Software</h1>
+                <h1>What is a design pattern? PHP Design Patterns</h1>
                 <h4>Published on Tuesday, December 11, 2012</h4>
                 <h3>Description</h3>
                 <p>For those of you who want to learn PHP beyond the basics, then you need to learn all about programming patterns. A design pattern is a solution to common problems that have already been discovered, documented, and is in wide use, and accepted as a common answer to said problem.

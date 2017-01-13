@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>How to Enable JavaScript - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Friday, November 30, 2012</h4>
                 <h3>Description</h3>
                 <p>To enable Javascript in Firefox, Internet Explorer, or Chrome, go to the settings page of the browser you're using, then find the button to disable Javascript or to enable it. Each browser stores this setting in a different location, and this video tutorial shows you where each one hides it.

@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Artificial Intelligence Introduction - JavaScript Tutorial for Beginners (2)</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>Programming a simulation of the artificial intelligence computer HAL 9000 from the movie 2001: A Space odyssey - in JavaScript. I had lots of fun making this brief tutorial series.

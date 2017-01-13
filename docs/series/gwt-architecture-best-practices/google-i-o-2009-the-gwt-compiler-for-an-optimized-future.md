@@ -15,7 +15,7 @@ title: GWT Architecture & Best Practices
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Architecture & Best Practices</h1>
+                <h1>Google I/O 2009 - ..The GWT Compiler for an Optimized Future</h1>
                 <h4>Published on Wednesday, June 3, 2009</h4>
                 <h3>Description</h3>
                 <p>Google I/O 2009 - The Story of your Compile: Reading the Tea Leaves of the GWT Compiler for an Optimized Future 

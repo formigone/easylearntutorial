@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Component-base games - Nintendo Game Development</h1>
                 <h4>Published on Friday, September 27, 2013</h4>
                 <h3>Description</h3>
                 <p>Let's begin developing our game for the Nintendo Wii U console system. Since the Nintendo Web Framework is all about developing in straight HTML5 and JavaScript for a WebKit environment, we'll write the entire game using Google Chrome to test and iterate. Once we have the game complete, and you have an indie game developer or studio license with Nintendo, we'll just need to compile the final code base so it can be sent to Nintendo. From there, the games will be available from the eStore either for free, or at some cost if you would like to make money from Nintendo games you program.

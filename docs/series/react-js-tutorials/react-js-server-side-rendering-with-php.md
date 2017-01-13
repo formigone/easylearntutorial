@@ -15,7 +15,7 @@ title: React.js Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>React.js Tutorials</h1>
+                <h1>React.js Server-side Rendering with PHP</h1>
                 <h4>Published on Wednesday, March 30, 2016</h4>
                 <h3>Description</h3>
                 <p>Learn how to build an isomorphic React.js app by using PHP to render your components server-side. To do this, we'll use V8Js (PHP extension). 

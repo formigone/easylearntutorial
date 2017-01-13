@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford - "The Better Parts" | .concat() 2015</h1>
                 <h4>Published on Wednesday, August 5, 2015</h4>
                 <h3>Description</h3>
                 <p>This talk is about using programming languages more effectively, and using that experience to create and select better programming languages. There are bad practices in software development that are so old and well established that it is difficult to recognize the problems they cause. There will be a review of the new good parts in ES6. JSON will also be mentioned.

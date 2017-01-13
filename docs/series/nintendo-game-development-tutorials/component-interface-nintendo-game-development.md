@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Component Interface - Nintendo Game Development</h1>
                 <h4>Published on Friday, September 27, 2013</h4>
                 <h3>Description</h3>
                 <p>In this JavaScript game development tutorial using the Nintendo Web Framework, we'll look at the component interface. In JavaScript game development, a component is a very simple interface that specifies that every component must be able to execute some common core method. In my game engine, every component will have a function execute(){} which, thanks to the way JavaScript method invocation works, can take whatever arguments it needs. In order to simplify things, every component in Rokko.js will take a single argument, which will be a reference to the entity that owns it. The logic behind this approach is that a component (for the most part) only exists to do something on behalf of the entity. There might be component objects that are an exception to this idea, which is totally fine. For example, the renderer component defines a timestamp parameter, which is needed by the Draw component so it is able to maintain a consistent time step. This timestamp is fed into these components by the main game loop, which is in turn a component.

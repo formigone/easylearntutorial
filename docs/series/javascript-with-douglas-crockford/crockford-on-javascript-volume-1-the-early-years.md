@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Crockford on JavaScript - Volume 1: The Early Years</h1>
                 <h4>Published on Saturday, September 10, 2011</h4>
                 <h3>Description</h3>
                 <p>Douglas Crockford puts the JavaScript programming language in its proper historical context, tracing the language's structure and conventions (and some of its quirks) back to their roots in the early decades of computer science.</p>

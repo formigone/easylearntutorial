@@ -15,7 +15,7 @@ title: Machine Learning Tutorials - Computer Vision
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Machine Learning Tutorials - Computer Vision</h1>
+                <h1>Image Processing Tutorials #4 Drawing images in HTML5 Canvas</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>To draw an image in a HTML5 canvas 2D context, you must first load the image into memory, then blits the pixels into the context object. How to draw the image into the canvas: Create an image object in Javascript (or acquire a reference to an image in your DOM), set up a callback function on the image's onLoad event, then, if you're creating the image in Javascript, set the image's source attribute (src). When the HTTP request returns with the binary image for the requested image, the callback will fire, and in there you can call the drawImage() function on the canvas context object. 

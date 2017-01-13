@@ -15,7 +15,7 @@ title: HTML 5 Tutorial Series
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>HTML 5 Tutorial Series</h1>
+                <h1>HTML5 Canvas Tutorial: Line cap (round, square, butt) #6</h1>
                 <h4>Published on Thursday, November 29, 2012</h4>
                 <h3>Description</h3>
                 <p>Learn how to draw different line caps in HTML 5 canvas context primitives. This tutorial covers the lineCap() API, which takes three possible values, namely round, square, and butt. The difference between the last two is where an intersection stops rendering. If you select square, then a sharp corner will look like it was cut off once, and if you set it to butt, there will be a concave curve between the two lines.

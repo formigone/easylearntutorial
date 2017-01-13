@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>What is Google Web Toolkit - GWT Tutorial</h1>
                 <h4>Published on Thursday, December 6, 2012</h4>
                 <h3>Description</h3>
                 <p>Google Web Toolkit (GWT) is a development toolkit for building and optimizing complex browser-based applications. GWT is used by many products at Google, including Google AdWords and Orkut. It's open source, completely free, and used by thousands of developers around the world. You write your source code in Java (using Eclipse IDE or whatever text editor you prefer), then compile it down into HTML5 JavaScript output, which runs in all browsers: Internet Explorer 6 and up on Windows, Google Chrome, FireFox, Safari, etc.

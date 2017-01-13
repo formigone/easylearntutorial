@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Do While Loop - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>What is a do while loop? In JavaScript, the DO WHILE loop works the exact same way as the WHILE loop, but executes at least one. This is useful when you don't know how many times the loop should run, but the first iteration must run whether or not the conditional part of the loop is true. Performance wise, all three loops discussed so far are the exact same.

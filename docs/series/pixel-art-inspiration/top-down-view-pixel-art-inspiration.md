@@ -15,7 +15,7 @@ title: Pixel Art Inspiration
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Pixel Art Inspiration</h1>
+                <h1>Top Down View - Pixel Art Inspiration</h1>
                 <h4>Published on Saturday, July 5, 2014</h4>
                 <h3>Description</h3>
                 <p>Graphic design & video game development ideas and inspiration. Screenshot of games from Nintendo NES, SNES, Sega Genesis, and others that I don't know. Games featured include:

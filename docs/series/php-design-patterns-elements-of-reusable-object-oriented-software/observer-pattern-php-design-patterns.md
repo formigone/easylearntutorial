@@ -15,7 +15,7 @@ title: PHP Design Patterns - Elements of Reusable Object-Oriented Software
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>PHP Design Patterns - Elements of Reusable Object-Oriented Software</h1>
+                <h1>Observer Pattern - PHP Design Patterns</h1>
                 <h4>Published on Tuesday, December 11, 2012</h4>
                 <h3>Description</h3>
                 <p>PHP observer pattern: The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods. It is mainly used to implement distributed event handling systems. The Observer pattern is also a key part in the familiar model-view-controller (MVC) architectural pattern. See Wikipedia.

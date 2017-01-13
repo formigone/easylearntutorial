@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>console.warn VS console.error - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Wednesday, October 9, 2013</h4>
                 <h3>Description</h3>
                 <p>The main difference between console.warn and console.error is the way they appear in the console. Note that console.error is not the same thing as an error that gets thrown. Execution of your JavaScript will not break because of an error being logged.

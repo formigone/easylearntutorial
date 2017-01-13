@@ -15,7 +15,7 @@ title: PHP Design Patterns - Elements of Reusable Object-Oriented Software
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>PHP Design Patterns - Elements of Reusable Object-Oriented Software</h1>
+                <h1>Command Pattern - PHP Design Patterns</h1>
                 <h4>Published on Tuesday, December 11, 2012</h4>
                 <h3>Description</h3>
                 <p>The command programming pattern solves the problem of coupling a function with a given action. Instead, it allows you to encapsulate a given behavior into an object, which you can then pass to the function that is associated with some action. For example, instead of creating a method (normally an anonymous method) to handle a click event on some user interface object, you can create a command object, then send that as the handler of said click event. Those learning PHP best practices and advanced programming techniques will like the extra benefit of the command pattern, which allows you more flexibility when testing your code, since you can use mock commands to speed up testing of dependent unites, and isolating command invokers and receivers with commands made especially for unit testing.

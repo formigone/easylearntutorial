@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>To-do List App - JavaScript Tutorial for Beginners (4)</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>Most JavaScript MVC frameworks seem to use a to do application as the focus of their introductory tutorial showing off the power of the library. I think coding a program like this by hand is a great exercise for a beginner to get started in a programming language.

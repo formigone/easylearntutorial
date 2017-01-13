@@ -15,7 +15,7 @@ title: AngularJS Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>AngularJS Game Development Tutorials</h1>
+                <h1>AngularJS Game Tutorial 3: Tile Map - Dispatching menu events</h1>
                 <h4>Published on Thursday, October 24, 2013</h4>
                 <h3>Description</h3>
                 <p>In order to make our map editor app more dynamic, we'll replace the hard-coded menu links with a list of actions passed in from the controller. Using Angular's ng-repeat, we're able to achieve the same result as PHP's foreach loop. By programming this way, we can declaratively create a menu widget that can be configured from the outside of the app, or directly in the JavaScript code within the controller. That's the beauty of the MVC architecture, as well as the power of Angular.js.

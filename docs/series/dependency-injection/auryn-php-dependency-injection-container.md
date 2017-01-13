@@ -15,7 +15,7 @@ title: Dependency Injection
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Dependency Injection</h1>
+                <h1>Auryn: PHP Dependency Injection Container</h1>
                 <h4>Published on Sunday, January 5, 2014</h4>
                 <h3>Description</h3>
                 <p>This PHP dependency injection container tutorial shows how to use Auryn dependency injector. Unlike Pimple DI container that we looked at in the last tutorial, Auryn is very robust, as well as highly performant. My very favorite feature is that it can auto-wire the entire dependency tree of a given object that you ask it to make through PHP reflection. If a dependency is specified as an interface or an abstract class, Auryn can be configured to instantiate any specific concrete implementation that you specify.

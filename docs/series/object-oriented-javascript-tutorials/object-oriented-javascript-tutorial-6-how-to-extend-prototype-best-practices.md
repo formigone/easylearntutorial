@@ -15,7 +15,7 @@ title: Object Oriented JavaScript Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Object Oriented JavaScript Tutorials</h1>
+                <h1>Object Oriented JavaScript Tutorial #6 How to Extend Prototype Best Practices</h1>
                 <h4>Published on Saturday, July 27, 2013</h4>
                 <h3>Description</h3>
                 <p>One issue with simply extending the prototype of your constructor functions after it's been defined, is that your code is now all over the place. Instead, we can create an inner constructor inside the original constructor, extends the prototype of that class definition, then return that function into the original class def. Now the prototype is extended, and all the code is encapsulated and looks much neater.

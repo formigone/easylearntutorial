@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford: JavaScript: The Good Parts</h1>
                 <h4>Published on Saturday, August 27, 2011</h4>
                 <h3>Description</h3>
                 <p>In this talk from 2007, Douglas Crockford takes us on a journey through the lens of his own personal experience with JavaScript — a journey from deep skepticism about a flawed, half-baked scripting language in the earliest days to a growing affection for what is now a still-flawed but surprisingly beautiful and powerful language that has "radically changed my way of thinking about programming languages."</p>

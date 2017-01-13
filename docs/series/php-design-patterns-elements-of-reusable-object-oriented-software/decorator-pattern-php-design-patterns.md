@@ -15,7 +15,7 @@ title: PHP Design Patterns - Elements of Reusable Object-Oriented Software
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>PHP Design Patterns - Elements of Reusable Object-Oriented Software</h1>
+                <h1>Decorator Pattern - PHP Design Patterns</h1>
                 <h4>Published on Tuesday, December 11, 2012</h4>
                 <h3>Description</h3>
                 <p>The decorator programming pattern solves the problem of adding behavior to a class, without having to keep extending the class (inheriting). This tutorial is for those who want to learn how to program more efficiently. A decorator is a simple class that uses composition to hold a reference to the class it tries to decorate, then adds a function of its own, which then calls the corresponding (complementing) method of the function it wraps. Doing so allows you to have dynamic types of classes made up of various smaller decorating classes.

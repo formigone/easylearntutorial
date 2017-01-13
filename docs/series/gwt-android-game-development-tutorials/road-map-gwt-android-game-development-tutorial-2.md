@@ -15,7 +15,7 @@ title: GWT & Android Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT & Android Game Development Tutorials</h1>
+                <h1>Road map: GWT & Android Game Development Tutorial 2</h1>
                 <h4>Published on Saturday, July 20, 2013</h4>
                 <h3>Description</h3>
                 <p>Learn 2D game development using Google Web Toolkit with HTML5 concepts and APIs. This video lays out the road map for the rest of the series, which will go as follows:

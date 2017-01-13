@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>Widgets & Application Themes - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Saturday, December 8, 2012</h4>
                 <h3>Description</h3>
                 <p>Google Web Toolkit comes with some pre-defined themes. Each theme file includes hundreds of lines of CSS stylesheets that style each button, input box, panel, and every other HTML widget that appears on a page. You can also define and create your own theme files for your GWT apps.

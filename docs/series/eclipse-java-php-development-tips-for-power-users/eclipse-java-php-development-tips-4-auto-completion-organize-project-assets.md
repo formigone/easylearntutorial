@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips 4: Auto Completion & Organize Project Assets</h1>
                 <h4>Published on Monday, November 19, 2012</h4>
                 <h3>Description</h3>
                 <p>Probably the two most used short cuts in Eclipse that every power user should know. Ctrl + Shift + O (organize) to import the proper packages to your project. Ctrl + Space to trigger auto completion. Auto completion not only completes your spelling of both variable, function, interfaces, or class names, as well as any reserved keyword in whatever language your Eclipse has been set up to handle.

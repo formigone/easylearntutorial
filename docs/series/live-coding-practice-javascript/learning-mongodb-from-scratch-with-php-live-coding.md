@@ -15,7 +15,7 @@ title: Live Coding Practice - JavaScript
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Live Coding Practice: JavaScript</h1>
+                <h1>Learning MongoDB from scratch with PHP - Live Coding</h1>
                 <h4>Published on Friday, November 8, 2013</h4>
                 <h3>Description</h3>
                 <p>MongoDB is a NoSQL database that stores JavaScript objects, PHP associative arrays, and whatever native data types your programming language supports that uses the MongoDB drivers. This live coding video shows my first experience with this awesome datastore. I'll walk you through how to install it on Ubuntu using the command:

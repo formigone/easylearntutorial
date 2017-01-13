@@ -15,7 +15,7 @@ title: Game Development Inspiration
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Game Development Inspiration</h1>
+                <h1>Rain Theme - Game Development Inspiration</h1>
                 <h4>Published on Thursday, July 10, 2014</h4>
                 <h3>Description</h3>
                 <p>Adding rain to the level design of your games give it a feeling of mystery, danger, suspense, and stealth, when combined with darkness, night time elements, and fog. When the rain is in an outside level, it can make the game world seem very large and open. If your raining effect is combined to daylight levels, it can make the game feel more fresh, tropical, and dynamic.

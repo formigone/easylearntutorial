@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford: The JavaScript Programming Language</h1>
                 <h4>Published on Thursday, August 25, 2011</h4>
                 <h3>Description</h3>
                 <p>In this 2007 presentation at Yahoo!, which is meant to be the beginning of a three-course sequence (followed by "Theory of the DOM" and then "Advanced JavaScript"), Douglas Crockford explores not only the language as it is today but also how the language came to be the way it is.

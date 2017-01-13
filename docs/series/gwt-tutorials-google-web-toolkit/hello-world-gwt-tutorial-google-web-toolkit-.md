@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>Hello World - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Saturday, December 8, 2012</h4>
                 <h3>Description</h3>
                 <p>This GWT tutorial for beginners builds a Hello, World web app. We'll use the Eclipse development environment with Google's plugin for it. The tutorial will show you how to set up your app's manifest file, and how to launch a basic application that prints a simple string "hello world" to the page. Although we're not using Google App Engine (GAE), there is nothing stopping you from launching your own project to the cloud - even if all it does is echo a variable out.

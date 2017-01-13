@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips  8: Tasks View</h1>
                 <h4>Published on Saturday, December 29, 2012</h4>
                 <h3>Description</h3>
                 <p>Tasks show code with @TODO annotations so you can comment your PHP code with reminders of things you need to do. Tasks could include a bug to fix, a feature to implement, or anything that is a reminder to the developer that the web application needs something done to it.

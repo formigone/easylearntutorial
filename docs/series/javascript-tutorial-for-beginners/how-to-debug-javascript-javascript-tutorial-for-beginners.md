@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>How to Debug JavaScript - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Friday, November 30, 2012</h4>
                 <h3>Description</h3>
                 <p>Up until a few years ago, programmers had a really hard time debugging dynamic Java Script code because there weren't a whole lot of tools available for the job. Most developers included console.log() statements all over their code, or maybe even some alert() calls if they were desperate enough. Today, modern browsers come pre-loaded with very sophisticated developer tools that make our lives so much easier.

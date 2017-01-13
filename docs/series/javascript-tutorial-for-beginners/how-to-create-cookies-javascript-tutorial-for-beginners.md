@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>How to Create Cookies - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Thursday, August 1, 2013</h4>
                 <h3>Description</h3>
                 <p>How do you set and update JavaScript cookies? The way to create a new cookie in JavaScript is really easy. Simply assign a string to the cookie property of the document object (document.cookie), formated in a key=value fashion.

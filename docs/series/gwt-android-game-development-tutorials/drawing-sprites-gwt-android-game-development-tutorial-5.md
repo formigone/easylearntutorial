@@ -15,7 +15,7 @@ title: GWT & Android Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT & Android Game Development Tutorials</h1>
+                <h1>Drawing Sprites: GWT & Android Game Development Tutorial 5</h1>
                 <h4>Published on Sunday, July 28, 2013</h4>
                 <h3>Description</h3>
                 <p>The setup behind this is pretty simple: I first define a Tile object that keeps track of its own with, height, as well as its x and y coordinates within the world (or within the map). Each tile also has a background image. In order to avoid having a million different images laying around, I put all of the skins to be used for each tile in a single sprite sheet.

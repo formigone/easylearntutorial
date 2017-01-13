@@ -15,7 +15,7 @@ title: Object Oriented JavaScript Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Object Oriented JavaScript Tutorials</h1>
+                <h1>Object Oriented JavaScript Tutorial #1 Class Vs. Prototype</h1>
                 <h4>Published on Saturday, July 27, 2013</h4>
                 <h3>Description</h3>
                 <p>How to create objects in JavaScript without using the keyword *class* that is so commonly used in other object-oriented languages, such as Java or C++. In JavaScript, instead of using classes as a means to provide inheritance, it uses a prototype object, which is nothing more than an object with all the properties that it provides to other objects.

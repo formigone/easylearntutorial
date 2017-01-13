@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>MVP - How to use data Model - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Thursday, July 25, 2013</h4>
                 <h3>Description</h3>
                 <p>In Google Web Toolkit, you can use your models right on the application by simply creating an instance of the model class. Since the model is (should be) in your source path, you can just call new and start working with the model. However, as we'll see shortly, as the application gets any level of complexity, we'll need to manage those models a bit more. In order to do that, we will use a presenter that will encapsulate the behavior associated with that model data. The presenter will hold a reference to the model data at all times, and will display that data to the user by using a view. If the presenter needs to store or persist that data back on the server, it can simply fire an async call, and the data is then sent back to the server, where the model is updated.

@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>While Loop - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>WHILE loop in JavaScript is useful when you know do not know how many times to run the loop. You must provide your own increment instruction, or somehow provide a way for the loop to finish. Otherwise you'll have an infinite loop.

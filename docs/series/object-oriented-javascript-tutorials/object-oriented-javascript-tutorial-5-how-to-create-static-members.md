@@ -15,7 +15,7 @@ title: Object Oriented JavaScript Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Object Oriented JavaScript Tutorials</h1>
+                <h1>Object Oriented JavaScript Tutorial #5 How to create Static Members</h1>
                 <h4>Published on Saturday, July 27, 2013</h4>
                 <h3>Description</h3>
                 <p>In JavaScript, all functions have a special property called the prototype. The prototype is a simple object that contains properties just like any other object. The cool thing is that we can have an object reference the prototype object of yet another object, which would essentially allow us to create inheritance in JavaScript.

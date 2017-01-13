@@ -15,7 +15,7 @@ title: Hidden Easter Eggs
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Hidden Easter Eggs</h1>
+                <h1>Super Mario Brothers - Google Easter Egg</h1>
                 <h4>Published on Wednesday, September 16, 2015</h4>
                 <h3>Description</h3>
                 <p>Do a Google search for "super mario bros" right now, even if you don't like Nintendo or video games in general. Then click the "?" box on the right side of the page. How awesome is that?!

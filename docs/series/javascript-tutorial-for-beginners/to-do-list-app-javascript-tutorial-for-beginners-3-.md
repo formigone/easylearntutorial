@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>To-do List App - JavaScript Tutorial for Beginners (3)</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>If learning JavaScript is in your list of things to do, then this beginner tutorial should point you in the right direction. I think a great way to become an advanced frontend programmer is to write a simple application such as a to-do app, then try to make it better, more efficient, and use as many constructs in the  language as you can.

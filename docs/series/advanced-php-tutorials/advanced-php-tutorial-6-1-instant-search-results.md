@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP Tutorial 6.1: Instant Search Results</h1>
                 <h4>Published on Saturday, November 17, 2012</h4>
                 <h3>Description</h3>
                 <p>This tutorial will teach you how to implement instant search in your website using PHP, MySQL, and Ajax (using jQuery's abstraction). We'll also use Mustache.js for a template engine. The application will have a text box where the user can start typing. As the user types, the app will perform an asynchronous search for names in the backend database, return all matches, and display the results to the user in real time - without the user needing to click enter, stop typing, or anything like that. This is very similar to what Google does with Google Instant Search, their suggestions, and predictions. The technique is very simple, yet very powerful. It adds great value to the user experience, and should be leveraged more in websites and web apps.

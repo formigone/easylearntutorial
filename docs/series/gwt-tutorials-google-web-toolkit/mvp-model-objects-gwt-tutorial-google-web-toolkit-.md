@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>MVP - Model Objects - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Thursday, July 25, 2013</h4>
                 <h3>Description</h3>
                 <p>The model in MVP is nothing more than the business objects you're representing in context of the application. Typically, this is a plain old Java object (POJO), and has little to no logic in and of itself. Any interesting business logic that we may want implemented by the application is pushed somewhere else in the application.

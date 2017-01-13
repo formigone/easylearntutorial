@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Crockford on JavaScript - Episode IV: The Metamorphosis of Ajax</h1>
                 <h4>Published on Thursday, September 22, 2011</h4>
                 <h3>Description</h3>
                 <p>Yahoo!'s JavaScript architect Douglas Crockford continues his lecture series on the JavaScript programming language with an analysis of the Document Object Model (DOM) and an exploration of Ajax.</p>

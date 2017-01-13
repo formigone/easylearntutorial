@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP tutorial 9: Autoload your classes PSR-0</h1>
                 <h4>Published on Tuesday, January 21, 2014</h4>
                 <h3>Description</h3>
                 <p>In PHP the most common way to load a class from a different file is to require_once or include_once. The problem with this approach is that you need to manually add each file. What if a file is not used? You still added it, which takes up time and memory. What if the order of your includes change? More manual work for you...

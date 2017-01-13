@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford: The State and Future of JavaScript</h1>
                 <h4>Published on Sunday, August 28, 2011</h4>
                 <h3>Description</h3>
                 <p>In this talk from YUIConf 2009, Yahoo! JavaScript Architect Douglas Crockford discusses the recent ECMA5 development process and efforts to improve the language in the future.</p>

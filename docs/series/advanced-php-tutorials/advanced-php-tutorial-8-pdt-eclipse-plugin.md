@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP Tutorial 8: PDT Eclipse Plugin</h1>
                 <h4>Published on Sunday, November 18, 2012</h4>
                 <h3>Description</h3>
                 <p>With this quick tip, you'll be able to use your favorite IDE (integrated development environment) - Eclipse, to develop PHP code. Doing so will give you access to syntax highlighting, code completion, documentation, and much more.

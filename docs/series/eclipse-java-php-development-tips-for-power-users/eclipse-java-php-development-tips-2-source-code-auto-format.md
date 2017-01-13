@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips 2: Source Code Auto Format</h1>
                 <h4>Published on Monday, November 19, 2012</h4>
                 <h3>Description</h3>
                 <p>Press the key combination Ctrl + F to format the entire page of source code, or highlight a section of your script, and press Ctrl + F to automatically format just that code block. This works in any language that Eclipse has support for, and in a context that it understands.

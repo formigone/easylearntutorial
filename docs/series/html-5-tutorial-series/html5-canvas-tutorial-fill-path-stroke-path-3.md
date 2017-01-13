@@ -15,7 +15,7 @@ title: HTML 5 Tutorial Series
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>HTML 5 Tutorial Series</h1>
+                <h1>HTML5 Canvas Tutorial: Fill path & stroke path #3</h1>
                 <h4>Published on Thursday, November 29, 2012</h4>
                 <h3>Description</h3>
                 <p>The HTML 5 canvas context offers two ways actually render lines and other primitives to the screen. These include the methods stroke() and fill(). The difference between these two functions is explained in this HTML5 canvas tutorial, as well as the difference between the methods moveTo() and lineTo().

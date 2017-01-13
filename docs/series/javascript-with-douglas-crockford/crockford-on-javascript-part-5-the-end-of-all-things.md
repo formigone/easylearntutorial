@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Crockford on JavaScript - Part 5: The End of All Things</h1>
                 <h4>Published on Thursday, September 22, 2011</h4>
                 <h3>Description</h3>
                 <p>Yahoo!'s JavaScript architect Douglas Crockford concludes his five-part lecture series on the JavaScript programming language with a review of issues related to security and performance in JavaScript.</p>

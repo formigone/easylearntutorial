@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>How to Comment Code - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Friday, November 30, 2012</h4>
                 <h3>Description</h3>
                 <p>What is the best way to document JavaScript code? The first step you should take if you want to learn how to write a program is to make sure you document your Java Script code with meaningful comments. This way other programmers can understand your logic, leave notes about things that need to be fixed or added to a script, etc.. There are two ways to insert comments into the source code. One way only comments out a single line, and the other can be used for multiple line comments.

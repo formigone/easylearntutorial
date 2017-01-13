@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Binary Operators - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>What is a binary operator? In JavaScript, a binary operator is one that works on two operands. For example, the addition operator takes two input values, and returns the sum of them, as in X + Y.

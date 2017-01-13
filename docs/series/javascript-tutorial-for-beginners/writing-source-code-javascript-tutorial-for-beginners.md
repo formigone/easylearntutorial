@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Writing Source Code - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Friday, November 30, 2012</h4>
                 <h3>Description</h3>
                 <p>The way you write cool Javascript programs is by coding all your scripts into a plain text file. The suggested program you use to create your awesome apps is Eclipse, which is the best free IDE for web development, as well as for Java programming, and even Mobile app creation for the Android.

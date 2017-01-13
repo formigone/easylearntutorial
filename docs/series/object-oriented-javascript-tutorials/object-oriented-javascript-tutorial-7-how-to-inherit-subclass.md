@@ -15,7 +15,7 @@ title: Object Oriented JavaScript Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Object Oriented JavaScript Tutorials</h1>
+                <h1>Object Oriented JavaScript Tutorial #7 How to Inherit & Subclass</h1>
                 <h4>Published on Saturday, July 27, 2013</h4>
                 <h3>Description</h3>
                 <p>JavaScript has some interesting object oriented properties. Because of the way that prototypes work, a property from a base class can simply be overridden by declaring a variable in the current execution context with the same name. That way, the property lookup in a given prototype chain context will return a match. One possible downside to this approach is that there is no native way to tell the JavaScript engine to simply call a method or property on the parent class. A simple solution to this problem is to create an attribute called _parent (or something similar), and reference the parent class that way.

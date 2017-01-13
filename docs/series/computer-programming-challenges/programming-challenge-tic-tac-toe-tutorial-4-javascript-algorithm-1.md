@@ -15,7 +15,7 @@ title: Computer Programming Challenges
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Computer Programming Challenges</h1>
+                <h1>Programming Challenge: Tic Tac Toe Tutorial 4: Javascript Algorithm 1</h1>
                 <h4>Published on Tuesday, November 20, 2012</h4>
                 <h3>Description</h3>
                 <p>This tutorial goes over the algorithm to check if a player has won the game of tic tac toe. Due to the nature of the project, I just used a brute force algorithm to check every possibility. I could have used some short cuts, such as not checking a row, column, or diagonal that the last click didn't belong to, but since the game is so, so simple, it didn't hurt to check everything possible.

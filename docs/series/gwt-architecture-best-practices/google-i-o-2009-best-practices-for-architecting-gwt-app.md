@@ -15,7 +15,7 @@ title: GWT Architecture & Best Practices
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Architecture & Best Practices</h1>
+                <h1>Google I/O 2009 - Best Practices for Architecting GWT App</h1>
                 <h4>Published on Monday, June 1, 2009</h4>
                 <h3>Description</h3>
                 <p>Google I/O 2009 - Google Web Toolkit Architecture: Best Practices For Architecting Your GWT App

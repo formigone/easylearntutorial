@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP Tutorial 7: Instant Search with Results Highlighting</h1>
                 <h4>Published on Wednesday, November 21, 2012</h4>
                 <h3>Description</h3>
                 <p>Return results instantly as the user types into the search box, and highlight where the search queries show up in the results matched. This advanced tutorial is a follow up to the simpler instant search tutorial. Be sure to refer to that video as needed. The only addition we're making in this PHP lesson is a little bit of regular expression. If you're not at least familiar with preg_match and preg_replace, I suggest you take at look at those function APIs first, so that the sample code shown here can make more sense.

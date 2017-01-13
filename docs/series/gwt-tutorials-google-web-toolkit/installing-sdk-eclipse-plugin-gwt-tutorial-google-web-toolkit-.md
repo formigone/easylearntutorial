@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>Installing SDK & Eclipse Plugin - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Saturday, December 8, 2012</h4>
                 <h3>Description</h3>
                 <p>Install Google Web Toolkit SDK and GWT Designer as Eclipse plugin. You can just download the SDK (software development kit) without Eclipse or any IDE, then you can use it in any development environment or text editor (such as Sublime Text, Notepad, Vim, IntelliJ, etc). However, especially if you're just beginning with GWT, what I recommend is that use you the latest version of Eclipse (as of this writing, that is Kepler 4.3.1), because then you won't have to worry about a lot of the small details associated with using the GWT compiler and other tools. 

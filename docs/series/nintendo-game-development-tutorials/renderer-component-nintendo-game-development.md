@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Renderer Component - Nintendo Game Development</h1>
                 <h4>Published on Saturday, September 28, 2013</h4>
                 <h3>Description</h3>
                 <p>This Nintendo Web Framework tutorial takes you one step closer to becoming... an awesome and successful indie game developer by teaching you about the renderer component. In Rokko.js game engine, the purpose of the renderer component is to encapsulate all of the visual components found in the game world. This includes entities representing our main hero (ex: Mega Man, Mario, Link or Zelda, etc.), all enemies in a level, the level itself, scrolling backgrounds, and just about anything else that we actually want to render to the TV or the Nintendo Wii U gamepad. Since the order in which things are rendered matters, the renderer component needs to be aware of that, so that it can render a background object, well, behind entities that must be shown in front of them.

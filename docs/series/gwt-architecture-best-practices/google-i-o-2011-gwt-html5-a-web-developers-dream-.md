@@ -15,7 +15,7 @@ title: GWT Architecture & Best Practices
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Architecture & Best Practices</h1>
+                <h1>Google I/O 2011: GWT + HTML5: A web developers dream!</h1>
                 <h4>Published on Thursday, May 12, 2011</h4>
                 <h3>Description</h3>
                 <p>John Labanca

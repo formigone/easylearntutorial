@@ -15,7 +15,7 @@ title: Computer Programming Challenges
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Computer Programming Challenges</h1>
+                <h1>Programming Challenge: Tic Tac Toe Tutorial 5: Javascript Algorithm 2</h1>
                 <h4>Published on Tuesday, November 20, 2012</h4>
                 <h3>Description</h3>
                 <p>This tutorial teaches how to check if the board is full, meaning that the game has ended on a draw, and nobody won. The computer programming challenge series ends with this tutorial, and I hope you have more of such challenges in the near future. I think my next project will be to implement the game with 2D graphics using the canvas API, or possibly 3D graphics using CSS3 transformations.

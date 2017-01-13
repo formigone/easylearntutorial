@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford: pronouncing "JSON" (JavaScript object notation)</h1>
                 <h4>Published on Friday, November 14, 2014</h4>
                 <h3>Description</h3>
                 <p>Douglas Crockford, the creator of what is now one of the most widely used data interchange format - JSON - explains what he thinks about the correct way to pronounce the word. What do you think? How do you pronounce it?

@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Image Component - Nintendo Game Development</h1>
                 <h4>Published on Saturday, September 28, 2013</h4>
                 <h3>Description</h3>
                 <p>Now that our Nintendo Wii U game is able to render entities, let's use HTML5's canvas API and draw actual images to the screen. The image class will abstract the native image element from HTML 1, as well as abstract away the possibility to use a single image file as an atlas. This way we can have a lot of images in the same png file, and only render a cropped out section of it. This technique is supported by the canvas context API, and is very handy because we only need to load one resource from the server. This works especially well when doing animation, which we'll do in the next tutorial.

@@ -15,7 +15,7 @@ title: Dependency Injection
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Dependency Injection</h1>
+                <h1>Dependency Injection VS Service Locator Pattern</h1>
                 <h4>Published on Sunday, January 5, 2014</h4>
                 <h3>Description</h3>
                 <p>What is dependency injection, inversion of control, dependency injection containers, and the service locator design pattern? What do they have in common, what problems do they solve, and what are some of the main differences between them?

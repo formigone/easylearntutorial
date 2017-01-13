@@ -15,7 +15,7 @@ title: GWT & Android Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT & Android Game Development Tutorials</h1>
+                <h1>2D Renderer: GWT & Android Game Development Tutorial 1</h1>
                 <h4>Published on Sunday, November 25, 2012</h4>
                 <h3>Description</h3>
                 <p>Learn how to develop 2D video games using Java. This series will use the Java language, and take advantage of such great tools as Google Web Toolkit (GWT) and the Android SDK, to teach you how to program 2D games to be played through an HTML5 compatible browser, or an Android device (phone or tablet). 

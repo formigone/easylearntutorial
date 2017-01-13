@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP Tutorial 4: Exception Handling & Error Reporting</h1>
                 <h4>Published on Wednesday, November 28, 2012</h4>
                 <h3>Description</h3>
                 <p>Most internal exceptions in PHP are reported through its own internal error reporting system instead of throwing exceptions. The downside to this is that you cannot wrap risky code around a try catch statement. Fortunately, PHP provides the function set_error_handler that allows you to change the behavior an an error condition, namely throwing an exception of type ErrorException, wrapping the real error message, line number, and file name, as well as the error severity. This is very handy because now you can try catch operations such as opening files, attempting to load obects, or call functions that may throw exceptions, as well as when you run out of memory, connection times out, etc.

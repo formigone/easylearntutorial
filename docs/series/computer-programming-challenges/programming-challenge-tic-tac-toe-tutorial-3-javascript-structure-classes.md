@@ -15,7 +15,7 @@ title: Computer Programming Challenges
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Computer Programming Challenges</h1>
+                <h1>Programming Challenge: Tic Tac Toe Tutorial 3: Javascript Structure & Classes</h1>
                 <h4>Published on Saturday, November 17, 2012</h4>
                 <h3>Description</h3>
                 <p>This is the second part of my coding tutorial where I walk through the source code and explain how I programmed my tic tac toe game in 33 minutes. This tutorial covers the Javascript used to provide the logic of the game. We first create a reference to all the DOM objects (type buttons), create a few flag variables to keep track of the game state, then loop through the array of buttons, and register an event listener for each. Inside the event handler that captures a click event for each button, we perform the operations of our main game loop. This involves checking for a win, a draw, or whether the game just continues to play.

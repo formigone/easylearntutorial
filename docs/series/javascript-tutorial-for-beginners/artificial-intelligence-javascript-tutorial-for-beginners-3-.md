@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Artificial Intelligence - JavaScript Tutorial for Beginners (3)</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>The conclusion of this introduction to artificial intelligence in JavaScript. Keep in mind that this is a basic example of AI showing how to simulate logic in a web application. For a more thorough and complete discussion on neural networks, Cybernetics and brain simulation, Probabilistic methods for uncertain reasoning, or any other related topics, this tutorial may not be the best resource.

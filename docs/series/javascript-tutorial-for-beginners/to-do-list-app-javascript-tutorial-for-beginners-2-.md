@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>To-do List App - JavaScript Tutorial for Beginners (2)</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>A good programming challenge for someone wanting to put their coding skills to the test is to try and build a to do list app as fast, and as efficient as they can. This is a simple way to practice one's understanding of a newly learned language, including JavaScript.

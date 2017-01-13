@@ -15,7 +15,7 @@ title: Local Web Development
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Local Web Development</h1>
+                <h1>Local Web Development Tutorial: How to monitor HTTP traffic</h1>
                 <h4>Published on Monday, November 26, 2012</h4>
                 <h3>Description</h3>
                 <p>Monitor all HTTP traffic on your website, web apps, or in just any website. This tutorial will show you how to do this using Google Chrome's Developer Tools, which comes with the browser. Simply press F12 to bring up the developer tools, then click the Network tab. Now you can view all HTTP requests made from your application, as well as the accompanying responses. You can see a preview of the response, along with the actual data for it. Very handy for debugging, as well as inspecting what other people do so you can learn from their techniques (or from their mistakes).

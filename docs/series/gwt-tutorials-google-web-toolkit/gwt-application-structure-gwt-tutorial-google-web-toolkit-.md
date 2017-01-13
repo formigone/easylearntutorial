@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>GWT Application Structure - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Saturday, December 8, 2012</h4>
                 <h3>Description</h3>
                 <p>The structure of a Google Web Toolkit is simple, and pretty easy to learn and master. Everything in GWT revolves around the idea of modules. A module is nothing more than the encapsulation of some data, behavior, and of course, some user interface elements. Basically, a module is a mini-app. You choose how granular to made a module. It can be as simple as a form, or as complex as an entire game. Obviously, you'd probably want to find a happy medium, so you can maximize the code reuse.

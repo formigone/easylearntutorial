@@ -15,7 +15,7 @@ title: Machine Learning Tutorials - Computer Vision
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Machine Learning Tutorials - Computer Vision</h1>
+                <h1>Image Processing Tutorials #5 Loading image into HTML5 2D Context</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>Before you attempt to draw an image into the canvas tag through its driving context object, you'll need to remember the asynchronous nature of the DOM and Javascript. You'll first need to register a callback to only attempt to draw the image data once it has been loaded from the network, then trigger the request to fetch the binary image data. If you forget this point, everything will seem normal, no errors or warnings will fire, but you will see an empty canvas.

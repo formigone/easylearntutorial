@@ -15,7 +15,7 @@ title: Computer Programming Challenges
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Computer Programming Challenges</h1>
+                <h1>Programming Challenge: Tic Tac Toe Tutorial 1: Introduction</h1>
                 <h4>Published on Wednesday, November 14, 2012</h4>
                 <h3>Description</h3>
                 <p>This is the challenge: see how fast you can program a fully functional game of Tic Tac Toe. The game must be playable by two humans, must handle wins and draws, as well as detect and handle illegal moves (marking a square that's already been marked).

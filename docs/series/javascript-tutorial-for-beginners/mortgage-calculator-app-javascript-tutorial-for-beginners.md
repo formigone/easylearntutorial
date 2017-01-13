@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Mortgage Calculator App - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>In this tutorial you will learn how to write a simple mortgage calculator program in JavaScript. This way you can plan your monthly payments and such, and program a web-based application that you can actually use for something later.

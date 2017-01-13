@@ -15,7 +15,7 @@ title: Object Oriented JavaScript Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Object Oriented JavaScript Tutorials</h1>
+                <h1>Object Oriented JavaScript Tutorial #3 How to create Public Members</h1>
                 <h4>Published on Saturday, July 27, 2013</h4>
                 <h3>Description</h3>
                 <p>Since objects in JavaScript are essentially just a hash of properties (even if a property is a string, integer, boolean, an array, a function or even other objects), each of those properties are publicly accessible to the client using the object. While this is not a bad thing, we might want to make it so properties of our objects are private. Private members are covered in the next tutorial. Here I'll show you how to create public variables and public function inside your constructor functions in JavaScript.

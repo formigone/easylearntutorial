@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Cookies - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Thursday, August 1, 2013</h4>
                 <h3>Description</h3>
                 <p>What is a JavaScript cookie? In frontend web development, a cookie is a collection of data that the web browser saves on the user's machine. This data can be used by the JavaScript application, which it can access very fast, since it doesn't need to make a request for the data on the backend server. Cookies are normally used as a cache layer, as well as a way to uniquely identify a user of an application.

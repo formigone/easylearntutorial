@@ -15,7 +15,7 @@ title: HTML 5 Tutorial Series
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>HTML 5 Tutorial Series</h1>
+                <h1>HTML5 Canvas Tutorial: 2D rendering context #1</h1>
                 <h4>Published on Thursday, November 29, 2012</h4>
                 <h3>Description</h3>
                 <p>This HTML 5 tutorial will walk you through how to get access to the drawing context in two different ways. One is by using HTML 5 tags, getting a pointer to it through Javascript's document.getElementById, and the other method is creating a canvas element directly in Javascript. The video also helps you learn how to resize canvas HTML5 style. That means the CSS attributes for width and height do not affect the rendering context's pixel data array dimensions, though it does indeed change the appearance of any and all HTML 5 tags.

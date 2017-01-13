@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>How to Load Code - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Friday, November 30, 2012</h4>
                 <h3>Description</h3>
                 <p>Loading JavasSript code into web programs that you write. One way is to inline the source code inline right on the document using the script HTML tag. The other is to import the app from an external .js file using the src attribute of the tag.

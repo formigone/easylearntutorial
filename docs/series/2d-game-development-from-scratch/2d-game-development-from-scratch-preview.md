@@ -15,7 +15,7 @@ title: 2D Game Development from Scratch
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>2D Game Development from Scratch</h1>
+                <h1>2D Game Development from Scratch - Preview</h1>
                 <h4>Published on Tuesday, August 12, 2014</h4>
                 <h3>Description</h3>
                 <p>Preview of my upcoming tutorial series about game development with JavaScript. The series will cover the theory and fundamentals of game programming, which is pretty language agnostic, although the implementation will be done in JavaScript and other web and HTML5 technologies.

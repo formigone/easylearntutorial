@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>What is JavaScript - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Friday, November 30, 2012</h4>
                 <h3>Description</h3>
                 <p>JavaScript Tutorial for Beginners with Examples: Java-Script is a dynamic programming language that can be used to write websites, web apps, and even HTML5 games. Contrary to what non-programmers might tell you, JavaScript has nothing to do with, and is very different from the Java language. Most browsers today have very powerful JavaScript engines that can execute your code very fast and efficiently. Some of the more used virtual machines include Google's V8, Mozilla's Rhino, SpiderMonkey, and Microsoft's Chakra, which powers Internet Explorer 9.

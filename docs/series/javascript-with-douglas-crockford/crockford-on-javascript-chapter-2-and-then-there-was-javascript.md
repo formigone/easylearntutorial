@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Crockford on JavaScript - Chapter 2: And Then There Was JavaScript</h1>
                 <h4>Published on Tuesday, September 20, 2011</h4>
                 <h3>Description</h3>
                 <p>Yahoo!'s JavaScript architect Douglas Crockford surveys the features of the JavaScript programming language.</p>

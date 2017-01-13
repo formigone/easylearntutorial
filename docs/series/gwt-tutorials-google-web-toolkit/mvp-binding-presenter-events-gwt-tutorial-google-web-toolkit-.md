@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>MVP - Binding Presenter events - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Sunday, July 28, 2013</h4>
                 <h3>Description</h3>
                 <p>This Google Web Toolkit tutorial explains the MVP design pattern, and shows how to connect an arbitrary view to a presenter. Through an interface specified by the presenter class, the view can respond to user events, and delegate the event handling back to the presenter. Please excuse the long wait at the end of the video as my machine had a hard time loading the GWT project on Google Chrome... One way that presenters can communicate with a view is by using an event bus, which is an implementation of the observer design pattern.

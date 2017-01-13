@@ -15,7 +15,7 @@ title: AngularJS Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>AngularJS Game Development Tutorials</h1>
+                <h1>AngularJS Game Development 1: 2D Tile Map Editor</h1>
                 <h4>Published on Saturday, October 19, 2013</h4>
                 <h3>Description</h3>
                 <p>This AngularJS tutorial develops a 2D tile map editor for my custom HTML5 game engine Rokko.js. If you know JavaScript game development, this series is perfect for you, especially if you're into Google's Angular MVC framework.

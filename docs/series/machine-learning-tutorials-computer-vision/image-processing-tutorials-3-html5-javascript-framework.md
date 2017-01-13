@@ -15,7 +15,7 @@ title: Machine Learning Tutorials - Computer Vision
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Machine Learning Tutorials - Computer Vision</h1>
+                <h1>Image Processing Tutorials #3 HTML5 Javascript Framework</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>Encapsulate the canvas API using some basic Javascript object oriented programming to simplify our interaction with it. Remember that a canvas physical width and height is what determines the size of the pixel data buffer. Any sizing you set through CSS has no impact in the Context2DRendering object and its members and fields.

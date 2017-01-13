@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford: Quality</h1>
                 <h4>Published on Friday, August 26, 2011</h4>
                 <h3>Description</h3>
                 <p>In this talk from Yahoo!'s internal Frontend Engineering Summit in 2007, Douglas Crockford discusses the importance of quality in software engineering.

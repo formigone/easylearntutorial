@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>How to add syntax highlighting to Eclipse (PHP, Java, Javascript, or C++)</h1>
                 <h4>Published on Monday, November 19, 2012</h4>
                 <h3>Description</h3>
                 <p>1. Download a theme from http://eclipsecolorthemes.org/ Be sure to download the .EPF (not the XML file)

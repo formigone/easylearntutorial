@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>PHP Command line: how to run PHP from command line in Windows</h1>
                 <h4>Published on Sunday, November 18, 2012</h4>
                 <h3>Description</h3>
                 <p>In this quick PHP tip I show you how to set up Windows to run PHP from the command prompt (DOS - cmd). The key is to add the path to your PHP installation to your system's environment variable (to the path). Once that's done, you just need to run php.exe with the file you'd like to have the interpreter execute.

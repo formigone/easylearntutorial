@@ -15,7 +15,7 @@ title: Local Web Development
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Local Web Development</h1>
+                <h1>How to create a virtual host in Windows (virtual domain) with Apache (WAMP)</h1>
                 <h4>Published on Sunday, November 18, 2012</h4>
                 <h3>Description</h3>
                 <p>This video tutorial teaches you how to create your own virtual hosts in Windows, so you can have your own domain name (for free, of course), when working on your localhost. This is very useful because you might not want to have to type stuff like localhost/my-project-directory just to get to your project directory. Not only is it more typing, but having a virtual host allows you to more closely match your development environment and your production environment (deployment environment). The steps to creating a virtual host are easy, and about the same in Microsoft Windows, as in any other operating system (Apple's Mac OS, Linux, Ubuntu, Debian, etc.). All you need to do is edit your system's host file (no extension, typically), then edit your server's config file. In WAMP, this will be Apache's httpd.config file. You can either edit that file directly to set up your alias, or you can create a separate alias.config file, and have the specific project configurations there.

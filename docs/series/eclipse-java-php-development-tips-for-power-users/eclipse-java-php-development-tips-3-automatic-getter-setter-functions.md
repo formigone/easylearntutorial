@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips 3: Automatic Getter & Setter Functions</h1>
                 <h4>Published on Monday, November 19, 2012</h4>
                 <h3>Description</h3>
                 <p>In object-oriented programming, a getter and a setter are public functions that give you access to private members of a structure. Some people refer to getters and setters as accessors and mutators. In Eclipse, you can use this handy feature to allow the IDE to analyze your code, then ask you which private members (fields) you want it to generate getter and setter functions for. The name of the function will be getMemberName() and setMemberName(type memberName).

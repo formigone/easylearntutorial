@@ -15,7 +15,7 @@ title: HTML 5 Tutorial Series
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>HTML 5 Tutorial Series</h1>
+                <h1>HTML5 Canvas Tutorial #9 Get Image Data</h1>
                 <h4>Published on Monday, December 10, 2012</h4>
                 <h3>Description</h3>
                 <p>--------------------------------

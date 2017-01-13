@@ -15,7 +15,7 @@ title: Game Development Inspiration
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Game Development Inspiration</h1>
+                <h1>Isometric Projection - Game Development Inspiration</h1>
                 <h4>Published on Sunday, July 20, 2014</h4>
                 <h3>Description</h3>
                 <p>In video games, an isometric projections give the illusion that the camera is fixed above the center of the viewport. Other common camera types include side-view and top-down view. In 2D games, an isometric camera is usually used to give a slight 3D effect to the game world, although all the sprites are still just two dimensional as in other camera projections. Also, most 2D isometric games allow for more freedom of movement; instead of just moving up/down or left/right, you an also move up, down, left, right, and in diagonals (up and left at the same time).

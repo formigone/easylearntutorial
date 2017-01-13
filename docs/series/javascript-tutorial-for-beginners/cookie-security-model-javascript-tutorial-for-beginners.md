@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Cookie Security Model - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Thursday, August 1, 2013</h4>
                 <h3>Description</h3>
                 <p>Are JavaScript cookies safe? Because cookies are fully managed by the web browser, and linked to a web domain, any data stored in a cookie cannot be accessed by a web site or application other than the application that created the cookie.

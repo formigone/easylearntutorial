@@ -15,7 +15,7 @@ title: Programming Theory & Fundamentals Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Programming Theory & Fundamentals Tutorials</h1>
+                <h1>Programming Theory & Fundamentals: naming variables</h1>
                 <h4>Published on Wednesday, November 28, 2012</h4>
                 <h3>Description</h3>
                 <p>This tutorial describes some programming tips and best practices for naming your functions and variables in your code. When you write code, you want to avoid using confusing, vague, non-descriptive names for variables and other modules in your source code. Be sure to choose short, easy to understand names, and of course, be sure to spell them correctly. Finally, use measurement unites when appropriate. For example, a variable named angleDeg does a better job than one named just angle, in describing a variable that represents an angle in degrees (as opposed to an angle in radians).

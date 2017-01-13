@@ -15,7 +15,7 @@ title: Local Web Development
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Local Web Development</h1>
+                <h1>How to use Mustache.js Template System</h1>
                 <h4>Published on Monday, November 19, 2012</h4>
                 <h3>Description</h3>
                 <p>Mustache is an awesome template engine that can be used in Javascript, PHP, Ruby, Python, Erlang, Perl, Objective-C, Java, .NET, Android, C++, Go, Lua, ooc, ActionScript, ColdFusion, Scala, Clojure, Fantom, CoffeeScript, D, and for node.js. Wow!

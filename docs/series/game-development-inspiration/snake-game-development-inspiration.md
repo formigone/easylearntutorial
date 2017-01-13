@@ -15,7 +15,7 @@ title: Game Development Inspiration
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Game Development Inspiration</h1>
+                <h1>Snake - Game Development Inspiration</h1>
                 <h4>Published on Saturday, July 5, 2014</h4>
                 <h3>Description</h3>
                 <p>Various screenshots of snake games. I'm not sure this is the official name of this type of game, but you get the idea. The player controls a snake that starts really small, then progressively gets longer as it eats stuff. If you run the snake into a wall or into its own body, it dies.

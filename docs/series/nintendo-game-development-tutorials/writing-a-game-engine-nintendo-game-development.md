@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Writing a Game Engine - Nintendo Game Development</h1>
                 <h4>Published on Thursday, September 26, 2013</h4>
                 <h3>Description</h3>
                 <p>Before writing the actual game, I'll be writing a custom JavaScript game engine from scratch. Why develop a game engine instead of using an existing one like Game Maker, Crafty.js, Quintus, etc.?! Mostly because I want to code everything! And if you're like me, you probably want to learn everything you can about how to write games in HTML5, instead of learning how to use some high level software that makes the game for you.

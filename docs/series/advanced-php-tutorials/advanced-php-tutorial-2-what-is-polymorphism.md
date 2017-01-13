@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP tutorial 2: what is polymorphism</h1>
                 <h4>Published on Tuesday, November 27, 2012</h4>
                 <h3>Description</h3>
                 <p>Polymorphism is a characteristic of object oriented programming that allows your code to be more flexible, easier to maintain, easier to test, and more dynamic.

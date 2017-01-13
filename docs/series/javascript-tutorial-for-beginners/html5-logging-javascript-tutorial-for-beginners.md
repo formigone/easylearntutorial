@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>HTML5 logging - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Wednesday, October 9, 2013</h4>
                 <h3>Description</h3>
                 <p>How to log information to the application UI layer in JavaScript. This way you don't have to look at the browser's console. To log complex data types to the user interface, you'll need to parse your objects, or call the toString class method of the instance you wish to log. Of course, you can also override the toString or toArray, so that it'll print in a user-friendly format every time you log the object. JavaScript makes it easy to build HTML strings, then inject it into the DOM. One common use case for this scenario might be logging a game's frame rate while in development or debugging mode.

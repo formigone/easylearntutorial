@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Google Closure Library - Nintendo Game Development</h1>
                 <h4>Published on Thursday, September 26, 2013</h4>
                 <h3>Description</h3>
                 <p>Before we start writing our 2D game engine in JavaScript for the Nintendo Wii U, I need to explain how to use the closure library. This tutorial shows you how to use Google Closure Library, which makes jQuery, MooTools, Dojo, and other JavaScript libraries and frameworks look like... Q-Basic compared to C++. The first step is to actually download the library from its Google Code source at http://code.google.com/p/closure-library Then make sure you have access to this from your server (from the client). What you need to do is include .../closure/goog/base.js, which will bootstrap the rest of the application.

@@ -15,7 +15,7 @@ title: HTML 5 Tutorial Series
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>HTML 5 Tutorial Series</h1>
+                <h1>HTML5 Canvas Tutorial: Drawing lines #2</h1>
                 <h4>Published on Thursday, November 29, 2012</h4>
                 <h3>Description</h3>
                 <p>This HTML5 canvas tutorial shows an example of, and explains how to draw lines to the context. The APIs used are beginPath(), closePath(), moveTo(), lineTo(), stroke(), and fill(). 

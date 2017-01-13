@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford: Advanced JavaScript</h1>
                 <h4>Published on Friday, August 26, 2011</h4>
                 <h3>Description</h3>
                 <p>In this presentation (the third of a three-part series) Douglas Crockford looks closely at code patterns from which JavaScript programmers can choose in authoring their applications. He compares familiar constructs like the Pseudoclassical Pattern with more unique patterns like the Parasitic Pattern that (he argues) run more "with the grain" of JavaScript.</p>

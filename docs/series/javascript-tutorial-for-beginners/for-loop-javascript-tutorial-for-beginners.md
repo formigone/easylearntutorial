@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>For Loop - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>What is a FOR loop? In JavaScript, a for loop allows you to repeat instructions efficiently. Use this type of loop when you know how many times you're going to be looping. They are useful for iterating arrays. Break out of the loop or continue to jump to increment instruction part of the loop.

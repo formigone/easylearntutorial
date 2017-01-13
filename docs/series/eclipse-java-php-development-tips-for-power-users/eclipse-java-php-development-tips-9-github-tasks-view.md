@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips 9: Github Tasks View</h1>
                 <h4>Published on Saturday, December 29, 2012</h4>
                 <h3>Description</h3>
                 <p>This allows you to synchronize your bugs, issues, feature requests, etc. from GitHub, right into your Eclipse Task list using a remote GitHub task repository/server.

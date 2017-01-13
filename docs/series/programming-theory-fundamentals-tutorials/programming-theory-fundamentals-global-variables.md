@@ -15,7 +15,7 @@ title: Programming Theory & Fundamentals Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Programming Theory & Fundamentals Tutorials</h1>
+                <h1>Programming Theory & Fundamentals: Global variables</h1>
                 <h4>Published on Wednesday, November 28, 2012</h4>
                 <h3>Description</h3>
                 <p>Learn how to make a program the right way by avoiding global variables. Yes, they are easy to code, but you, as serious developer, should understand why this is one of the best programming tips I can share with you. Before writing variables that can be accessible from anywhere in your code, understand what the trade offs are, and be sure you have a good reason to do so, if you absolutely must. Otherwise, just structure your code better, and pass your data around with purpose.

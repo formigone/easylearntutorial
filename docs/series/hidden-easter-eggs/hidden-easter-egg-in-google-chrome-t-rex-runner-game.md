@@ -15,7 +15,7 @@ title: Hidden Easter Eggs
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Hidden Easter Eggs</h1>
+                <h1>Hidden Easter Egg in Google Chrome: T-rex Runner Game</h1>
                 <h4>Published on Friday, September 18, 2015</h4>
                 <h3>Description</h3>
                 <p>There's a hidden easter egg game in Google Chrome, for those of you still considering using Microsoft's Internet Explorer browser. Worse yet, Mozilla FireFox... In Chrome, both desktop and mobile, you can find this T-Rex runner game by losing your internet connection (either by waiting for a bad day to happen, or by disconnecting your computer from the network), then trying to access a website. You will see a screen with the dinosaur, at which point you can just press the spacebar or the enter key (or just tap the screen, if that applies).

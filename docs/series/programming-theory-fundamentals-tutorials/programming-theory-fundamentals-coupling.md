@@ -15,7 +15,7 @@ title: Programming Theory & Fundamentals Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Programming Theory & Fundamentals Tutorials</h1>
+                <h1>Programming Theory & Fundamentals: Coupling</h1>
                 <h4>Published on Wednesday, November 28, 2012</h4>
                 <h3>Description</h3>
                 <p>If you want to know how to make a program that's actually reusable, flexible, and easier to test, the best tip I can give you is this: write loosely coupled code. This is one of the most basic of all programming fundamentals, yet one of the least taught amongst beginner software development tutorials.

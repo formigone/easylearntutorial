@@ -15,7 +15,7 @@ title: Live Coding Practice - JavaScript
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Live Coding Practice: JavaScript</h1>
+                <h1>Learning Angular.js from scratch - Live Coding</h1>
                 <h4>Published on Tuesday, July 30, 2013</h4>
                 <h3>Description</h3>
                 <p>This was my very first coding experience with Angular.js. What I wanted to accomplish in this first session was more or less the following:

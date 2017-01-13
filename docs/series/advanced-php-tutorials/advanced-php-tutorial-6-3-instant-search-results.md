@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP Tutorial 6.3: Instant Search Results</h1>
                 <h4>Published on Sunday, November 18, 2012</h4>
                 <h3>Description</h3>
                 <p>In this final part of this tutorial series, we discuss PHP enumerations, and how to access the post data from the HTTP request, then respond to it accordingly. We also discuss the various ways to use the LIKE operator in MySQL using a wild card symbol to match zero or more characters before the incoming query.

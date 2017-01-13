@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>Designing with UiBinder - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Saturday, December 8, 2012</h4>
                 <h3>Description</h3>
                 <p>The UiBinder feature of Google Web Toolkit, which was introduced in version 2.0, allows you to declare your user interface using XML files similar to the way that this is done in Android apps. You can either declare the UI in Java, or you can create UiBinder classes that use an XML, more HTML-like structure. At compile time, these XML structures get converted to pure Java objects, so the execution is very efficient. But the programming is very powerful as well, since you can separate the code from its presentation.

@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips 1: Reorganize Code Fast</h1>
                 <h4>Published on Monday, November 19, 2012</h4>
                 <h3>Description</h3>
                 <p>Highlight the block of code you want to reorganize (move around), then hold down the ALT key, and move the code up and down your source code using the arrow keys. This is similar to Ctrl + X (cut) follows by Ctrl + P (paste), or a simple copy and paste, but with the benefit that you can see the code moving. Looks pretty code, I must say =)

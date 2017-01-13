@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Douglas Crockford: The JSON Saga</h1>
                 <h4>Published on Sunday, August 28, 2011</h4>
                 <h3>Description</h3>
                 <p>Yahoo! JavaScript architect Douglas Crockford tells the story of how JSON was discovered and how it became a major standard for describing data.</p>

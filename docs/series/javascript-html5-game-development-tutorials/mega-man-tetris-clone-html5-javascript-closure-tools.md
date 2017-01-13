@@ -15,7 +15,7 @@ title: JavaScript HTML5 Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript HTML5 Game Development Tutorials</h1>
+                <h1>Mega Man Tetris Clone - HTML5 & JavaScript Closure Tools</h1>
                 <h4>Published on Saturday, August 31, 2013</h4>
                 <h3>Description</h3>
                 <p>This HTML5 game is a demonstration of Google Closure tools and the latest HTML5 APIs that lend themselves well for game development. If you'd like to learn more about Closure Tools, how to make your own video games, or anything those lines, come find my YouTube channel or my tech blog.

@@ -15,7 +15,7 @@ title: Object Oriented JavaScript Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Object Oriented JavaScript Tutorials</h1>
+                <h1>Object Oriented JavaScript Tutorial #4 What is a closure & private members</h1>
                 <h4>Published on Saturday, July 27, 2013</h4>
                 <h3>Description</h3>
                 <p>In JavaScript, an object can have private data through closures. If a variable is only scoped within a function, the we are not able to access the variable outside the function. Similarly, if a variable is only scoped within a constructor, we can't access the variable once the constructor has instantiated an object. This is how to create private members in JavaScript. The way to access the private data is by using closures, which keep a reference (a public member) to the private variable. This way, even after the private variable has gone out of scope, since the public variable can access the data, we can achieve private data in JavaScript objects.

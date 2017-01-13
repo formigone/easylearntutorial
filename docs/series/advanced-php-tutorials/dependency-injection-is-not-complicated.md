@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Dependency Injection is not complicated</h1>
                 <h4>Published on Tuesday, November 27, 2012</h4>
                 <h3>Description</h3>
                 <p>No, you don't need a full-feature Dependency Injection framework or huge XML configuration files to have dependency injection. Annotations are nice, and having an automated container makes life easier, but that's not what makes this design pattern what it is. The principle behind inversion of control is as simple as a constructor or method call.

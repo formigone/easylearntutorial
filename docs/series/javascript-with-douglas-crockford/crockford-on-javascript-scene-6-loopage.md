@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Crockford on JavaScript - Scene 6: Loopage</h1>
                 <h4>Published on Friday, September 23, 2011</h4>
                 <h3>Description</h3>
                 <p>Software development is hampered by a specific set of design mistakes that were made in the first programming languages and repeated in everything that has been done since. And, somewhat miraculously, JavaScript is going to make it right, radically transforming the way we write applications. Again. In the Loop of History, it has all happened before, but it has never happened like this. This is why you should care about the emergence of server-side JavaScript and the excitement around projects like Node.js -- not because they're at the sharp end of a trend, but because they're paving the road toward the next big revolution in software.</p>

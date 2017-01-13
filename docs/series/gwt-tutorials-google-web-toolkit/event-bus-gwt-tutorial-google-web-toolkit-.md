@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>Event Bus: GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Thursday, February 13, 2014</h4>
                 <h3>Description</h3>
                 <p>Why use an event bus: allow components to communicate throughout the app in a decoupled way.

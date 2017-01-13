@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips 7: Open Declaration & PHPDoc</h1>
                 <h4>Published on Saturday, December 29, 2012</h4>
                 <h3>Description</h3>
                 <p>Open declaration allows you to view the PHPdoc for a function, class, interface, or variable. It gives you information about the source code and what it does. Your development environment may also give you PHPDoc about native functions, which would make you a much more productive programmer.

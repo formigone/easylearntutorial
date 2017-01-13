@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>GOTO 2013 - Syntaxation - Douglas Crockford</h1>
                 <h4>Published on Tuesday, October 27, 2015</h4>
                 <h3>Description</h3>
                 <p>This presentation was recorded at GOTO Aarhus 2013

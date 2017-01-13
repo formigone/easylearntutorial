@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Crockford on JavaScript - Level 7: ECMAScript 5: The New Parts</h1>
                 <h4>Published on Monday, November 14, 2011</h4>
                 <h3>Description</h3>
                 <p>In Level 7 of the Crockford on JavaScript series, Yahoo! JavaScript architect Douglas Crockford outlines the changes made to the language in the 5th edition of the ECMAScript standard.</p>

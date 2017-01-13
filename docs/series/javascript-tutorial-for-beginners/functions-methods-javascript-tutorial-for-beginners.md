@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Functions & Methods - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>What is a function? In JavaScript, a function is a named block of code that can be invoked from anywhere within the code. You can pass arguments as parameters, and assign the return value to a variable. The difference between a function, a method, and a sub-routine is basically what programming language is involved. They practically mean the same thing, but different programmers like to argue about the particular technical differences.

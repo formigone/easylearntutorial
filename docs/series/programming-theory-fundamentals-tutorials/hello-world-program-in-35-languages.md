@@ -15,7 +15,7 @@ title: Programming Theory & Fundamentals Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Programming Theory & Fundamentals Tutorials</h1>
+                <h1>Hello, World Program in 35 Languages</h1>
                 <h4>Published on Saturday, July 5, 2014</h4>
                 <h3>Description</h3>
                 <p>Hello world is a very simple computer program that simply displays that message to the screen. Traditionally, introductory computer programming lessons or tutorials begin by teaching how to write a hello world app in a given language. 

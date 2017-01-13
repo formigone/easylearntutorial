@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Nintendo Web Framework Indie: Do I Need the DevKit?</h1>
                 <h4>Published on Saturday, February 15, 2014</h4>
                 <h3>Description</h3>
                 <p>Question: Can I develop my game for the Nintendo Wii U without a development kit?

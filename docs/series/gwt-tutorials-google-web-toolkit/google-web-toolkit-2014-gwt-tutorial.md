@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>Google Web Toolkit 2014 - GWT Tutorial</h1>
                 <h4>Published on Thursday, December 6, 2012</h4>
                 <h3>Description</h3>
                 <p>Google Web Toolkit tutorial: GWT is pronounced "gwit", rhyming with "quit". This video tutorial is a brief introduction to Google Web Toolkit, and to this web development series. The goal of GWT is to allow you to develop AJAX apps using the familiar Java language, with all its powerful tools, such as the Eclipse IDE, unit test suites, and all the years it's been available, and people have had a chance to master it. 

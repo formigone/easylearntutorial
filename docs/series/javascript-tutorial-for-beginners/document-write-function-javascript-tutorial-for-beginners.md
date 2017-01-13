@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>document.write Function - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Friday, November 30, 2012</h4>
                 <h3>Description</h3>
                 <p>The document.write() function prints code directly on the HTML page where the script tag containing your code is. One key programming fundamental you should know is that code is executed in a linear manner. JavaScript allows you to write code or data directly into the HTML document that is loading it. You can also log data into your browser's console, making it appear as a warning, error, or information.

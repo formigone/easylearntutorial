@@ -15,7 +15,7 @@ title: Algorithms & Data Structures
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Algorithms & Data Structures</h1>
+                <h1>Gaussian Blur - Image Processing Algorithm</h1>
                 <h4>Published on Thursday, July 31, 2014</h4>
                 <h3>Description</h3>
                 <p>The gaussian blur algorithm is one of the most widely used blurring algorithms. It is accomplished by applying a convolution kernel to every pixel of an image, and averaging each value of each color channel of each pixel with the corresponding elements of the convolution matrix. You can also weigh the kernel so that each pixel processed takes a fraction of its neighboring pixels instead of the whole value.

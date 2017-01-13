@@ -15,7 +15,7 @@ title: Machine Learning Tutorials - Computer Vision
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Machine Learning Tutorials - Computer Vision</h1>
+                <h1>Image Processing Tutorials - Intro & Demo - #1</h1>
                 <h4>Published on Tuesday, November 20, 2012</h4>
                 <h3>Description</h3>
                 <p>This series of tutorials about computer vision will cover subjects such as image analysis, image hashing, various blurring algorithms used within other algorithms, SURF, and histogram extraction and comparison. The demo used to teach all the concepts comes from my personal senior project, which I presented originally at Brigham Young University- Idaho (BYU-I), in 2012. 

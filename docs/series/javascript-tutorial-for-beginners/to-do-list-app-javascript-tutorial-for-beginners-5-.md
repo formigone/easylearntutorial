@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>To-do List App - JavaScript Tutorial for Beginners (5)</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>Coding a to-do list application is normally much easier using a model-view-controller framework such as Angular.JS, Backbone, or even Google Web Toolkit (GWT). I think that having a basic understanding of JavaScript is a great way to master the concepts. Once your programming skills re solid, an MVC framework can make you more efficient as a developer.

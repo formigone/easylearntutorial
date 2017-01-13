@@ -15,7 +15,7 @@ title: Local Web Development
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Local Web Development</h1>
+                <h1>Local Web Development Tutorial: how to syntax highlight your app</h1>
                 <h4>Published on Monday, November 26, 2012</h4>
                 <h3>Description</h3>
                 <p>Add syntax highlighting to your blog post by using the Javascript library Prettify, which is an open source Javascript project hosted on Google Code. This adds a lot to the user experience, and the overall quality of your website.

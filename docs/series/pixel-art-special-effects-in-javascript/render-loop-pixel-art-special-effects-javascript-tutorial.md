@@ -15,7 +15,7 @@ title: Pixel Art Special Effects in JavaScript
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Pixel Art Special Effects in JavaScript</h1>
+                <h1>Render Loop - Pixel Art Special Effects - JavaScript Tutorial</h1>
                 <h4>Published on Wednesday, October 9, 2013</h4>
                 <h3>Description</h3>
                 <p>The render loop is a way to control how and when our scene is drawn to the screen. Inside it we'll just call all of the game entities using an HTML5 2D canvas. After the canvas has rendered, we will eventually post process the canvas pixel data manually. My hope is that they add a new API to CanvasRenderingContext2D that allows us to specify a GLSL fragment shader that it can use to render the scene with our custom instructions.

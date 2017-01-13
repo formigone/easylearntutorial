@@ -15,7 +15,7 @@ title: AngularJS Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>AngularJS Game Development Tutorials</h1>
+                <h1>AngularJS Game Tutorial 2: Tile Map - Bootstrap</h1>
                 <h4>Published on Sunday, October 20, 2013</h4>
                 <h3>Description</h3>
                 <p>The HTML structure for the tile map web app is done using Twitter Bootstrap, which is a "sleek, intuitive, and powerful front-end framework for faster and easier web development". There are 3 sections and 4 widgets used in the app: the navigation menu, the tileset settings box, the tileset selector and viewer, and the map grid. 

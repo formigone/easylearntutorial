@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Unary Operators - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>A unary operator in JavaScript is one where there is only a single input into the mathematical operation. For example, X++, where the variable 'x' is the operand, and '+' is the operator. In this case, the operation is performed on the variable 'x'.

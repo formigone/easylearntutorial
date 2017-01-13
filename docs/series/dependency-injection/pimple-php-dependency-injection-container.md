@@ -15,7 +15,7 @@ title: Dependency Injection
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Dependency Injection</h1>
+                <h1>Pimple: PHP Dependency Injection Container</h1>
                 <h4>Published on Sunday, January 5, 2014</h4>
                 <h3>Description</h3>
                 <p>This PHP dependency injection tutorial shows how to use Pimple. Pimple is a simple, lightweight PHP injector that feels an awful lot like a factory. Since it doesn't autowire your dependencies, it's a bit tedious to create everything by hand. Still, the container works fairly well, and is definitely a good step in the right direction for any programmers and developers wanting to take advantage of dependency injection design pattern, and write more testable, modular, and maintainable code.

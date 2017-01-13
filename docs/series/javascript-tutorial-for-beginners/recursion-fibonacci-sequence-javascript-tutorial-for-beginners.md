@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Recursion & Fibonacci Sequence - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Wednesday, July 31, 2013</h4>
                 <h3>Description</h3>
                 <p>What is recursion? In JavaScript, recursion is a way to solve a problem by calling a function from within that same function. While this may be considered one of the most complicated ideas in software development, the concept is really quite simple. As an example to illustrate this tutorial, we'll write some JavaScript code implementing a function that calculates the Nth number of the Fibonacci sequence.

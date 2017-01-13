@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>console.log() - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Wednesday, October 9, 2013</h4>
                 <h3>Description</h3>
                 <p>Logging information in JavaScript is very handy. It allows you to send data directly to the browser's console, so that you can trace the execution path of your script, test data in your application, as well as just simply record events as your web app runs. The console object has a function log, which takes at least one argument, which can be anything: string, number, arrays, objects, null, or even undefined. Google Chrome developer tools allows you to inspect data logged to the console, including object expansion and property lookup.

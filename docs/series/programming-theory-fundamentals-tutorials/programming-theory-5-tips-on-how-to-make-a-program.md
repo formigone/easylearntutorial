@@ -15,7 +15,7 @@ title: Programming Theory & Fundamentals Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Programming Theory & Fundamentals Tutorials</h1>
+                <h1>Programming Theory: 5 tips on how to make a program</h1>
                 <h4>Published on Tuesday, November 20, 2012</h4>
                 <h3>Description</h3>
                 <p>Learn how to write a program properly and effectively by mastering a few fundamentals that every software engineer should know.

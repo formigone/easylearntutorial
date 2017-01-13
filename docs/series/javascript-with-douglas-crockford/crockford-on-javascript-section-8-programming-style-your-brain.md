@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>Crockford on JavaScript - Section 8: Programming Style & Your Brain</h1>
                 <h4>Published on Saturday, November 12, 2011</h4>
                 <h3>Description</h3>
                 <p>In this keynote talk from YUIConf 2011, Yahoo! JavaScript architect Douglas Crockford drops some science to explain why code style is important in programming -- particularly in JavaScript -- and how tools like JSLint can help.</p>

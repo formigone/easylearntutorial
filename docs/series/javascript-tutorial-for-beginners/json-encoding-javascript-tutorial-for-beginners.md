@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>JSON Encoding - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>In Javascript, objects are nothing but hashes. They are similar to arrays, in that they store a list of items, but an object has a key that can be a string, as opposed to an integer index used in arrays. Object members can be any native variable type, arrays, functions, or even other objects. JSON - Java Script Object Notation is a term that refers to a JavaScript object, but one that can be used to transfer data between other languages.

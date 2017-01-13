@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips 5: Markers View</h1>
                 <h4>Published on Saturday, December 29, 2012</h4>
                 <h3>Description</h3>
                 <p>A PHP marker in Eclipse allows you to specify annotations and tags in your source code that you can easily search for later. This could include tasks @todo or bugs to @fixme, as well as any custom strings that a developer may decide is worth your while.

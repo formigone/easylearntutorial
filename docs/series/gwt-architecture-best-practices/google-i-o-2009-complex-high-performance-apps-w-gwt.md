@@ -15,7 +15,7 @@ title: GWT Architecture & Best Practices
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Architecture & Best Practices</h1>
+                <h1>Google I/O 2009 - ..Complex, high-performance apps w/ GWT</h1>
                 <h4>Published on Wednesday, June 3, 2009</h4>
                 <h3>Description</h3>
                 <p>Google I/O 2009 - Effective GWT: Developing a complex, high-performance app with Google Web Toolkit

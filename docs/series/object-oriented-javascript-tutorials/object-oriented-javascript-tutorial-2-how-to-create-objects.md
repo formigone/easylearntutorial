@@ -15,7 +15,7 @@ title: Object Oriented JavaScript Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Object Oriented JavaScript Tutorials</h1>
+                <h1>Object Oriented JavaScript Tutorial #2 How to Create Objects</h1>
                 <h4>Published on Saturday, July 27, 2013</h4>
                 <h3>Description</h3>
                 <p>Two ways to create objects in JavaScript are by creating a literal object using curly braces, or by creating a function (constructor function), then calling it with the keyword *new* before it. If you create a literal object, you end up with a "instance" of that object, whereas calling a constructor function gives you an instance of that function (aka "class"). This way you can reuse the constructor and instantiate more objects of that type.

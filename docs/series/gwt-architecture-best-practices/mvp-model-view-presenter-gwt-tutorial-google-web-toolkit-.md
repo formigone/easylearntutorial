@@ -15,7 +15,7 @@ title: GWT Architecture & Best Practices
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Architecture & Best Practices</h1>
+                <h1>MVP - Model View Presenter - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Thursday, July 25, 2013</h4>
                 <h3>Description</h3>
                 <p>Model View Presenter (aka MVP) is a design pattern that attempts to decouple the logic of a component from its presentation. This is similar to the popular MVC (model view controller) design pattern, but has some fundamentally different goals. The benefits of MVP include more testable code, more reusable code, and a decoupled development environment. One way that different components (presenters) can communicate with each other throughout the application is by using an event bus. In short, the event bus is a mechanism that allows components to register for certain events, being notified when such an event is fired, as well as notifying events with the event bus itself, so that anyone listening for those events can be told about it.

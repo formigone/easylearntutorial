@@ -15,7 +15,7 @@ title: Computer Programming Challenges
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Computer Programming Challenges</h1>
+                <h1>Programming Challenge: Tic Tac Toe Tutorial 2: HTML & CSS Structure</h1>
                 <h4>Published on Friday, November 16, 2012</h4>
                 <h3>Description</h3>
                 <p>This is the first part of my coding tutorial where I walk through the source code and explain how I programmed my tic tac toe game in 33 minutes. This tutorial covers an overview of the  lesson, shows a demo of the final product (the fully functional tic tac toe game coded in HTML and Javascript), and walks through the set up of the HTML DOM (the structure), and the CSS styling of it.

@@ -15,7 +15,7 @@ title: Advanced PHP Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Advanced PHP Tutorials</h1>
+                <h1>Advanced PHP Tutorial 5: Databse Abstraction Layer</h1>
                 <h4>Published on Sunday, November 18, 2012</h4>
                 <h3>Description</h3>
                 <p>This tutorial will teach you about database abstraction for use in PHP. Instead of programming directly to MySQL, Oracle, or PostgreSQL (or whatever database system you use), you can just use a common interface that will make programming easier and more flexible. Another focus of this particular abstraction is that data selection queries should return an actual object, instead of a SQL resource that you'll need to iterate and access a record one at a time.

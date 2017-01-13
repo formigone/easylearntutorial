@@ -15,7 +15,7 @@ title: Eclipse Java & PHP Development Tips for Power Users
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Eclipse Java & PHP Development Tips for Power Users</h1>
+                <h1>Eclipse Java & PHP Development Tips 6: Marketplace</h1>
                 <h4>Published on Saturday, December 29, 2012</h4>
                 <h3>Description</h3>
                 <p>The Eclipse IDE has its own "app store" feature, but for PHP developers. Their marketplace allows you to download and install free plugins and extensions to your development environment. A plug-in can be extra functionality, such as spell checker for your in-code comments, syntax highlighting, code optimizer, etc.

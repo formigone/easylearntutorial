@@ -15,7 +15,7 @@ title: JavaScript with Douglas Crockford
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript with Douglas Crockford</h1>
+                <h1>JSeverywhere: Douglas Crockford - JavaScript, The World's Most Misunderstood Language</h1>
                 <h4>Published on Thursday, October 27, 2011</h4>
                 <h3>Description</h3>
                 <p>Yahoo! JavaScript architect Douglas Crockford talks about the history, strengths, and fault of what's considered the world's most widely used -- and sometimes most disliked -- language.</p>

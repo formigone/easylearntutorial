@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Switch Statement - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>JavaScript programming allows you to, Instead of checking multiple related conditionals using an if statement, use a switch case block. This allows you do jump execution right into a particular value. This is better than nested ifs because no checks are make. Instead, the cases are hashed, and the input value is used to key into the possible logic blocks.

@@ -15,7 +15,7 @@ title: Algorithms & Data Structures
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Algorithms & Data Structures</h1>
+                <h1>Pathfinding Algorithms in JavaScript - Maze solving</h1>
                 <h4>Published on Tuesday, September 1, 2015</h4>
                 <h3>Description</h3>
                 <p>Breadth-first search and depth-first search are two types of pathfinding algorithms commonly used to solve mazes, and find paths in maps and graphs.

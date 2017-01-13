@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>HTML5 & Tools - Nintendo Game Development</h1>
                 <h4>Published on Thursday, September 26, 2013</h4>
                 <h3>Description</h3>
                 <p>In this tutorial series I'll use the following tools as I develop the game engine, along with my first game for the Nintendo Wii U system:

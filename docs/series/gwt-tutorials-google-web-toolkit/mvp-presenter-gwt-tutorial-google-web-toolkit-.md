@@ -15,7 +15,7 @@ title: GWT Tutorials - Google Web Toolkit
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>GWT Tutorials: Google Web Toolkit</h1>
+                <h1>MVP - Presenter - GWT Tutorial (Google Web Toolkit)</h1>
                 <h4>Published on Saturday, July 27, 2013</h4>
                 <h3>Description</h3>
                 <p>The presenter is designed to drive a particular view, which in this case will be UiBinder views. Because of that, the presenter needs to define some sort of interface for all views that it will control to follow. Any events received by the view are delegated to the presenter so it can respond to those events without having to strictly register event handlers with it.

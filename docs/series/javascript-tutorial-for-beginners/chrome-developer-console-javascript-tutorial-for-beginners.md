@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Chrome Developer Console - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Friday, November 30, 2012</h4>
                 <h3>Description</h3>
                 <p>What is the best debugging tool for JavaScript? Google's Chrome browser has the best Javascript console embedded onto it for free. Using the live console is easy, and gives you instant feedback, error checking and reporting, and shows you all the functions and data available natively on the Javascript engine it runs on, as well as on any objects you import into your applications.

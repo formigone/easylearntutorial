@@ -15,7 +15,7 @@ title: Windows 7 Power User Tips
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Windows 7 Power User Tips</h1>
+                <h1>Windows 7 Power User Tip #3 Quick Launch Application With Keyboard</h1>
                 <h4>Published on Saturday, December 29, 2012</h4>
                 <h3>Description</h3>
                 <p>--------------------------------

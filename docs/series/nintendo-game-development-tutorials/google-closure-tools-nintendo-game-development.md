@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Google Closure Tools - Nintendo Game Development</h1>
                 <h4>Published on Thursday, September 26, 2013</h4>
                 <h3>Description</h3>
                 <p>You can write 2D games for the Nintendo Wii U using their Web Framework with whatever tools you like. As long as your codebase ends up being valid WebKit HTML5 and JavaScript, your game will run and play just fine. However, in order to be more efficient and agile both in terms of development, testing, debugging, and compiling my games, I'll be using Google Closure tools in my projects, including this JavaScript gaming tutorial series.

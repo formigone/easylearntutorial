@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Nintendo Web Framework - Nintendo Game Development</h1>
                 <h4>Published on Thursday, September 26, 2013</h4>
                 <h3>Description</h3>
                 <p>Learn how to develop your own games for the Nintendo Wii U! "The Nintendo Web Framework is a development environment based on WebKit technologies, supporting application development on the Wii U system using HTML5, JavaScript, and CSS. It also supports the Wii U GamePad controller, Wii Remote controllers, and JavaScript extensions such as video playback."

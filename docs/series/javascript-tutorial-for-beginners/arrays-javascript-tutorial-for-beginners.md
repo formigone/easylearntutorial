@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Arrays - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>JavaScript arrays are lists of variables. Normally, you'd use arrays to group related variables together, such as when you have a list of names, or a list of numbers (for example, you can store all the (x, y) coordinates of a list of images in an application). JavaScript allows for mixed types, meaning that your array doesn't have to be of one type only. You can start out having numbers in the array, then have elements that are strings, then Booleans, and back to strings, etc.

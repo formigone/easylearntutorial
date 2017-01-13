@@ -15,7 +15,7 @@ title: HTML 5 Tutorial Series
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>HTML 5 Tutorial Series</h1>
+                <h1>HTML5 Canvas Tutorial: Line width & thickness #4</h1>
                 <h4>Published on Thursday, November 29, 2012</h4>
                 <h3>Description</h3>
                 <p>Of all the HTML5 tags, canvas offers the most settings to customize it. One such attribute is lineWidth, which allows you to specify how thick lines appear on the screen.

@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>String Manipulations - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>How to concatenate strings? In JavaScript, one way to combine strings of text and other variables is to use the plus operator. Since it doesn't make sense to "add" non-numerical variables together, the + operator is overloaded in JavaScript. This way, we can build one string out of two or more other ones.

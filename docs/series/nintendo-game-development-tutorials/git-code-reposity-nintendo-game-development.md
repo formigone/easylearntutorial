@@ -15,7 +15,7 @@ title: Nintendo Game Development Tutorials
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>Nintendo Game Development Tutorials</h1>
+                <h1>Git Code Reposity - Nintendo Game Development</h1>
                 <h4>Published on Thursday, September 26, 2013</h4>
                 <h3>Description</h3>
                 <p>Learning 2D game development for the Nintendo Wii U can be a bit hard, even though we mostly use HTML5 and JavaScript. For this reason, I'm saving all of the code for the games and the RokkoJS game engine that I write in these tutorials in an open-source git repository, hosted at GitHub. Feel free to do a git pull on my project repo, or just copy all of my JavaScript while you watch my tutorial.

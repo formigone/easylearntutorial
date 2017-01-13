@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>IF ELSE conditional statements - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>JavaScript if else statements allow you to change the flow of execution in your program by using conditional checks, which are instructions that evaluate to either true or false. You can fork execution in JavaScript with an IF statement followed by an ELSE block, which is executed in the first fails to be true.

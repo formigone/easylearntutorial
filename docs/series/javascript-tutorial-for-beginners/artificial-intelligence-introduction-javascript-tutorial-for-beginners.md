@@ -15,7 +15,7 @@ title: JavaScript Tutorial for Beginners
             </div>
             <div class="clearfix"></div>
             <div class="col-md-8">
-                <h1>JavaScript Tutorial for Beginners</h1>
+                <h1>Artificial Intelligence Introduction - JavaScript Tutorial for Beginners</h1>
                 <h4>Published on Tuesday, December 4, 2012</h4>
                 <h3>Description</h3>
                 <p>Basic artificial intelligence using JavaScript using fundamental programming concepts. This is the first part of the basic artificial intelligence segment of this tutorial series using JavaScript. 
