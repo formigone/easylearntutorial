@@ -22,19 +22,19 @@ title: HTML5 Game Development Tutorial with GWT
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="acc9349c804273775482c44fad32df0d">
+    <a href="/series/html5-game-development-tutorial-with-gwt/2d-renderer-gwt-android-game-development-tutorial-1">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/PvQUS1zP6GQ/hqdefault.jpg" class="img-responsive" alt="2D Renderer: GWT & Android Game Development Tutorial 1" style="width: 100%;">
     </a>
     <h3>
-        <a href="acc9349c804273775482c44fad32df0d" style="color:inherit">2D Renderer: GWT & Android Game Development Tutorial 1</a>
+        <a href="/series/html5-game-development-tutorial-with-gwt/2d-renderer-gwt-android-game-development-tutorial-1" style="color:inherit">2D Renderer: GWT & Android Game Development Tutorial 1</a>
     </h3>
     <p>Saturday, July 20, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="85208767967303b38e8bc4755b3cbb22">
+    <a href="/series/html5-game-development-tutorial-with-gwt/road-map-gwt-android-game-development-tutorial-2">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/EvyQ9b--cFw/hqdefault.jpg" class="img-responsive" alt="Road map: GWT & Android Game Development Tutorial 2" style="width: 100%;">
     </a>
     <h3>
-        <a href="85208767967303b38e8bc4755b3cbb22" style="color:inherit">Road map: GWT & Android Game Development Tutorial 2</a>
+        <a href="/series/html5-game-development-tutorial-with-gwt/road-map-gwt-android-game-development-tutorial-2" style="color:inherit">Road map: GWT & Android Game Development Tutorial 2</a>
     </h3>
     <p>Saturday, July 20, 2013</p>
 </div>

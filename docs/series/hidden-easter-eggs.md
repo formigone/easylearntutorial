@@ -22,19 +22,19 @@ title: Hidden Easter Eggs
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="2aca96af90fd7f19de7535858a71f944">
+    <a href="/series/hidden-easter-eggs/hidden-easter-egg-in-google-chrome-t-rex-runner-game">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/eBgYamvLqUE/hqdefault.jpg" class="img-responsive" alt="Hidden Easter Egg in Google Chrome: T-rex Runner Game" style="width: 100%;">
     </a>
     <h3>
-        <a href="2aca96af90fd7f19de7535858a71f944" style="color:inherit">Hidden Easter Egg in Google Chrome: T-rex Runner Game</a>
+        <a href="/series/hidden-easter-eggs/hidden-easter-egg-in-google-chrome-t-rex-runner-game" style="color:inherit">Hidden Easter Egg in Google Chrome: T-rex Runner Game</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="24bfbd6094fb5b6823a6128bf2f891ae">
+    <a href="/series/hidden-easter-eggs/super-mario-brothers-google-easter-egg">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/_s_j1I-Il28/hqdefault.jpg" class="img-responsive" alt="Super Mario Brothers - Google Easter Egg" style="width: 100%;">
     </a>
     <h3>
-        <a href="24bfbd6094fb5b6823a6128bf2f891ae" style="color:inherit">Super Mario Brothers - Google Easter Egg</a>
+        <a href="/series/hidden-easter-eggs/super-mario-brothers-google-easter-egg" style="color:inherit">Super Mario Brothers - Google Easter Egg</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>

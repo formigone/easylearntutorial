@@ -22,19 +22,19 @@ title: JavaScript HTML5 Game Development Tutorials
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="15c35174ea550b2f9a3a01e564fc04eb">
+    <a href="/series/javascript-html5-game-development-tutorials/html5-game-development-tutorial-javascript-1-road-map">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/OKOD8sv-1tQ/hqdefault.jpg" class="img-responsive" alt="HTML5 Game Development Tutorial - JavaScript #1 Road Map" style="width: 100%;">
     </a>
     <h3>
-        <a href="15c35174ea550b2f9a3a01e564fc04eb" style="color:inherit">HTML5 Game Development Tutorial - JavaScript #1 Road Map</a>
+        <a href="/series/javascript-html5-game-development-tutorials/html5-game-development-tutorial-javascript-1-road-map" style="color:inherit">HTML5 Game Development Tutorial - JavaScript #1 Road Map</a>
     </h3>
     <p>Saturday, July 20, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="1a5264e6791ace39c9eab90e81742445">
+    <a href="/series/javascript-html5-game-development-tutorials/mega-man-tetris-clone-html5-javascript-closure-tools">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/rJz_yO5W69M/hqdefault.jpg" class="img-responsive" alt="Mega Man Tetris Clone - HTML5 & JavaScript Closure Tools" style="width: 100%;">
     </a>
     <h3>
-        <a href="1a5264e6791ace39c9eab90e81742445" style="color:inherit">Mega Man Tetris Clone - HTML5 & JavaScript Closure Tools</a>
+        <a href="/series/javascript-html5-game-development-tutorials/mega-man-tetris-clone-html5-javascript-closure-tools" style="color:inherit">Mega Man Tetris Clone - HTML5 & JavaScript Closure Tools</a>
     </h3>
     <p>Saturday, July 20, 2013</p>
 </div>

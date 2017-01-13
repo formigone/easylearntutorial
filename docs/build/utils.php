@@ -207,13 +207,12 @@ function genSummaryFile(array $playists)
 {
     array_map(function($row){
         $seriesTitle = genSlug($row['title']);
-        $filename = genSlug($seriesTitle);
         $rows = [];
         $cols = [];
         $totalItems = count($row['items']);
 
         foreach ($row['items'] as $i => $item) {
-            $itemLink = $item['videoId'];
+            $itemLink = '/series/' . $seriesTitle . '/' . genSlug($item['title']);
             $cols[] = '' .
 '<div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
     <a href="' . $itemLink . '">
@@ -261,8 +260,114 @@ title: ' . str_replace(':', ' -', $row['title']) . '
 </div>
 ';
 
-        file_put_contents(PROJECT_PATH . '/series/' . $filename . '.md', $data);
-        echo 'Created: '.PROJECT_PATH . '/series/' . $filename . '.md'.PHP_EOL;
+        $filename = PROJECT_PATH . '/series/' . $seriesTitle . '.md';
+        $isNew = file_exists($filename);
+        file_put_contents($filename, $data);
+
+        if ($isNew) {
+            echo 'Updated: ' . $filename . PHP_EOL;
+        } else {
+            echo 'Created: ' . $filename . PHP_EOL;
+        }
+
+    }, $playists);
+}
+
+function genNext($playlist, $index, $seriesTitle)
+{
+    $next = $playlist[$index];
+    $nextLink = '/series/' . $seriesTitle . '/' . genSlug($next['title']);
+    return ''.
+        '<div class="row" style="margin-bottom: 20px">
+            <div class="col-md-6">
+                <a href="' . $nextLink . '">
+                    <img src="/img/blank.gif" data-echo="' . $next['thumbnail']. '" class="img-responsive" />
+                </a>
+            </div>
+            <div class="col-md-6">
+                <h4>
+                    <a href="' . $nextLink . '">' .  $next['title'] . '</a>
+                </h4>
+            </div>
+        </div>';
+}
+
+function genVideoFile(array $playists)
+{
+    array_map(function($row){
+        $seriesTitle = genSlug($row['title']);
+        $totalItems = count($row['items']);
+
+        foreach ($row['items'] as $i => $item) {
+            $videoFilename = genSlug($item['title']);
+            $nextList = [];
+            $inNext = [];
+
+            if ($totalItems > 1) {
+                for ($n = 1; $n <= 3; $n++) {
+                    $next = ($i + $n) % $totalItems;
+                    if ($next !== $i && !in_array($next, $inNext)) {
+                        $nextList[] = genNext($row['items'], $next, $seriesTitle);
+                        $inNext[] = $next;
+                    }
+                }
+            }
+
+            if (!empty($nextList)) {
+                $nextList = array_merge([
+                    '<h4>Next on <a href="/series/' . $seriesTitle . '">' . $row['title'] . '</a></h4>'
+                ], $nextList);
+            }
+
+            $data = '---
+layout: default
+nav: series
+title: ' . str_replace(':', ' -', $row['title']) . '
+---
+
+<div class="container">
+    <div class="row mt grid">
+        <div class="mt"></div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-sm-push-1 col-sm-10 col-md-push-2 col-md-8">
+                <div class="video-container">
+                    <iframe width="100%" src="https://www.youtube.com/embed/' . $item['videoUrl'] . '" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-8">
+                <h1>' . $row['title'] . '</h1>
+                <h4>Published on ' . date('l, F j, Y', strtotime($item['publishedAt'])) . '</h4>
+                <h3>Description</h3>
+                <p>' . $item['description'] . '</p>
+            </div>
+            <div class="col-md-4">
+                '. implode('', $nextList) .'
+            </div>
+            <div class="col-md-8">
+                {% include disqus.html %}
+            </div>
+        </div>
+    </div>
+    <div class="row mt grid"></div>
+</div>
+';
+
+            $dir = PROJECT_PATH . '/series/' . $seriesTitle;
+            if (!file_exists($dir)) {
+                mkdir($dir);
+            }
+
+            $filename = $dir . '/' . $videoFilename . '.md';
+            $isNew = file_exists($filename);
+            file_put_contents($filename, $data);
+
+            if ($isNew) {
+                echo 'Updated: ' . $filename . PHP_EOL;
+            } else {
+                echo 'Created: ' . $filename . PHP_EOL;
+            }
+        }
     }, $playists);
 }
 

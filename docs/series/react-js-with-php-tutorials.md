@@ -22,11 +22,11 @@ title: React.js with PHP Tutorials
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="6c90f4a1ddd1bde6b2f33296f64955c4">
+    <a href="/series/react-js-with-php-tutorials/react-js-server-side-rendering-with-php">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/1REcQro7tik/hqdefault.jpg" class="img-responsive" alt="React.js Server-side Rendering with PHP" style="width: 100%;">
     </a>
     <h3>
-        <a href="6c90f4a1ddd1bde6b2f33296f64955c4" style="color:inherit">React.js Server-side Rendering with PHP</a>
+        <a href="/series/react-js-with-php-tutorials/react-js-server-side-rendering-with-php" style="color:inherit">React.js Server-side Rendering with PHP</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>

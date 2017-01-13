@@ -34,37 +34,37 @@ The main languages and technologies covered in this series are:
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="182684c7cf7f098f8482d3e165922984">
+    <a href="/series/local-web-development/how-to-create-a-virtual-host-in-windows-virtual-domain-with-apache-wamp-">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/cZ9FU7x97qw/hqdefault.jpg" class="img-responsive" alt="How to create a virtual host in Windows (virtual domain) with Apache (WAMP)" style="width: 100%;">
     </a>
     <h3>
-        <a href="182684c7cf7f098f8482d3e165922984" style="color:inherit">How to create a virtual host in Windows (virtual domain) with Apache (WAMP)</a>
+        <a href="/series/local-web-development/how-to-create-a-virtual-host-in-windows-virtual-domain-with-apache-wamp-" style="color:inherit">How to create a virtual host in Windows (virtual domain) with Apache (WAMP)</a>
     </h3>
     <p>Sunday, November 11, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="3475bdc49f8e3adf45e737dfad3f1f6c">
+    <a href="/series/local-web-development/how-to-use-mustache-js-template-system">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/JlmoQBF2lvw/hqdefault.jpg" class="img-responsive" alt="How to use Mustache.js Template System" style="width: 100%;">
     </a>
     <h3>
-        <a href="3475bdc49f8e3adf45e737dfad3f1f6c" style="color:inherit">How to use Mustache.js Template System</a>
+        <a href="/series/local-web-development/how-to-use-mustache-js-template-system" style="color:inherit">How to use Mustache.js Template System</a>
     </h3>
     <p>Sunday, November 11, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="1cc4f7921d920ec475c83499142ae196">
+    <a href="/series/local-web-development/local-web-development-tutorial-how-to-monitor-http-traffic">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/lXbUAUdzbmI/hqdefault.jpg" class="img-responsive" alt="Local Web Development Tutorial: How to monitor HTTP traffic" style="width: 100%;">
     </a>
     <h3>
-        <a href="1cc4f7921d920ec475c83499142ae196" style="color:inherit">Local Web Development Tutorial: How to monitor HTTP traffic</a>
+        <a href="/series/local-web-development/local-web-development-tutorial-how-to-monitor-http-traffic" style="color:inherit">Local Web Development Tutorial: How to monitor HTTP traffic</a>
     </h3>
     <p>Sunday, November 11, 2012</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="ff4f2a86de6c60956b1663b56e945fb4">
+    <a href="/series/local-web-development/local-web-development-tutorial-how-to-syntax-highlight-your-app">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/ovmVJVr-iPQ/hqdefault.jpg" class="img-responsive" alt="Local Web Development Tutorial: how to syntax highlight your app" style="width: 100%;">
     </a>
     <h3>
-        <a href="ff4f2a86de6c60956b1663b56e945fb4" style="color:inherit">Local Web Development Tutorial: how to syntax highlight your app</a>
+        <a href="/series/local-web-development/local-web-development-tutorial-how-to-syntax-highlight-your-app" style="color:inherit">Local Web Development Tutorial: how to syntax highlight your app</a>
     </h3>
     <p>Sunday, November 11, 2012</p>
 </div>

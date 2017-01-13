@@ -22,53 +22,53 @@ title: Machine Learning Tutorials - Computer Vision
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="2c5e0ea255061c3a049387e50b31f6c2">
+    <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-intro-demo-1">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/kGJJL72Fhjc/hqdefault.jpg" class="img-responsive" alt="Image Processing Tutorials - Intro & Demo - #1" style="width: 100%;">
     </a>
     <h3>
-        <a href="2c5e0ea255061c3a049387e50b31f6c2" style="color:inherit">Image Processing Tutorials - Intro & Demo - #1</a>
+        <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-intro-demo-1" style="color:inherit">Image Processing Tutorials - Intro & Demo - #1</a>
     </h3>
     <p>Tuesday, November 20, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="67bcecad7e0e89ea51f6c6a4924fc3db">
+    <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-2-html5-canvas-context-2d-rendering-workflow">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/s0lJkvhONHY/hqdefault.jpg" class="img-responsive" alt="Image Processing Tutorials #2 HTML5 Canvas & Context 2D Rendering Workflow" style="width: 100%;">
     </a>
     <h3>
-        <a href="67bcecad7e0e89ea51f6c6a4924fc3db" style="color:inherit">Image Processing Tutorials #2 HTML5 Canvas & Context 2D Rendering Workflow</a>
+        <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-2-html5-canvas-context-2d-rendering-workflow" style="color:inherit">Image Processing Tutorials #2 HTML5 Canvas & Context 2D Rendering Workflow</a>
     </h3>
     <p>Tuesday, November 20, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="16900a7b8b7bac3cc3ae5cd1a7682b19">
+    <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-3-html5-javascript-framework">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/7anw4KKVVgI/hqdefault.jpg" class="img-responsive" alt="Image Processing Tutorials #3 HTML5 Javascript Framework" style="width: 100%;">
     </a>
     <h3>
-        <a href="16900a7b8b7bac3cc3ae5cd1a7682b19" style="color:inherit">Image Processing Tutorials #3 HTML5 Javascript Framework</a>
+        <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-3-html5-javascript-framework" style="color:inherit">Image Processing Tutorials #3 HTML5 Javascript Framework</a>
     </h3>
     <p>Tuesday, November 20, 2012</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="217dc127b171eae4704d0096834546c9">
+    <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-4-drawing-images-in-html5-canvas">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/3BSZR00b_Nw/hqdefault.jpg" class="img-responsive" alt="Image Processing Tutorials #4 Drawing images in HTML5 Canvas" style="width: 100%;">
     </a>
     <h3>
-        <a href="217dc127b171eae4704d0096834546c9" style="color:inherit">Image Processing Tutorials #4 Drawing images in HTML5 Canvas</a>
+        <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-4-drawing-images-in-html5-canvas" style="color:inherit">Image Processing Tutorials #4 Drawing images in HTML5 Canvas</a>
     </h3>
     <p>Tuesday, November 20, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="743db537d9ffcb96d0c03c6f9ebf2a02">
+    <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-5-loading-image-into-html5-2d-context">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/gkIo0CoBxGM/hqdefault.jpg" class="img-responsive" alt="Image Processing Tutorials #5 Loading image into HTML5 2D Context" style="width: 100%;">
     </a>
     <h3>
-        <a href="743db537d9ffcb96d0c03c6f9ebf2a02" style="color:inherit">Image Processing Tutorials #5 Loading image into HTML5 2D Context</a>
+        <a href="/series/machine-learning-tutorials-computer-vision/image-processing-tutorials-5-loading-image-into-html5-2d-context" style="color:inherit">Image Processing Tutorials #5 Loading image into HTML5 2D Context</a>
     </h3>
     <p>Tuesday, November 20, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="013a1ce1037206b207e96964c2f811a4">
+    <a href="/series/machine-learning-tutorials-computer-vision/pathfinding-algorithms-in-javascript-maze-solving">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/F6oYjQc_tNM/hqdefault.jpg" class="img-responsive" alt="Pathfinding Algorithms in JavaScript - Maze solving" style="width: 100%;">
     </a>
     <h3>
-        <a href="013a1ce1037206b207e96964c2f811a4" style="color:inherit">Pathfinding Algorithms in JavaScript - Maze solving</a>
+        <a href="/series/machine-learning-tutorials-computer-vision/pathfinding-algorithms-in-javascript-maze-solving" style="color:inherit">Pathfinding Algorithms in JavaScript - Maze solving</a>
     </h3>
     <p>Tuesday, November 20, 2012</p>
 </div>

@@ -22,3 +22,4 @@ $playists = json_decode(file_get_contents(SITEMAP_PATH), true);
 
 Eltcom\genPlaylistFile($playists);
 Eltcom\genSummaryFile($playists);
+Eltcom\genVideoFile($playists);

@@ -22,27 +22,27 @@ title: Algorithms & Data Structures
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="02eca2fa8dee45374dfbfac5780b6cd6">
+    <a href="/series/algorithms-data-structures/maze-generation-algorithm-recursive-backtracker">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/elMXlO28Q1U/hqdefault.jpg" class="img-responsive" alt="Maze Generation Algorithm - Recursive Backtracker" style="width: 100%;">
     </a>
     <h3>
-        <a href="02eca2fa8dee45374dfbfac5780b6cd6" style="color:inherit">Maze Generation Algorithm - Recursive Backtracker</a>
+        <a href="/series/algorithms-data-structures/maze-generation-algorithm-recursive-backtracker" style="color:inherit">Maze Generation Algorithm - Recursive Backtracker</a>
     </h3>
     <p>Sunday, July 13, 2014</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="eda5ff157cc23ba2f5e570a9de5863ac">
+    <a href="/series/algorithms-data-structures/gaussian-blur-image-processing-algorithm">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/7LW_75E3A1Q/hqdefault.jpg" class="img-responsive" alt="Gaussian Blur - Image Processing Algorithm" style="width: 100%;">
     </a>
     <h3>
-        <a href="eda5ff157cc23ba2f5e570a9de5863ac" style="color:inherit">Gaussian Blur - Image Processing Algorithm</a>
+        <a href="/series/algorithms-data-structures/gaussian-blur-image-processing-algorithm" style="color:inherit">Gaussian Blur - Image Processing Algorithm</a>
     </h3>
     <p>Sunday, July 13, 2014</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="013a1ce1037206b207e96964c2f811a4">
+    <a href="/series/algorithms-data-structures/pathfinding-algorithms-in-javascript-maze-solving">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/F6oYjQc_tNM/hqdefault.jpg" class="img-responsive" alt="Pathfinding Algorithms in JavaScript - Maze solving" style="width: 100%;">
     </a>
     <h3>
-        <a href="013a1ce1037206b207e96964c2f811a4" style="color:inherit">Pathfinding Algorithms in JavaScript - Maze solving</a>
+        <a href="/series/algorithms-data-structures/pathfinding-algorithms-in-javascript-maze-solving" style="color:inherit">Pathfinding Algorithms in JavaScript - Maze solving</a>
     </h3>
     <p>Sunday, July 13, 2014</p>
 </div>

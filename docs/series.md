@@ -154,24 +154,6 @@ title: Select a tutorial series
 </div>
 <div class="row" style="margin-bottom: 20px;">
     <div class="col-sm-6 col-md-4">
-        <a href="/series/awesome-presentation-styles">
-            <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/mBXGBbEbXZY/hqdefault.jpg" class="img-responsive" alt="Awesome Presentation Styles" style="width: 100%;">
-        </a>
-    </div>
-    <div class="col-sm-6 col-md-8" style="text-align: left">
-        <h3>
-            <a href="/series/awesome-presentation-styles" style="color: inherit">Awesome Presentation Styles</a>
-        </h3>
-        
-        <p>8 videos. Published: Thursday, July 3, 2014</p>
-        <p></p>
-        <p>
-            <a href="/series/awesome-presentation-styles" class="btn btn-theme btn-lg">Start Learning</a>
-        </p>
-    </div>
-</div>
-<div class="row" style="margin-bottom: 20px;">
-    <div class="col-sm-6 col-md-4">
         <a href="/series/dependency-injection">
             <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/egONoRg_Gjg/hqdefault.jpg" class="img-responsive" alt="Dependency Injection" style="width: 100%;">
         </a>

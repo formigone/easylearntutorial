@@ -22,11 +22,11 @@ title: 2D Game Development from Scratch
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="ffeb4d5ed536a6357d53b9b8061a5e0e">
+    <a href="/series/2d-game-development-from-scratch/2d-game-development-from-scratch-preview">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/qu-CIK5gJLw/hqdefault.jpg" class="img-responsive" alt="2D Game Development from Scratch - Preview" style="width: 100%;">
     </a>
     <h3>
-        <a href="ffeb4d5ed536a6357d53b9b8061a5e0e" style="color:inherit">2D Game Development from Scratch - Preview</a>
+        <a href="/series/2d-game-development-from-scratch/2d-game-development-from-scratch-preview" style="color:inherit">2D Game Development from Scratch - Preview</a>
     </h3>
     <p>Tuesday, August 26, 2014</p>
 </div>

@@ -22,11 +22,11 @@ title: Pixel Art Inspiration
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="776992d39549d8793e327415a8194a82">
+    <a href="/series/pixel-art-inspiration/top-down-view-pixel-art-inspiration">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/oNE7L1TnzuU/hqdefault.jpg" class="img-responsive" alt="Top Down View - Pixel Art Inspiration" style="width: 100%;">
     </a>
     <h3>
-        <a href="776992d39549d8793e327415a8194a82" style="color:inherit">Top Down View - Pixel Art Inspiration</a>
+        <a href="/series/pixel-art-inspiration/top-down-view-pixel-art-inspiration" style="color:inherit">Top Down View - Pixel Art Inspiration</a>
     </h3>
     <p>Saturday, July 5, 2014</p>
 </div>

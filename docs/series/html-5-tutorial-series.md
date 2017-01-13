@@ -28,105 +28,105 @@ Other links of interest:
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="ea93ff8659e5e57443716ff927cfee9c">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-2d-rendering-context-1">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/6PRdWK8MZqo/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial: 2D rendering context #1" style="width: 100%;">
     </a>
     <h3>
-        <a href="ea93ff8659e5e57443716ff927cfee9c" style="color:inherit">HTML5 Canvas Tutorial: 2D rendering context #1</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-2d-rendering-context-1" style="color:inherit">HTML5 Canvas Tutorial: 2D rendering context #1</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="419119221ff86a8fdde28bb80f48a536">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-drawing-lines-2">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/8we3v69EAU0/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial: Drawing lines #2" style="width: 100%;">
     </a>
     <h3>
-        <a href="419119221ff86a8fdde28bb80f48a536" style="color:inherit">HTML5 Canvas Tutorial: Drawing lines #2</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-drawing-lines-2" style="color:inherit">HTML5 Canvas Tutorial: Drawing lines #2</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="42ede8309eeee900308fb1d3a0e8e841">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-fill-path-stroke-path-3">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/yqudaugYt2M/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial: Fill path & stroke path #3" style="width: 100%;">
     </a>
     <h3>
-        <a href="42ede8309eeee900308fb1d3a0e8e841" style="color:inherit">HTML5 Canvas Tutorial: Fill path & stroke path #3</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-fill-path-stroke-path-3" style="color:inherit">HTML5 Canvas Tutorial: Fill path & stroke path #3</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="3689487f0594399865b32cfe18538b48">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-line-width-thickness-4">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/F7o962sWVqM/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial: Line width & thickness #4" style="width: 100%;">
     </a>
     <h3>
-        <a href="3689487f0594399865b32cfe18538b48" style="color:inherit">HTML5 Canvas Tutorial: Line width & thickness #4</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-line-width-thickness-4" style="color:inherit">HTML5 Canvas Tutorial: Line width & thickness #4</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="ea7ad30709fd430fdad6553ec9b44588">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-adding-color-5">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/lDKZ4TffTUE/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial: Adding color #5" style="width: 100%;">
     </a>
     <h3>
-        <a href="ea7ad30709fd430fdad6553ec9b44588" style="color:inherit">HTML5 Canvas Tutorial: Adding color #5</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-adding-color-5" style="color:inherit">HTML5 Canvas Tutorial: Adding color #5</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="aaa54ff7ea944e3e2543b0e0a38a2d9c">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-line-cap-round-square-butt-6">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/7JE7ic580L4/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial: Line cap (round, square, butt) #6" style="width: 100%;">
     </a>
     <h3>
-        <a href="aaa54ff7ea944e3e2543b0e0a38a2d9c" style="color:inherit">HTML5 Canvas Tutorial: Line cap (round, square, butt) #6</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-line-cap-round-square-butt-6" style="color:inherit">HTML5 Canvas Tutorial: Line cap (round, square, butt) #6</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="7fa5bc4c8940358ca32051d27a66720a">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-7-linejoin">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/RUkEcqQ5kw4/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial #7 Linejoin" style="width: 100%;">
     </a>
     <h3>
-        <a href="7fa5bc4c8940358ca32051d27a66720a" style="color:inherit">HTML5 Canvas Tutorial #7 Linejoin</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-7-linejoin" style="color:inherit">HTML5 Canvas Tutorial #7 Linejoin</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="c4c392dca7e98cfdd31e0c9aa4308cf2">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-8-draw-image">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/L_S5SU6j-OY/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial #8 Draw Image" style="width: 100%;">
     </a>
     <h3>
-        <a href="c4c392dca7e98cfdd31e0c9aa4308cf2" style="color:inherit">HTML5 Canvas Tutorial #8 Draw Image</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-8-draw-image" style="color:inherit">HTML5 Canvas Tutorial #8 Draw Image</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="40e28ac11c74e93d95dba4f2cfccf147">
+    <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-9-get-image-data">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/5tMX53tp1Io/hqdefault.jpg" class="img-responsive" alt="HTML5 Canvas Tutorial #9 Get Image Data" style="width: 100%;">
     </a>
     <h3>
-        <a href="40e28ac11c74e93d95dba4f2cfccf147" style="color:inherit">HTML5 Canvas Tutorial #9 Get Image Data</a>
+        <a href="/series/html-5-tutorial-series/html5-canvas-tutorial-9-get-image-data" style="color:inherit">HTML5 Canvas Tutorial #9 Get Image Data</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="f96a5ca8dc78ec7221a57d62c72e1425">
+    <a href="/series/html-5-tutorial-series/html5-web-worker-tutorial-10-how-to-use-it">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/Wv19ltLFWho/hqdefault.jpg" class="img-responsive" alt="HTML5 Web Worker Tutorial #10 How to use it" style="width: 100%;">
     </a>
     <h3>
-        <a href="f96a5ca8dc78ec7221a57d62c72e1425" style="color:inherit">HTML5 Web Worker Tutorial #10 How to use it</a>
+        <a href="/series/html-5-tutorial-series/html5-web-worker-tutorial-10-how-to-use-it" style="color:inherit">HTML5 Web Worker Tutorial #10 How to use it</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="ba10a141992f2a5c19be3fe0b63296bb">
+    <a href="/series/html-5-tutorial-series/html5-web-worker-tutorial-11-example">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/3T7YwAA5I2Y/hqdefault.jpg" class="img-responsive" alt="HTML5 Web Worker Tutorial #11 Example" style="width: 100%;">
     </a>
     <h3>
-        <a href="ba10a141992f2a5c19be3fe0b63296bb" style="color:inherit">HTML5 Web Worker Tutorial #11 Example</a>
+        <a href="/series/html-5-tutorial-series/html5-web-worker-tutorial-11-example" style="color:inherit">HTML5 Web Worker Tutorial #11 Example</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="735b0afc0edabf361cbc435254966ad6">
+    <a href="/series/html-5-tutorial-series/html5-web-worker-tutorial-12-inline-workers-with-blob-bloburl">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/h6Gnun8-zoA/hqdefault.jpg" class="img-responsive" alt="HTML5 Web Worker Tutorial #12 Inline Workers with Blob & BlobURL" style="width: 100%;">
     </a>
     <h3>
-        <a href="735b0afc0edabf361cbc435254966ad6" style="color:inherit">HTML5 Web Worker Tutorial #12 Inline Workers with Blob & BlobURL</a>
+        <a href="/series/html-5-tutorial-series/html5-web-worker-tutorial-12-inline-workers-with-blob-bloburl" style="color:inherit">HTML5 Web Worker Tutorial #12 Inline Workers with Blob & BlobURL</a>
     </h3>
     <p>Thursday, November 29, 2012</p>
 </div>

@@ -22,45 +22,45 @@ title: Computer Programming Challenges
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="73799b87bd1ebad5f971b0afa0384b1f">
+    <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-1-introduction">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/Uz7QU3hc-5o/hqdefault.jpg" class="img-responsive" alt="Programming Challenge: Tic Tac Toe Tutorial 1: Introduction" style="width: 100%;">
     </a>
     <h3>
-        <a href="73799b87bd1ebad5f971b0afa0384b1f" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 1: Introduction</a>
+        <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-1-introduction" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 1: Introduction</a>
     </h3>
     <p>Wednesday, November 14, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="d43a9feca1c37f279fc5321d770eaf92">
+    <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-2-html-css-structure">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/EDYngknJGfc/hqdefault.jpg" class="img-responsive" alt="Programming Challenge: Tic Tac Toe Tutorial 2: HTML & CSS Structure" style="width: 100%;">
     </a>
     <h3>
-        <a href="d43a9feca1c37f279fc5321d770eaf92" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 2: HTML & CSS Structure</a>
+        <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-2-html-css-structure" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 2: HTML & CSS Structure</a>
     </h3>
     <p>Wednesday, November 14, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="6df8d16b442ff1d90ad34341056b3374">
+    <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-3-javascript-structure-classes">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/WG6lwNSRG_E/hqdefault.jpg" class="img-responsive" alt="Programming Challenge: Tic Tac Toe Tutorial 3: Javascript Structure & Classes" style="width: 100%;">
     </a>
     <h3>
-        <a href="6df8d16b442ff1d90ad34341056b3374" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 3: Javascript Structure & Classes</a>
+        <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-3-javascript-structure-classes" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 3: Javascript Structure & Classes</a>
     </h3>
     <p>Wednesday, November 14, 2012</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="9d38f3cd777e849c015e40a7fd71e378">
+    <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-4-javascript-algorithm-1">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/vdxW69sIIFo/hqdefault.jpg" class="img-responsive" alt="Programming Challenge: Tic Tac Toe Tutorial 4: Javascript Algorithm 1" style="width: 100%;">
     </a>
     <h3>
-        <a href="9d38f3cd777e849c015e40a7fd71e378" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 4: Javascript Algorithm 1</a>
+        <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-4-javascript-algorithm-1" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 4: Javascript Algorithm 1</a>
     </h3>
     <p>Wednesday, November 14, 2012</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="43b9eb5d3deb464e662e95e388a9f651">
+    <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-5-javascript-algorithm-2">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/xQMha5ITR4U/hqdefault.jpg" class="img-responsive" alt="Programming Challenge: Tic Tac Toe Tutorial 5: Javascript Algorithm 2" style="width: 100%;">
     </a>
     <h3>
-        <a href="43b9eb5d3deb464e662e95e388a9f651" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 5: Javascript Algorithm 2</a>
+        <a href="/series/computer-programming-challenges/programming-challenge-tic-tac-toe-tutorial-5-javascript-algorithm-2" style="color:inherit">Programming Challenge: Tic Tac Toe Tutorial 5: Javascript Algorithm 2</a>
     </h3>
     <p>Wednesday, November 14, 2012</p>
 </div>

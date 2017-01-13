@@ -22,11 +22,11 @@ title: Pixel Art Special Effects in JavaScript
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="e4279486be725253684ac67e4d6197b9">
+    <a href="/series/pixel-art-special-effects-in-javascript/render-loop-pixel-art-special-effects-javascript-tutorial">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/uRNK4jqly6k/hqdefault.jpg" class="img-responsive" alt="Render Loop - Pixel Art Special Effects - JavaScript Tutorial" style="width: 100%;">
     </a>
     <h3>
-        <a href="e4279486be725253684ac67e4d6197b9" style="color:inherit">Render Loop - Pixel Art Special Effects - JavaScript Tutorial</a>
+        <a href="/series/pixel-art-special-effects-in-javascript/render-loop-pixel-art-special-effects-javascript-tutorial" style="color:inherit">Render Loop - Pixel Art Special Effects - JavaScript Tutorial</a>
     </h3>
     <p>Wednesday, October 9, 2013</p>
 </div>

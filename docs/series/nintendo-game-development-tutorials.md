@@ -26,123 +26,123 @@ Finally, the bulk of the tutorials will teach you how to create a game engine (R
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="bd4662ec849f058c18086bfe3b6d5d7b">
+    <a href="/series/nintendo-game-development-tutorials/nintendo-web-framework-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/dPEsL7U2fSw/hqdefault.jpg" class="img-responsive" alt="Nintendo Web Framework - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="bd4662ec849f058c18086bfe3b6d5d7b" style="color:inherit">Nintendo Web Framework - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/nintendo-web-framework-nintendo-game-development" style="color:inherit">Nintendo Web Framework - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="afae68d836a19f6198f3cfbd92af7a09">
+    <a href="/series/nintendo-game-development-tutorials/nintendo-web-framework-indie-do-i-need-the-devkit-">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/DNk2vUEf_BY/hqdefault.jpg" class="img-responsive" alt="Nintendo Web Framework Indie: Do I Need the DevKit?" style="width: 100%;">
     </a>
     <h3>
-        <a href="afae68d836a19f6198f3cfbd92af7a09" style="color:inherit">Nintendo Web Framework Indie: Do I Need the DevKit?</a>
+        <a href="/series/nintendo-game-development-tutorials/nintendo-web-framework-indie-do-i-need-the-devkit-" style="color:inherit">Nintendo Web Framework Indie: Do I Need the DevKit?</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="1aa58fc859c527dc90851d2551bf6520">
+    <a href="/series/nintendo-game-development-tutorials/writing-a-game-engine-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/Jr3607oMgOM/hqdefault.jpg" class="img-responsive" alt="Writing a Game Engine - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="1aa58fc859c527dc90851d2551bf6520" style="color:inherit">Writing a Game Engine - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/writing-a-game-engine-nintendo-game-development" style="color:inherit">Writing a Game Engine - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="7030c2828f87c6c48b8001143be3cafd">
+    <a href="/series/nintendo-game-development-tutorials/html5-tools-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/3rVCp_OD1qw/hqdefault.jpg" class="img-responsive" alt="HTML5 & Tools - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="7030c2828f87c6c48b8001143be3cafd" style="color:inherit">HTML5 & Tools - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/html5-tools-nintendo-game-development" style="color:inherit">HTML5 & Tools - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="deeea70c7bcebca3c1ad182d3a537db9">
+    <a href="/series/nintendo-game-development-tutorials/agile-pivotal-tracker-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/H08ByDzWX0c/hqdefault.jpg" class="img-responsive" alt="Agile & Pivotal Tracker - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="deeea70c7bcebca3c1ad182d3a537db9" style="color:inherit">Agile & Pivotal Tracker - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/agile-pivotal-tracker-nintendo-game-development" style="color:inherit">Agile & Pivotal Tracker - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="be86ce6f8462fd5a6f552df52c741133">
+    <a href="/series/nintendo-game-development-tutorials/git-code-reposity-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/tc2NoTtUhSE/hqdefault.jpg" class="img-responsive" alt="Git Code Reposity - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="be86ce6f8462fd5a6f552df52c741133" style="color:inherit">Git Code Reposity - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/git-code-reposity-nintendo-game-development" style="color:inherit">Git Code Reposity - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="4df4a758d705fb0d6a94a7237dde1e08">
+    <a href="/series/nintendo-game-development-tutorials/google-closure-tools-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/mXO4yojVPFE/hqdefault.jpg" class="img-responsive" alt="Google Closure Tools - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="4df4a758d705fb0d6a94a7237dde1e08" style="color:inherit">Google Closure Tools - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/google-closure-tools-nintendo-game-development" style="color:inherit">Google Closure Tools - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="edb4f32d3d871450775aa63dc7d19319">
+    <a href="/series/nintendo-game-development-tutorials/google-closure-library-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/bT-JkFCminw/hqdefault.jpg" class="img-responsive" alt="Google Closure Library - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="edb4f32d3d871450775aa63dc7d19319" style="color:inherit">Google Closure Library - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/google-closure-library-nintendo-game-development" style="color:inherit">Google Closure Library - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="67a356a89111ad65d1b3186ef32b55e5">
+    <a href="/series/nintendo-game-development-tutorials/component-base-games-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/OlfEfHoUCCY/hqdefault.jpg" class="img-responsive" alt="Component-base games - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="67a356a89111ad65d1b3186ef32b55e5" style="color:inherit">Component-base games - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/component-base-games-nintendo-game-development" style="color:inherit">Component-base games - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="63e3de0d290553158a0dd41d5fd9e350">
+    <a href="/series/nintendo-game-development-tutorials/entity-system-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/aKhVilAlWrE/hqdefault.jpg" class="img-responsive" alt="Entity System - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="63e3de0d290553158a0dd41d5fd9e350" style="color:inherit">Entity System - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/entity-system-nintendo-game-development" style="color:inherit">Entity System - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="8de6244d2d5e9d5b05df6a0b477311a0">
+    <a href="/series/nintendo-game-development-tutorials/component-interface-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/lTQcJ6ogwj8/hqdefault.jpg" class="img-responsive" alt="Component Interface - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="8de6244d2d5e9d5b05df6a0b477311a0" style="color:inherit">Component Interface - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/component-interface-nintendo-game-development" style="color:inherit">Component Interface - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="9d7543752cd94161f68d998c93aa83d5">
+    <a href="/series/nintendo-game-development-tutorials/draw-component-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/hLDFho-g7bc/hqdefault.jpg" class="img-responsive" alt="Draw Component - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="9d7543752cd94161f68d998c93aa83d5" style="color:inherit">Draw Component - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/draw-component-nintendo-game-development" style="color:inherit">Draw Component - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="bb58c3e3fa8beb612224ce6dae2e7e01">
+    <a href="/series/nintendo-game-development-tutorials/renderer-component-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/niCC7lo0sTU/hqdefault.jpg" class="img-responsive" alt="Renderer Component - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="bb58c3e3fa8beb612224ce6dae2e7e01" style="color:inherit">Renderer Component - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/renderer-component-nintendo-game-development" style="color:inherit">Renderer Component - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="39fca6df7cc9a24eb65ae83e5731fb10">
+    <a href="/series/nintendo-game-development-tutorials/image-component-nintendo-game-development">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/89PvuaFDYCg/hqdefault.jpg" class="img-responsive" alt="Image Component - Nintendo Game Development" style="width: 100%;">
     </a>
     <h3>
-        <a href="39fca6df7cc9a24eb65ae83e5731fb10" style="color:inherit">Image Component - Nintendo Game Development</a>
+        <a href="/series/nintendo-game-development-tutorials/image-component-nintendo-game-development" style="color:inherit">Image Component - Nintendo Game Development</a>
     </h3>
     <p>Thursday, September 26, 2013</p>
 </div>

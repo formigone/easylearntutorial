@@ -22,167 +22,167 @@ title: JavaScript with Douglas Crockford
     <div class="row mt grid">
         <div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="f8bcd7004324355184ce7a2820d2b4d4">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-pronouncing-json-javascript-object-notation-">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/zhVdWQWKRqM/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford: pronouncing 'JSON' (JavaScript object notation)" style="width: 100%;">
     </a>
     <h3>
-        <a href="f8bcd7004324355184ce7a2820d2b4d4" style="color:inherit">Douglas Crockford: pronouncing "JSON" (JavaScript object notation)</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-pronouncing-json-javascript-object-notation-" style="color:inherit">Douglas Crockford: pronouncing "JSON" (JavaScript object notation)</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="4fb854596257748afeb51640233950b4">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-the-better-parts-concat-2015">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/_EF-FO63MXs/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford - 'The Better Parts' | .concat() 2015" style="width: 100%;">
     </a>
     <h3>
-        <a href="4fb854596257748afeb51640233950b4" style="color:inherit">Douglas Crockford - "The Better Parts" | .concat() 2015</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-the-better-parts-concat-2015" style="color:inherit">Douglas Crockford - "The Better Parts" | .concat() 2015</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="dd12894c6a936a4fcf52350e4c4a22ce">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-the-javascript-programming-language">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/v2ifWcnQs6M/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford: The JavaScript Programming Language" style="width: 100%;">
     </a>
     <h3>
-        <a href="dd12894c6a936a4fcf52350e4c4a22ce" style="color:inherit">Douglas Crockford: The JavaScript Programming Language</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-the-javascript-programming-language" style="color:inherit">Douglas Crockford: The JavaScript Programming Language</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="97c37db06ae79e182a56da1312df3d65">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-an-inconvenient-api-the-theory-of-the-dom">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/Y2Y0U-2qJMs/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford: An Inconvenient API - The Theory of the DOM" style="width: 100%;">
     </a>
     <h3>
-        <a href="97c37db06ae79e182a56da1312df3d65" style="color:inherit">Douglas Crockford: An Inconvenient API - The Theory of the DOM</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-an-inconvenient-api-the-theory-of-the-dom" style="color:inherit">Douglas Crockford: An Inconvenient API - The Theory of the DOM</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="0e9450c32c5156ecc36bcf51afec6fde">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-advanced-javascript">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/DwYPG6vreJg/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford: Advanced JavaScript" style="width: 100%;">
     </a>
     <h3>
-        <a href="0e9450c32c5156ecc36bcf51afec6fde" style="color:inherit">Douglas Crockford: Advanced JavaScript</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-advanced-javascript" style="color:inherit">Douglas Crockford: Advanced JavaScript</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="11ed9f0a52ec12f14253f6a6504aa6d3">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-javascript-the-good-parts">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/_DKkVvOt6dk/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford: JavaScript: The Good Parts" style="width: 100%;">
     </a>
     <h3>
-        <a href="11ed9f0a52ec12f14253f6a6504aa6d3" style="color:inherit">Douglas Crockford: JavaScript: The Good Parts</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-javascript-the-good-parts" style="color:inherit">Douglas Crockford: JavaScript: The Good Parts</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="ee9c69a48938113fa4ab6d27cb415dbd">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-the-json-saga">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/-C-JoyNuQJs/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford: The JSON Saga" style="width: 100%;">
     </a>
     <h3>
-        <a href="ee9c69a48938113fa4ab6d27cb415dbd" style="color:inherit">Douglas Crockford: The JSON Saga</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-the-json-saga" style="color:inherit">Douglas Crockford: The JSON Saga</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="059f3ae916f107a7ffebe86db5656837">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-the-state-and-future-of-javascript">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/V1_Y-KVhZ9Q/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford: The State and Future of JavaScript" style="width: 100%;">
     </a>
     <h3>
-        <a href="059f3ae916f107a7ffebe86db5656837" style="color:inherit">Douglas Crockford: The State and Future of JavaScript</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-the-state-and-future-of-javascript" style="color:inherit">Douglas Crockford: The State and Future of JavaScript</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="27b490a92b94cc9e87a063c8e9ee4956">
+    <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-volume-1-the-early-years">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/JxAXlJEmNMg/hqdefault.jpg" class="img-responsive" alt="Crockford on JavaScript - Volume 1: The Early Years" style="width: 100%;">
     </a>
     <h3>
-        <a href="27b490a92b94cc9e87a063c8e9ee4956" style="color:inherit">Crockford on JavaScript - Volume 1: The Early Years</a>
+        <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-volume-1-the-early-years" style="color:inherit">Crockford on JavaScript - Volume 1: The Early Years</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="5fe33a0a4a9469e7975a96c0465e415d">
+    <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-chapter-2-and-then-there-was-javascript">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/RO1Wnu-xKoY/hqdefault.jpg" class="img-responsive" alt="Crockford on JavaScript - Chapter 2: And Then There Was JavaScript" style="width: 100%;">
     </a>
     <h3>
-        <a href="5fe33a0a4a9469e7975a96c0465e415d" style="color:inherit">Crockford on JavaScript - Chapter 2: And Then There Was JavaScript</a>
+        <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-chapter-2-and-then-there-was-javascript" style="color:inherit">Crockford on JavaScript - Chapter 2: And Then There Was JavaScript</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="4ad57065c834764037c3d5f0f5553eb8">
+    <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-act-iii-function-the-ultimate">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/ya4UHuXNygM/hqdefault.jpg" class="img-responsive" alt="Crockford on JavaScript - Act III: Function the Ultimate" style="width: 100%;">
     </a>
     <h3>
-        <a href="4ad57065c834764037c3d5f0f5553eb8" style="color:inherit">Crockford on JavaScript - Act III: Function the Ultimate</a>
+        <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-act-iii-function-the-ultimate" style="color:inherit">Crockford on JavaScript - Act III: Function the Ultimate</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="f5a1a9d7eaacd1f19366082ef91fc0f5">
+    <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-episode-iv-the-metamorphosis-of-ajax">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/Fv9qT9joc0M/hqdefault.jpg" class="img-responsive" alt="Crockford on JavaScript - Episode IV: The Metamorphosis of Ajax" style="width: 100%;">
     </a>
     <h3>
-        <a href="f5a1a9d7eaacd1f19366082ef91fc0f5" style="color:inherit">Crockford on JavaScript - Episode IV: The Metamorphosis of Ajax</a>
+        <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-episode-iv-the-metamorphosis-of-ajax" style="color:inherit">Crockford on JavaScript - Episode IV: The Metamorphosis of Ajax</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="a7c9c1599679c9488c6b279bdf5bfe4e">
+    <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-part-5-the-end-of-all-things">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/47Ceot8yqeI/hqdefault.jpg" class="img-responsive" alt="Crockford on JavaScript - Part 5: The End of All Things" style="width: 100%;">
     </a>
     <h3>
-        <a href="a7c9c1599679c9488c6b279bdf5bfe4e" style="color:inherit">Crockford on JavaScript - Part 5: The End of All Things</a>
+        <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-part-5-the-end-of-all-things" style="color:inherit">Crockford on JavaScript - Part 5: The End of All Things</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="76136e316d74ea5595cfa924ce2bf153">
+    <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-scene-6-loopage">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/QgwSUtYSUqA/hqdefault.jpg" class="img-responsive" alt="Crockford on JavaScript - Scene 6: Loopage" style="width: 100%;">
     </a>
     <h3>
-        <a href="76136e316d74ea5595cfa924ce2bf153" style="color:inherit">Crockford on JavaScript - Scene 6: Loopage</a>
+        <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-scene-6-loopage" style="color:inherit">Crockford on JavaScript - Scene 6: Loopage</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="7c7f65fd91b30a05950f39eb03c6713c">
+    <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-level-7-ecmascript-5-the-new-parts">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/UTEqr0IlFKY/hqdefault.jpg" class="img-responsive" alt="Crockford on JavaScript - Level 7: ECMAScript 5: The New Parts" style="width: 100%;">
     </a>
     <h3>
-        <a href="7c7f65fd91b30a05950f39eb03c6713c" style="color:inherit">Crockford on JavaScript - Level 7: ECMAScript 5: The New Parts</a>
+        <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-level-7-ecmascript-5-the-new-parts" style="color:inherit">Crockford on JavaScript - Level 7: ECMAScript 5: The New Parts</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="6fb24b5c7f801f0c964a49204baf8cbf">
+    <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-section-8-programming-style-your-brain">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/taaEzHI9xyY/hqdefault.jpg" class="img-responsive" alt="Crockford on JavaScript - Section 8: Programming Style & Your Brain" style="width: 100%;">
     </a>
     <h3>
-        <a href="6fb24b5c7f801f0c964a49204baf8cbf" style="color:inherit">Crockford on JavaScript - Section 8: Programming Style & Your Brain</a>
+        <a href="/series/javascript-with-douglas-crockford/crockford-on-javascript-section-8-programming-style-your-brain" style="color:inherit">Crockford on JavaScript - Section 8: Programming Style & Your Brain</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="675403fd85d5d48f613943c16ecf7183">
+    <a href="/series/javascript-with-douglas-crockford/goto-2013-syntaxation-douglas-crockford">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/Nlqv6NtBXcA/hqdefault.jpg" class="img-responsive" alt="GOTO 2013 - Syntaxation - Douglas Crockford" style="width: 100%;">
     </a>
     <h3>
-        <a href="675403fd85d5d48f613943c16ecf7183" style="color:inherit">GOTO 2013 - Syntaxation - Douglas Crockford</a>
+        <a href="/series/javascript-with-douglas-crockford/goto-2013-syntaxation-douglas-crockford" style="color:inherit">GOTO 2013 - Syntaxation - Douglas Crockford</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div><div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="e7c861992c8265e84850369d2d89d32f">
+    <a href="/series/javascript-with-douglas-crockford/douglas-crockford-quality">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/t9YLtDJZtPY/hqdefault.jpg" class="img-responsive" alt="Douglas Crockford: Quality" style="width: 100%;">
     </a>
     <h3>
-        <a href="e7c861992c8265e84850369d2d89d32f" style="color:inherit">Douglas Crockford: Quality</a>
+        <a href="/series/javascript-with-douglas-crockford/douglas-crockford-quality" style="color:inherit">Douglas Crockford: Quality</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>
 </div><div class="row" style="margin-bottom: 20px;">
 <div class="col-xs-push-1 col-xs-10 col-sm-push-0 col-sm-4">
-    <a href="c9fac119ec89b7f0807b1acac6a46ea4">
+    <a href="/series/javascript-with-douglas-crockford/jseverywhere-douglas-crockford-javascript-the-world-s-most-misunderstood-language">
         <img src="/img/blank.gif" data-echo="https://i.ytimg.com/vi/gz7KL7ZirZc/hqdefault.jpg" class="img-responsive" alt="JSeverywhere: Douglas Crockford - JavaScript, The World's Most Misunderstood Language" style="width: 100%;">
     </a>
     <h3>
-        <a href="c9fac119ec89b7f0807b1acac6a46ea4" style="color:inherit">JSeverywhere: Douglas Crockford - JavaScript, The World's Most Misunderstood Language</a>
+        <a href="/series/javascript-with-douglas-crockford/jseverywhere-douglas-crockford-javascript-the-world-s-most-misunderstood-language" style="color:inherit">JSeverywhere: Douglas Crockford - JavaScript, The World's Most Misunderstood Language</a>
     </h3>
     <p>Wednesday, January 11, 2017</p>
 </div>
