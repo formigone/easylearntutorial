@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "react-dispatcher": "~0.2.1",
-    "angular": "~1.4.2",
+    "angular": "~1.8.0",
     "bootstrap": "~3.3.5"
   },
   "devDependencies": {
